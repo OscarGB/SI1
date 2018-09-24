@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../../stylesheet/header_style.css">
+	<link rel="stylesheet" href="../stylesheet/header_style.css">
 	<title>La casa del dvd</title>
 </head>
 <body>
-	<iframe src="../utils/header.html" seamless></iframe>
+<div class="float"><iframe src="./utils/header.html" seamless></iframe></div>
 
-	
+<div class="content">
+	<H1><u>Novedades</u></H1>
+
+	<table  width="700" height="300" cellpadding="3" border="0">
+		<tr>
+		   <td>
+		   <blockquote>
+		   <img src="../media/img/indiana_jones.jpg" width="100" align=left>
+		   <H4><b><a href="./films/indiana_jones.html">Indiana Jones y la ultima cruzada</a></b></H4>
+		   <H4><b>Precio: 12,99$</b></H4>
+		   </td>
+
+		    <td>
+			<blockquote>
+			<img src="../media/img/la_guerra_de_las_galaxias.jpg" width="100" align="center">
+			<H4><b><a href="./films/la_guerra_de_las_galaxias.html">La guera de las galaxias:Episodio IV- Una nueva esperanza</a></b></H4>
+			<H4><b>Precio: 15,50$</b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/ocho_apellidos_vascos.jpg" width="100" align=left>
+			<H4><b><a href="./films/ocho_apellidos_vascos.html">Ocho apellidos vascos</a></b></H4>
+			<H4><b>Precio: 11,80$</b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/mamma_mia.jpg" width="100" align=left>
+			<H4><b><a href="./films/mamma_mia.html">Mamma Mia!</a></b></H4>
+			<H4><b>Precio: 13,50$</b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/titanic.jpg" width="100" align=left>
+			<H4><b><a href="./films/titanic.html">Titanic</a></b></H4>
+			<H4><b>Precio: 9,99$</b></H4>
+			</td>
+		</tr>
+	</table>
+
+	<H1><u>Categorias destacadas</u></H1>	
+
+	<table  align= "left" width="700" height="300" cellpadding="3" border="0">
+		<tr>
+		   <td>
+		   <blockquote>
+		   <img src="../media/img/indiana_jones.jpg" width="100" align=left>
+		   <H4><b><a href="./menus/accion.html">Accion</a></b></H4>
+		   </td>
+
+		    <td>
+			<blockquote>
+			<img src="../media/img/la_guerra_de_las_galaxias.jpg" width="100" align="center">
+			<H4><b><a href="./menus/ficcion.html">Ciencia ficcion</a></b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/ocho_apellidos_vascos.jpg" width="100" align=left>
+			<H4><b><a href="./menus/comedia.html">Comedia</a></b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/mamma_mia.jpg" width="100" align=left>
+			<H4><b><a href="./menus/musical.html">Musical</a></b></H4>
+			</td>
+
+			<td>
+			<blockquote>
+			<img src="../media/img/titanic.jpg" width="100" align=left>
+			<H4><b><a href="./menus/drama.html">Drama</a></b></H4>
+			</td>
+		</tr>
+	</table>
+
+	<H1><u>Busqueda</u></H1>
+
+	<p><b>Por nombre:</b>
+	<input type="text" name="Busqueda por nombre"></p>
+	<p><b>Por categoria:</b>
+	<select>
+		<option value="1">Seleccione categoria</option>
+		<option value="2">Accion</option>
+		<option value="3">Ciencia ficcion</option>
+		<option value="4">Comedia</option>
+		<option value="5">Musical</option>
+		<option value="6">Drama</option>
+	</select></p>
+	<br>
+	<input type="button" value="Buscar" align="center">
+</div>
 </body>

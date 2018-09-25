@@ -130,6 +130,7 @@
   float: left; 
   padding: 15px; 
   max-width: 50%;
+  max-height: 50%;
 }
 
 .sb-images {

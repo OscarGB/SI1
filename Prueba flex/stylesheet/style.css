@@ -1,8 +1,17 @@
 /*General web style*/
-html body{
+html{
 	background-color: #D3D3D3;
 	padding: 0;
 	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding: 0 0 35px 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
 }
 
 * {
@@ -20,8 +29,8 @@ h1 {
 }
 
 .full {
-	height: 100%;
-	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
 }
 
 .flex-column {
@@ -41,6 +50,10 @@ h1 {
 .black-border{
 	border: 1px solid black;
 }
+
+.wrap {
+	flex-wrap: wrap;
+}
 /*End general web style*/
 
 /*Specific class style*/
@@ -58,7 +71,7 @@ h1 {
 .flex-bottom {
 	justify-content: space-between;
 	align-content: center;
-	padding-bottom: 30px;
+	overflow: visible;
 }
 
 .flex-1-top {
@@ -79,7 +92,8 @@ h1 {
 }
 
 .flex-2-right {
-	flex: 80%;	
+	flex: 80%;
+	min-height: 100%	
 	padding-left: 15px;
 }
 
@@ -102,13 +116,13 @@ h1 {
   object-fit: contain;
   float: left; 
   padding: 15px; 
-  max-width: 50%;
-  max-height: 50%;
+  width: 50%;
+  height: 50%;
 }
 
 .sb-img {
-  max-width: 90px;
-  max-height: 115px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .link-image {
@@ -140,9 +154,10 @@ h1 {
 
 
 .sidebar {
-	flex-basis: 20%;
-	min-height: 100%;
-	flex-wrap: wrap;
+	flex-basis: 17%;
+	min-height: 400px;
+	flex-wrap: nowrap;
+	display: none;
 }
 
 .sidebar-section {
@@ -155,11 +170,15 @@ h1 {
 	flex-basis: 3rem;
 	align-content: center;
 	overflow: hidden;
-	height: 100%;
+	min-height: 400px;
+}
+
+.content {
+	overflow: auto;
 }
 
 .rotated {
-	transform: rotate(-90deg) translateX(-800%);
+	transform: rotate(-90deg) translateX(-450%);
  	width: height: 10rem;	
 }
 

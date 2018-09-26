@@ -151,6 +151,12 @@
 	padding: 5px;
 }
 
+.link_image2 {
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+}
+
 .button1 {
   	font: bold 11px Arial;
   	text-decoration: none;
@@ -166,7 +172,12 @@
 
 .button2 {
   	font: bold 11px Arial;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
   	text-decoration: none;
+  	flex-grow: 1;
+  	padding: auto;
   	background-color: rgba(85, 111, 52,20);
   	color: white;
   	text-align: center;

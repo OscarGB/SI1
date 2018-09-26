@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="#"><img src="../../media/img/la_casa_del_dvd.png"></a>
+					<h1>La casa del DVD</h1>
+					<div class="login_buttons">
+						<a class="button1 hov" href="#">Login</a>
+						<a class="button1 hov" href="#">Registro</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="#"><img class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="#"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Ofertas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="#"><img class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones2.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones3.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/parque_jurasico.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                         CONTENIDO                             -->
+	<h1>Lo imposible</h1>
+	<div class="flex-row film-container">
+		<img src="../../media/img/lo_imposible.jpg" class="film-image">
+		<p class="film-description"><b>Director:</b>J.A. Bayona<br>
+			<b>Reparto:</b>Naomi Watts,  Ewan McGregor,  Tom Holland,  Geraldine Chaplin,  Oaklee Pendergast, Samuel Joslin,  Dominic Power,  Sönke Möhring,  Olivia Jackson,  Natalie Lorence, Nicola Harrison,  Bruce Blain,  Johan Sundberg,  Teo Quintavalle, Jan Roland Sundberg,  Marta Etura<br>
+			<b>Sinopsis:</b><br>Diciembre del año 2004. María (Naomi Watts), Henry (Ewan McGregor) y sus tres hijos pequeños vuelan desde Japón a Tailandia para pasar las vacaciones de Navidad en la playa. Una mañana, mientras se encuentran todos en la piscina del complejo a orillas del mar, un tremendo tsunami destroza el hotel y gran parte de la costa del sudeste asiático. Este desastre cambió para siempre la vida de millones de personas. Esta es sólo la historia de una familia. <br>
+
+			<b>Año:</b>2012<br>
+			<b>Duracion:</b>107 min.<br>
+			<b>País:</b>España<br>
+			<b>Premios:</b><br>2012: Oscars: Nominada a Mejor actriz (Naomi Watts)<br>2012: Globos de Oro: Nominada a Mejor actriz-drama (Naomi Watts)<br>1997: 10 nominaciones a los BAFTA, incluyendo mejor película y director<br>2012: 5 Premios Goya, incluyendo Mejor director. 14 nominaciones<br>2012: Critics Choice Awards: Nominada a Mejor actriz (Watts) e Intérprete joven (Holland)<br>2012: National Board of Review (NBR): Mejor actor revelación (Tom Holland)<br>2012: Asociación de Críticos de Chicago: 2 nom., incluyendo Mejor actriz (Watts)
+		</p>
+		<div class="green black-border film-buy-container flex-column">
+			<h1 class="button1">12€</h1>
+			<p class="button1 hov">Añadir al carrito</p>
+		</div>
+	</div>
+	<h1>Películas similares</h1>
+	<div class="black-border film-similar-container flex-row">
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+		<a href="#"><div class="film-similar-img-container">
+			<img src="../../media/img/mamma_mia.jpg">
+		</div></a>
+	</div>
+	<h1>OH!-PIÑONES</h1>
+	<div class="flex-column film-opinions-container">
+		<p>"Naturalmente que se le pueden poner "peros" a la película de Bayona. Es un cóctel muy complicado de hacer, pero la película es absolutamente impresionante"<br> Luis Martínez<br><b>Puntuación:</b>4 piñones<img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"></p>
+		<p>"Bayona propone una experiencia brutal pero nos priva de la emoción. Una experiencia intensa y desasosegante. 'Lo imposible' se convencionaliza hasta estándares de drama familiar."<br>Manuel Piñón<br><b>Puntuación:</b>3 piñones<img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"></p>	
+	</div>
+<!--                     FIN CONTENIDO                             -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

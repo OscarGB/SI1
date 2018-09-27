@@ -16,11 +16,21 @@ body {
 
 * {
 	box-sizing:border-box;
-  	font: bold 12px Arial;
+  	font: bold 12px Arial; 	
 }
 
 h1 {
 	font: bold 25px Arial;
+}
+
+h2 {
+	font: bold 20px Arial;
+}
+
+h3 {
+	font: bold 15px Arial;
+	color: rgba(85, 111, 52,20);
+	display:inline;
 }
 
 .green {
@@ -241,6 +251,11 @@ h1 {
     height: 120px;
 }
 
+.pedidos-img{
+    width: 90px;
+    height: 120px;
+}
+
 .film-opinions-container {
 	border: 1px solid black;
 }
@@ -251,11 +266,83 @@ h1 {
 	border-bottom: 1px solid black;
 }
 
+.register {
+	justify-content: space-around;
+}
+
+.register-form {
+	padding: 20px;
+	flex-basis: 70%;
+	text-align: center;
+}
+
+.frase-motivadora{
+	padding: 20px;
+	background-color: Khaki;
+	flex-basis: 20%;
+	min-width: 200px;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+.frase-motivadora p>i{
+	font-size: 30px;
+}
+
+.register-button {
+	border-radius: 20px;
+	padding: 5px 10px;
+}
+
+.user-info{
+	justify-content: space-around;
+	width: 100%;
+
+}
+
+.user-data {
+	display:inline;
+}
+
+.user-data-container {
+	align-items: center;
+}
+
+.user-data-exterior{
+	padding: 20px;	
+	flex-basis: 50%;
+	padding-right: 20px;
+}
+
+.pedidos {
+	background-color: Khaki;
+	padding: 0;
+	flex-basis: 40%;
+}
+
+.pedidos img, .pedidos div{
+	padding: 5px;
+	float: left;
+}
+
+.pedidos div{
+	align-self: right;
+	flex-basis: 80%;
+}
+
+.pedidos div>span {
+	text-align: right;
+}
 
 /*End specific class style */
+
+/*Media queries*/
 
 @media screen and (max-width: 1150px) {
 	.film-similar-img-container {
 		flex-basis: 25%;
 	}
 }
+
+/*End media queries*/

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="#"><img src="../../media/img/la_casa_del_dvd.png"></a>
+					<h1>La casa del DVD</h1>
+					<div class="login_buttons">
+						<a class="button1 hov" href="#">Login</a>
+						<a class="button1 hov" href="#">Registro</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="#"><img class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="#"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Ofertas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="#"><img class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones2.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones3.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/parque_jurasico.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                 CONTENIDO                       -->
+
+<h1>&iexcl;Reg&iacute;strate!</h1>
+	<div class="flex-row register wrap">
+		<div class="register-form">
+			<p>
+			<br>
+			<H2><b>Introduce tus datos:</b></H2>
+
+			<p><b>Nombre de usuario:</b>
+			 	  <input type="text" name="UserName"></p>
+			<p><b>Correo:</b>
+				  <input type="text" name="Correo"></p>
+			<p><b>Contrase&nacute;a:</b>
+				  <input type="text" name="Contrasena"></p>
+			<p><b>Repita contrase&nacute;a:</b>
+				  <input type="text" name="RepContrasena"></p>
+			<br><input type="checkbox" id="Condiciones" name="Condiciones" /><label for="Condiciones">Acepta las <a href="../../media/others/pagina_condiciones.html">condiciones y t&eacute;rminos de esta p&aacute;gina</a></label>
+			<br>
+			<br>
+			<input type="button" value="Registrar" class="register-button green hov">
+		</div>
+		<div class="black-border frase-motivadora">
+			<p><i>Carpe diem, aprovechad el momento, haced que vuestra vida sea extraordinaria.</i></p>
+			<p>~El club de los poetas muertos~</p>
+		</div>
+	</div>
+
+<!--                  FIN-DE-CONTENIDO                      -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

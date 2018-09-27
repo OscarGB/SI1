@@ -68,6 +68,11 @@ h1 {
 	align-content: center;
 }
 
+.login_buttons *{
+	display: flex;
+	flex-flow: row;
+}
+
 .flex-bottom {
 	justify-content: space-between;
 	align-content: center;
@@ -116,13 +121,10 @@ h1 {
 .sb-img-container {
   object-fit: contain;
   float: left; 
-  padding: 15px; /*
-  width: 50%;
-  height: 50%;*/
+  padding: 15px;
 }
 
 .sb-img {
-  
   width: 117px;
   height: 180px;
 }
@@ -216,7 +218,6 @@ h1 {
 	margin-right: 20px;
 	margin-top: 20px;
 	min-width: 150px;
-	min-height: 25%;
 }
 
 .film-similar.container {

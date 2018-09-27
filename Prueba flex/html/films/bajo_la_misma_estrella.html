@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="#"><img src="../../media/img/la_casa_del_dvd.png"></a>
+					<h1>La casa del DVD</h1>
+					<div class="login_buttons">
+						<a class="button1 hov" href="#">Login</a>
+						<a class="button1 hov" href="#">Registro</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="#"><img class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="#"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Ofertas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="#"><img class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones2.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones3.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/parque_jurasico.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                         CONTENIDO                             -->
+	<h1>Bajo la misma estrella</h1>
+	<div class="flex-row film-container">
+		<img src="../../media/img/bajo_la_misma_estrella.jpg" class="film-image">
+		<p class="film-description"><b>Director:</b>Josh Boone<br><br>
+			<b>Reparto:</b>Willem Dafoe,  Lotte Verbeek,  Ana Dela Cruz,  Randy Kovitz,  Toni Saladna, David Whalen,  Milica Govich,  Allegra Carpenter,  Emily Peachey,  Emily Bach, Mike Birbiglia<br><br>
+			<b>Sinopsis:</b><br>A pesar de que un milagro m&eacute;dico ha conseguido reducir su tumor y darle unos años m&aacute;s de vida, la adolescente Hazel (Shailene Woodley) siempre se ha considerado una enferma terminal. Sin embargo, cuando el joven Gus (Ansel Elgort) entra a formar parte del grupo de ayuda para enfermos de c&aacute;ncer juvenil, la vida de Hazel se transforma por completo. <br><br>
+
+			<b>A&ntilde;o:</b>2014<br><br>
+			<b>Duraci&oacute;n:</b>125 min.<br><br>
+			<b>Pa&iacute;s:</b>Estados Unidos<br><br>
+			<b>Premios:</b><br>2014: Critics Choice Awards: Nominada a Mejor int&eacute;rprete joven (Ansel Elgort)
+		</p>
+		<div class="green black-border film-buy-container flex-column">
+			<h1 class="button1">13,30&euro;</h1>
+			<p class="button1 hov">A&ntilde;adir al carrito</p>
+		</div>
+	</div>
+	<h1>Pel&iacute;culas similares</h1>
+	<div class="black-border film-similar-container flex-row">
+		<div class="film-similar-img-container">
+			<a href="./titanic.html"><img src="../../media/img/titanic.jpg"></a>
+		</div>
+		<div class="film-similar-img-container">
+			<a href="./12_a&ntilde;os_de_esclavitud.html"><img src="../../media/img/esclavitud.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./lo_imposible.html"><img src="../../media/img/lo_imposible.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./tres_carteles_a_las_afueras.html"><img src="../../media/img/tres_carteles_a_las_afueras.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="#"><img src="../../media/img/mamma_mia.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="#"><img src="../../media/img/mamma_mia.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="#"><img src="../../media/img/mamma_mia.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="#"><img src="../../media/img/mamma_mia.jpg"></a>
+		</div>
+	</div>
+	<h1>OH!-PI&Ntilde;ONES</h1>
+	<div class="flex-column film-opinions-container">
+		<p>"Los puntos fuertes de la pel&iacute;cula vienen de la novela de Green, que rechaza totalmente convertirse un un drama t&oacute;pico sobre el c&aaute;ncer, creando a cambio dos personajes j&oacute;venes cre&iacute;bles y vibrantes"<br> Justin Lowe<br><b>Puntuaci&oacute;n:</b>4 pi&ntilde;ones<img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"></p>
+
+		<p>"Una candorosa y un tanto maniquea historia de amor. Shailene Woodley logra una composici&oacute;n intensa, sensible y cre&iacute;ble"<br>Andrew Barker<br><b>Puntuaci&oacute;n:</b>3 pi&ntilde;ones<img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"><img src="../../media/img/pinon.png" width="30"></p>	
+	</div>
+<!--                     FIN CONTENIDO                             -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

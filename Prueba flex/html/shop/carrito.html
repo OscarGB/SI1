@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carrito de la compra</title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="#"><img src="../../media/img/la_casa_del_dvd.png"></a>
+					<h1>La casa del DVD</h1>
+					<div class="login_buttons">
+						<a class="button1 hov" href="#">Login</a>
+						<a class="button1 hov" href="#">Registro</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="#"><img class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="#"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Ofertas</p></a>
+					<a class="hov green flex-row button2" href="#"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="#"><img class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones2.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/indiana_jones3.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/parque_jurasico.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="#"><img class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!----------------------------------------CONTENIDO----------------------------------------------------------->
+<h1>Los fant&aacute;sticos DVDs que vas a comprar</h1>
+<div class="flex-row wrap">
+	<div class="carrito-left">
+		<div class="flex-column pedidos">
+			<div class="black-border flex-row">
+				<img src="../../media/img/indiana_jones.jpg" class="pedidos-img">
+				<div>
+					<h4><b>Indiana Jones y la &uacute;ltima cruzada</b></h4>
+					<h4><b>Cantidad: 1</b></h4>
+					<span><h4>Precio: 12,99&euro;</h4></span>
+				</div>
+			</div>
+			<div class="black-border flex-row">
+				<img src="../../media/img/la_guerra_de_las_galaxias.jpg" class="pedidos-img">
+				<div>
+					<h4><b>La guerra de las galaxias:Episodio IV- Una nueva esperanza</b></h4>
+					<h4><b>Cantidad: 1</b></h4>
+					<span><h4>Precio: 10,99&euro;</h4></span>
+				</div>
+			</div>
+			<div class="black-border flex-row">
+				<img src="../../media/img/ocho_apellidos_vascos.jpg" class="pedidos-img">
+				<div>
+					<h4><b>Ocho apellidos vascos</b></h4>
+					<h4><b>Cantidad: 1</b></h4>
+					<span><h4>Precio: 8.50&euro;</h4></span>
+				</div>
+			</div>
+			<div class="black-border flex-row">
+				<div class="full">
+					<h4>TOTAL</h4>
+					<span><h1>32,48</h1></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex-column carrito-right">
+		<a class="button3 hov" href="./pagar.html">Me los llevo</a>
+		<a class="button3 hov" href="../index.html">Seguir comprando</a>
+		<div class="black-border frase-motivadora1">
+			<p><i>Hoy es el primer d&iacute;a del resto de mi vida</i></p>
+			<p>~American Beauty~</p>
+		</div>
+	</div>
+</div>
+
+
+<!---------------------------------FIN-DE-CONTENIDO----------------------------------------------------------->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

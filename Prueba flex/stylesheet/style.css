@@ -16,11 +16,21 @@ body {
 
 * {
 	box-sizing:border-box;
-  	font: bold 12px Arial;
+  	font: bold 12px Arial; 	
 }
 
 h1 {
 	font: bold 25px Arial;
+}
+
+h2 {
+	font: bold 20px Arial;
+}
+
+h3 {
+	font: bold 15px Arial;
+	color: rgba(85, 111, 52,20);
+	display:inline;
 }
 
 .green {
@@ -68,6 +78,11 @@ h1 {
 	align-content: center;
 }
 
+.login_buttons *{
+	display: flex;
+	flex-flow: row;
+}
+
 .flex-bottom {
 	justify-content: space-between;
 	align-content: center;
@@ -76,6 +91,11 @@ h1 {
 
 .flex-1-top {
 	justify-content: space-around;
+}
+
+.flex-1-top h1 {
+	font: bold 30px Courier;
+	padding: 0; 
 }
 
 .flex-1-bottom {
@@ -116,13 +136,10 @@ h1 {
 .sb-img-container {
   object-fit: contain;
   float: left; 
-  padding: 15px; /*
-  width: 50%;
-  height: 50%;*/
+  padding: 15px;
 }
 
 .sb-img {
-  
   width: 117px;
   height: 180px;
 }
@@ -216,7 +233,6 @@ h1 {
 	margin-right: 20px;
 	margin-top: 20px;
 	min-width: 150px;
-	min-height: 25%;
 }
 
 .film-similar.container {
@@ -240,6 +256,11 @@ h1 {
     height: 120px;
 }
 
+.pedidos-img{
+    width: 90px;
+    height: 120px;
+}
+
 .film-opinions-container {
 	border: 1px solid black;
 }
@@ -250,11 +271,118 @@ h1 {
 	border-bottom: 1px solid black;
 }
 
+.register {
+	justify-content: space-around;
+}
 
+.register-form {
+	padding: 20px;
+	flex-basis: 70%;
+	text-align: center;
+}
+
+.frase-motivadora{
+	padding: 20px;
+	background-color: Khaki;
+	flex-basis: 20%;
+	min-width: 200px;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+.frase-motivadora1{
+	padding: 20px;
+	background-color: Khaki;
+	min-width: 200px;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+.frase-motivadora p>i, .frase-motivadora1 p>i{
+	font-size: 30px;
+}
+
+.register-button {
+	border-radius: 20px;
+	padding: 5px 10px;
+}
+
+.user-info{
+	justify-content: space-around;
+	width: 100%;
+
+}
+
+.user-data {
+	display:inline;
+}
+
+.user-data-container {
+	align-items: center;
+}
+
+.user-data-exterior{
+	padding: 20px;	
+	flex-basis: 50%;
+	padding-right: 20px;
+}
+
+.pedidos {
+	background-color: Khaki;
+	padding: 0;
+	flex-basis: 40%;
+}
+
+.pedidos img, .pedidos div{
+	padding: 5px;
+	float: left;
+}
+
+.pedidos div{
+	align-self: right;
+	flex-basis: 80%;
+}
+
+.pedidos div>span {
+	text-align: right;
+}
+
+.carrito-left{
+	flex-basis: 70%;
+	padding: 20px;
+	height: 100%;
+}
+
+.carrito-right{
+	flex-basis: 20%;
+	border-left: 1px solid black;
+	padding: 20px;
+	align-content: center;
+	justify-content: space-around;
+}
+
+.button3 {
+  	text-decoration: none;
+  	background-color: #EEEEEE;
+  	color: black;
+  	padding: 10px 10px 10px 10px;
+  	border-top: 1px solid #CCCCCC;
+  	border-right: 1px solid #333333;
+  	border-bottom: 1px solid #333333;
+  	border-left: 1px solid #CCCCCC;
+  	border-radius: 20px;
+  	text-align: center;
+}
 /*End specific class style */
+
+/*Media queries*/
 
 @media screen and (max-width: 1150px) {
 	.film-similar-img-container {
 		flex-basis: 25%;
 	}
 }
+
+/*End media queries*/

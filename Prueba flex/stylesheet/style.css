@@ -116,14 +116,15 @@ h1 {
 .sb-img-container {
   object-fit: contain;
   float: left; 
-  padding: 15px; 
+  padding: 15px; /*
   width: 50%;
-  height: 50%;
+  height: 50%;*/
 }
 
 .sb-img {
-  max-width: 100%;
-  max-height: 100%;
+  
+  width: 117px;
+  height: 180px;
 }
 
 .link-image {
@@ -165,6 +166,7 @@ h1 {
 	flex-basis: 50%;
 	border-bottom: 1px solid black;
 	padding: 0.5rem;
+	height: 50%;
 }
 
 .sidebar-handle {
@@ -185,6 +187,7 @@ h1 {
 
 .film-container {
 	padding-left: 20px;
+	flex-wrap: wrap;
 }
 
 .film-image {
@@ -198,6 +201,7 @@ h1 {
 .film-description {
 	padding: 20px;
 	color: rgba(85, 111, 52,20);
+	max-width: 60%;
 }
 
 .film-description b {
@@ -210,8 +214,9 @@ h1 {
 	align-self: center;
 	flex-basis: 15%;
 	margin-right: 20px;
+	margin-top: 20px;
 	min-width: 150px;
-	height: 25%;
+	min-height: 25%;
 }
 
 .film-similar.container {
@@ -220,11 +225,14 @@ h1 {
 }
 
 .film-similar-container {
-	padding: 20px 0 20px 20px; 
+	padding: 0 0 20px 20px;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .film-similar-img-container {
 	padding-right: 20px;
+	padding-top: 20px;
 }
 
 .film-similar-img-container img{
@@ -242,5 +250,11 @@ h1 {
 	border-bottom: 1px solid black;
 }
 
-.
+
 /*End specific class style */
+
+@media screen and (max-width: 1150px) {
+	.film-similar-img-container {
+		flex-basis: 25%;
+	}
+}

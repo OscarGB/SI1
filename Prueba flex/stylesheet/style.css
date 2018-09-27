@@ -286,7 +286,16 @@ h3 {
 	justify-content: space-around;
 }
 
-.frase-motivadora p>i{
+.frase-motivadora1{
+	padding: 20px;
+	background-color: Khaki;
+	min-width: 200px;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+.frase-motivadora p>i, .frase-motivadora1 p>i{
 	font-size: 30px;
 }
 
@@ -335,6 +344,32 @@ h3 {
 	text-align: right;
 }
 
+.carrito-left{
+	flex-basis: 70%;
+	padding: 20px;
+	height: 100%;
+}
+
+.carrito-right{
+	flex-basis: 20%;
+	border-left: 1px solid black;
+	padding: 20px;
+	align-content: center;
+	justify-content: space-around;
+}
+
+.button3 {
+  	text-decoration: none;
+  	background-color: #EEEEEE;
+  	color: black;
+  	padding: 10px 10px 10px 10px;
+  	border-top: 1px solid #CCCCCC;
+  	border-right: 1px solid #333333;
+  	border-bottom: 1px solid #333333;
+  	border-left: 1px solid #CCCCCC;
+  	border-radius: 20px;
+  	text-align: center;
+}
 /*End specific class style */
 
 /*Media queries*/

@@ -93,6 +93,11 @@ h3 {
 	justify-content: space-around;
 }
 
+.flex-1-top h1 {
+	font: bold 30px Courier;
+	padding: 0; 
+}
+
 .flex-1-bottom {
 	justify-content: flex-start;
 	align-content: center;

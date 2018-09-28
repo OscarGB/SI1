@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>G&eacute;neros</title>
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="#"><img src="../../../media/img/la_casa_del_dvd.png"></a>
+					<h4>La casa del DVD</h4>
+					<div class="login_buttons">
+						<a class="button1 hov" href="../../users/login.html">Login</a>
+						<a class="button1 hov" href="../../users/register.html">Registro</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="../../index.html"><img class="link-image" src="../../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="../peliculas1.html"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="../categorias/generos.html"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="../../shop/ofertas.html"><p>Ofertas</p></a>
+					<a class="hov green flex-row button2" href="../../users/contacto.html"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="../../shop/carrito.html"><img class="link-image" src="../../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../animacion/indiana_jones.html"><img class="sb-img" src="../../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/yucatan.html"><img class="sb-img" src="../../../media/img/yucatan.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../animacion/gladiator.html"><img class="sb-img" src="../../../media/img/gladiator.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../drama/lo_imposible.html"><img class="sb-img" src="../../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../musical/mamma_mia.html"><img class="sb-img" src="../../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../ficcion/alien.html"><img class="sb-img" src="../../../media/img/alien.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../musical/la_la_land.html"><img class="sb-img" src="../../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/campeones.html"><img class="sb-img" src="../../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                 CONTENIDO                       -->
+
+<h1>G&eacute;neros</h1>
+<div class="flex-row">
+	<div class="img-gen">
+		<a href="../categorias/accion.html"><img class="sb-img" src="../../../media/img/gladiator.jpg"></a>
+		<p><h1>Acci&oacute;n</h1></p>
+	</div>
+	<div class="img-gen">
+		<a href="../categorias/animacion.html"><img class="sb-img" src="../../../media/img/del_reves.jpg"></a>
+		<p><h1>Animaci&oacute;n</h1></p>
+	</div>
+	<div class="img-gen">
+		<a href="../categorias/comedia.html"><img class="sb-img" src="../../../media/img/ocho_apellidos_vascos.jpg"></a>
+		<p><h1>Comedia</h1></p>
+	</div>
+</div>
+<div class="flex-row">
+	<div class="img-gen">
+		<a href="../categorias/drama.html"><img class="sb-img" src="../../../media/img/titanic.jpg"></a>
+		<p><h1>Drama</h1></p>
+	</div>
+	<div class="img-gen">
+		<a href="../categorias/ficcion.html"><img class="sb-img" src="../../../media/img/avatar.jpg"></a>
+		<p><h1>Ficci&oacute;n</h1></p>
+	</div>
+	<div class="img-gen">
+		<a href="../categorias/musical.html"><img class="sb-img" src="../../../media/img/mamma_mia.jpg"></a>
+		<p><h1>Musical</h1></p>
+	</div>
+</div>
+
+<!--                  FIN-DE-CONTENIDO                      -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

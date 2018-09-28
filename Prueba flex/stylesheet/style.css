@@ -118,6 +118,10 @@ h3 {
 	align-items: center;
 }
 
+.flex-3-right {
+	align-items: left;
+}
+
 .footer-frame {
   	position: fixed;
   	bottom: 0;
@@ -140,8 +144,22 @@ h3 {
 }
 
 .sb-img {
+  object-fit: contain;
   width: 117px;
   height: 180px;
+}
+
+.img-gen{
+  text-align: center;
+  object-fit: contain;
+  width: 400px;
+  height: 400px;
+}
+
+
+.img-index {
+	padding-right: 20px;
+	padding-top: 20px;
 }
 
 .link-image {
@@ -170,6 +188,20 @@ h3 {
   	text-align: center;
   	border: 1px solid black;
 }
+
+.button3 {
+	flex-flow:row;
+  	text-decoration: none;
+  	background-color: #EEEEEE;
+  	color: black;
+  	padding: 5px 10px 5px 10px;
+  	border-top: 1px solid #CCCCCC;
+  	border-right: 1px solid #333333;
+  	border-bottom: 1px solid #333333;
+  	border-left: 1px solid #CCCCCC;
+  	border-radius: 20px;
+}
+
 
 
 .sidebar {
@@ -363,6 +395,30 @@ h3 {
 	justify-content: space-around;
 }
 
+.index-top{
+	flex-basis: 70%;
+	padding: 20px;
+	height: 100%;
+}
+
+
+.index-down{
+	flex-basis: 20%;
+	border-bottom:1px solid black;
+	padding: 20px;
+	align-content: center;
+	justify-content: space-around;
+}
+
+.index-right{
+	flex-basis: 20%;
+	border-left: 1px solid black;
+	padding: 20px;
+	align-content: center;
+	justify-content: space-around;
+}
+
+
 .button3 {
   	text-decoration: none;
   	background-color: #EEEEEE;
@@ -379,7 +435,7 @@ h3 {
 
 /*Media queries*/
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1000px) {
 	.film-similar-img-container {
 		flex-basis: 25%;
 	}

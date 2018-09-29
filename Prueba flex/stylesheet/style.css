@@ -67,6 +67,11 @@ h3 {
 /*End general web style*/
 
 /*Specific class style*/
+
+.flex-general div>div>div>h4 {
+
+}
+
 .flex-general {
 	padding-bottom: 30px;
 	overflow: auto;
@@ -93,7 +98,7 @@ h3 {
 	justify-content: space-around;
 }
 
-.flex-1-top h1 {
+.flex-1-top h4 {
 	font: bold 30px Courier;
 	padding: 0; 
 }
@@ -382,8 +387,9 @@ h3 {
 	flex-basis: 80%;
 }
 
-.pedidos div>span {
+.pedidos-right {
 	text-align: right;
+	width: 100%;
 }
 
 .carrito-left{

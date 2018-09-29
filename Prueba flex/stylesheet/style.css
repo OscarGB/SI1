@@ -150,12 +150,15 @@ h3 {
 }
 
 .img-gen{
-  text-align: center;
-  object-fit: contain;
-  width: 400px;
-  height: 400px;
+  flex-basis: 30%;
+  padding-left: 50px;
 }
 
+
+.peliculas-gen {
+	justify-content: space-around;
+	align-self: center;
+}
 
 .img-index {
 	padding-right: 20px;
@@ -202,7 +205,9 @@ h3 {
   	border-radius: 20px;
 }
 
-
+.gen-down *{
+	padding: 0 30px;
+}
 
 .sidebar {
 	flex-basis: 17%;
@@ -395,6 +400,19 @@ h3 {
 	justify-content: space-around;
 }
 
+.index-down-left{
+	flex-grow: 8;
+	padding: 20px;
+	height: 100%;
+}
+
+.index-down-right {
+	flex-grow: 2;
+	border-left: 1px solid black;
+	padding: 20px;
+	align-content: center;
+}
+
 .index-top{
 	flex-basis: 70%;
 	padding: 20px;
@@ -403,7 +421,7 @@ h3 {
 
 
 .index-down{
-	flex-basis: 20%;
+	/*flex-basis: 50%;*/
 	border-bottom:1px solid black;
 	padding: 20px;
 	align-content: center;

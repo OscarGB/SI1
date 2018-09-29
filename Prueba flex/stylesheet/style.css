@@ -29,12 +29,12 @@ h2 {
 
 h3 {
 	font: bold 15px Arial;
-	color: rgba(85, 111, 52,20);
+	color: rgb(85, 111, 52);
 	display:inline;
 }
 
 .green {
-	background-color: rgba(85, 111, 52,20);
+	background-color: rgb(85, 111, 52);
   	color: white;
 }
 
@@ -78,8 +78,7 @@ h3 {
 }
 
 .flex-top {
-	padding-top: 10px; 
-	flex-basis: 1;
+	padding-top: 10px;
 	align-content: center;
 }
 
@@ -118,13 +117,8 @@ h3 {
 
 .flex-2-right {
 	flex: 80%;
-	min-height: 100%	
-	padding-left: 20px;
+	min-height: 100%;
 	align-items: center;
-}
-
-.flex-3-right {
-	align-items: left;
 }
 
 .footer-frame {
@@ -192,7 +186,6 @@ h3 {
     justify-content: center;
   	text-decoration: none;
   	flex-grow: 1;
-  	padding: auto;
   	text-align: center;
   	border: 1px solid black;
 }
@@ -241,7 +234,6 @@ h3 {
 
 .rotated {
 	transform: rotate(-90deg) translateX(-450%);
- 	width: height: 10rem;	
 }
 
 .film-container {
@@ -259,7 +251,7 @@ h3 {
 
 .film-description {
 	padding: 20px;
-	color: rgba(85, 111, 52,20);
+	color: rgb(85, 111, 52);
 	max-width: 60%;
 }
 
@@ -383,7 +375,6 @@ h3 {
 }
 
 .pedidos div{
-	align-self: right;
 	flex-basis: 80%;
 }
 

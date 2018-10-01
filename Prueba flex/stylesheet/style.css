@@ -408,6 +408,7 @@ h3 {
 	border-left: 1px solid black;
 	padding: 20px;
 	align-content: center;
+	justify-content: space-around;
 }
 
 .index-top{

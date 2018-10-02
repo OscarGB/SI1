@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ 	<meta charset="UTF-8">
+	<title>Marte</title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="../../index.html"><img alt="La casa del dvd" src="../../media/img/la_casa_del_dvd.png"></a>
+					<h4>La casa del DVD</h4>
+					<div class="login_buttons">
+						<a class="button1 hov" href="../../index.html">Logout</a>
+						<a class="button1 hov" href="../../users/user-info.html">Mi cuenta</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="../../index.html"><img alt="Home" class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="../peliculas1.html"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="../categorias/generos.html"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="../../users/contacto.html"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="../../shop/carrito.html"><img alt="Carrito" class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../accion/indiana_jones.html"><img alt="Indiana Jones" class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/yucatan.html"><img alt="Yucatan" class="sb-img" src="../../media/img/yucatan.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../accion/gladiator.html"><img alt="Gladiator" class="sb-img" src="../../media/img/gladiator.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../drama/lo_imposible.html"><img alt="Lo imposible" class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../musical/mamma_mia.html"><img alt="Mamma mia" class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../ficcion/alien.html"><img alt="Alien" class="sb-img" src="../../media/img/alien.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../musical/la_la_land.html"><img alt="La la land" class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/campeones.html"><img alt="Campeones" class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                         CONTENIDO                             -->
+	<h1>Marte</h1>
+	<div class="flex-row film-container">
+		<img alt="Marte" src="../../media/img/marte.jpg" class="film-image">
+		<p class="film-description"><b>Director:</b>Riddley Scott<br><br>
+			<b>Reparto:</b>     Matt Damon, Jessica Chastain, Chiwetel Ejiofor, Jeff Daniels, Kate Mara, Michael Peña, Sean Bean, Kristen Wiig, Sebastian Stan, Aksel Hennie, Benedict Wong, Mackenzie Davis, Donald Glover, Mark O'Neal, Brian Caspe, Chen Shu, Eddy Ko <br><br>
+			<b>Sinopsis:</b><br>Durante una misi&oacute;n tripulada a Marte, el astronauta Mark Watney es dado por muerto tras una terrible tormenta y abandonado por la tripulaci&oacute;n, que pone rumbo de vuelta a la Tierra. Pero Watney ha sobrevivido y se encuentra atrapado y solo en el hostil planeta rojo. Con suministros escasos, deber&aacute; recurrir a su ingenio y a su instinto de supervivencia para encontrar la manera de comunicar a la Tierra que sigue vivo<br><br>
+
+			<b>A&ntilde;o:</b>2015<br><br>
+			<b>Duraci&oacute;n:</b>142 min.<br><br>
+			<b>Pa&iacute;s:</b>Estados Unidos<br><br>
+			<b>Premios:</b><br>2015: Premios Oscar: 7 nominaciones incluyendo mejor película y actor (Damon)<br> 2015: Globos de Oro: Mejor pel&iacute;cula comedia y actor (Damon)<br> 2015: Premios BAFTA: 6 nominaciones, incluyendo Mejor Director<br> 2015: National Board Review: Top 10, director, actor (Damon), guión adaptado<br> 2015: American Film Institute (AFI): Top 10 - Mejores pel&iacute;culas del año<br> 2015: Satellite Awards: Mejor sonido. 9 nominaciones</p>
+		<div class="green black-border film-buy-container flex-column">
+			<h1 class="button1">11,50&euro;</h1>
+			<p class="button1 hov">A&ntilde;adir al carrito</p>
+		</div>
+	</div>
+	<h1>Pel&iacute;culas similares</h1>
+	<div class="black-border film-similar-container flex-row">
+		<div class="film-similar-img-container">
+			<a href="./avatar.html"><img alt="Avatar" src="../../media/img/avatar.jpg"></a>
+		</div>
+		<div class="film-similar-img-container">
+			<a href="./parque_jurasico.html"><img alt="Parque jurasico" src="../../media/img/parque_jurasico.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./gravity.html"><img alt="Gravity" src="../../media/img/gravity.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./la_guerra_de_las_galaxias.html"><img alt="Star Wars" src="../../media/img/la_guerra_de_las_galaxias.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./matrix.html"><img alt="Matrix" src="../../media/img/matrix.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./walle.html"><img alt="Wall-e" src="../../media/img/walle.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./independence_day.html"><img alt="Independence Day" src="../../media/img/independence_day.jpg"></a>
+		</div><div class="film-similar-img-container">
+			<a href="./alien.html"><img alt="Alien" src="../../media/img/alien.jpg"></a>
+		</div>
+	</div>
+	<h1>OH!-PI&Ntilde;ONES</h1>
+	<div class="flex-column film-opinions-container">
+		<p>"Scott reconstruye el mito del planeta rojo con un efectivo espect&aacute;culo entre la rutina, el humor y el genio de un inmenso Matt Damon. Es una pel&iacute;cula tan disfrutable como intrigante; tan febril como complaciente" <br>Jonas Harry<br><b>Puntuaci&oacute;n:</b>4 pi&ntilde;ones<img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"></p>
+		<p>"Ridley Scott revalida su maestr&iacute;a en el campo de la ciencia ficci&oacute;n. No es, claro est&aacute;, una cima del g&eacute;nero como 'Alien' o 'Blade runner', pero s&iacute; una obra s&oacute;lida de alto nivel, impecablemente concebida y ejecutada"<br>Lourdes Bermejo<br><b>Puntuaci&oacute;n:</b>4 pi&ntilde;ones<img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"><img alt="Piñon" src="../../media/img/pinon.png" width="30"></p>	
+	</div>
+<!--                     FIN CONTENIDO                             -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

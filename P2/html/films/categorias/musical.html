@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ 	<meta charset="UTF-8">
+	<title>Musical</title>
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script> 
+		$(document).ready(function(){
+		    $("#sidebar-handle").click(function(){
+		        $(".sidebar").toggle();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div class="flex-column full flex-general"> 
+		<div class="flex-top">
+			<div class="flex-column">
+				<div class="flex-row flex-1-top">
+					<a href="../../index.html"><img alt="La casa del dvd" src="../../media/img/la_casa_del_dvd.png"></a>
+					<h4>La casa del DVD</h4>
+					<div class="login_buttons">
+						<a class="button1 hov" href="../../index.html">Logout</a>
+						<a class="button1 hov" href="../../users/user-info.html">Mi cuenta</a>
+					</div>
+				</div>
+				<div class="flex-row green flex-1-bottom">
+					<a class="button2 hov green flex-row" href="../../index.html"><img alt="Home" class="link-image" src="../../media/img/home.png"></a>
+					<a class="hov green flex-row button2" href="../peliculas1.html"><p>Pel&iacute;culas</p></a>
+					<a class="hov green flex-row button2" href="../categorias/generos.html"><p>G&eacute;neros</p></a>
+					<a class="hov green flex-row button2" href="../../users/contacto.html"><p>Contacto</p></a>
+					<a class="hov green flex-row button2" href="../../shop/carrito.html"><img alt="Carrito" class="link-image" src="../../media/img/carrito.png"></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="flex-row flex-bottom full">
+			<div class="sidebar flex-column" id="sidebar">
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../accion/indiana_jones.html"><img alt="Indiana Jones" class="sb-img" src="../../media/img/indiana_jones.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/yucatan.html"><img alt="Yucatan" class="sb-img" src="../../media/img/yucatan.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../accion/gladiator.html"><img alt="Gladiator" class="sb-img" src="../../media/img/gladiator.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../drama/lo_imposible.html"><img alt="Lo imposible" class="sb-img" src="../../media/img/lo_imposible.jpg"></a>
+					</div>
+				</div>
+				<div class="sidebar-section flex-row wrap">
+					<div class="sb-img-container">
+					<a href="../musical/mamma_mia.html"><img alt="Mamma mia" class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../ficcion/alien.html"><img alt="Alien" class="sb-img" src="../../media/img/alien.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../musical/la_la_land.html"><img alt="La la land" class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+					</div>
+					<div class="sb-img-container">
+					<a href="../comedia/campeones.html"><img alt="Campeones" class="sb-img" src="../../media/img/campeones.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+				<div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+				<div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+			</div>
+			<div class="flex-2-right flex-column">
+<!--                 CONTENIDO                       -->
+
+				<h1>Musical</h1>
+				<p><b>Ordeanar por:</b>
+					<select>
+						<option value="1">Seleccione una opci&oacute;n</option>
+						<option value="2">Menor precio</option>
+						<option value="3">Mejor valoradas</option>
+						<option value="4">M&aacute;s compradas</option>
+						<option value="5">M&aacute;s recientes</option>
+					</select></p>
+				<div class="flex-row wrap peliculas-gen">
+					<div class="img-gen">
+						<a href="../musical/el_gran_showman.html"><img alt="El gran Showman" class="sb-img" src="../../media/img/el_gran_showman.jpg"></a>
+						<h4><b>El Gran Showman</b></h4>
+						<h4><b>Precio: 14,50&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/la_la_land.html"><img alt="La la land" class="sb-img" src="../../media/img/la_la_land.jpg"></a>
+						<h4><b>La La Land</b></h4>
+						<h4><b>Precio: 12,20&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/grease.html"><img alt="Grease" class="sb-img" src="../../media/img/grease.jpg"></a>
+						<h4><b>Grease</b></h4>
+						<h4><b>Precio: 12,20&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/high_school_musical.html"><img alt="HSM" class="sb-img" src="../../media/img/high_school_musical.jpg"></a>
+						<h4><b>High School Musical</b></h4>
+						<h4><b>Precio: 9,20&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/mamma_mia.html"><img alt="Mamma mia" class="sb-img" src="../../media/img/mamma_mia.jpg"></a>
+						<h4><b>Mamma Mia!</b></h4>
+						<h4><b>Precio: 11,90&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/bella_y_bestia.html"><img alt="Bella y Bestia" class="sb-img" src="../../media/img/bella_y_bestia.jpg"></a>
+						<h4><b>La bella y la bestia</b></h4>
+						<h4><b>Precio: 10,50&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/los_miserables.html"><img alt="Los miserables" class="sb-img" src="../../media/img/los_miserables.jpg"></a>
+						<h4><b>Los miserables</b></h4>
+						<h4><b>Precio: 11,50&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/la_llamada.html"><img alt="La llamada" class="sb-img" src="../../media/img/la_llamada.jpg"></a>
+						<h4><b>La llamada</b></h4>
+						<h4><b>Precio: 10,60&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="../musical/dirty_dancing.html"><img alt="Dirty Dancing" class="sb-img" src="../../media/img/dirty_dancing.jpg"></a>
+						<h4><b>Dirty dancing</b></h4>
+						<h4><b>Precio: 9,50&euro;</b></h4>
+					</div>
+				</div>
+
+					
+<!--                  FIN-DE-CONTENIDO                      -->
+			</div>
+		</div>
+		</div>
+	<div class="footer-frame green">
+		<p class="footer-text">	Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018</p>
+	</div>
+</body>
+</html>

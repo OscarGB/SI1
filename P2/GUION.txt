@@ -1,0 +1,60 @@
+SEMANA 1:
+	Busqueda, seleccion y detalle peliculas:
+
+	1) Crear el json con las peliculas (Peñaso++)
+	2) Crear todo lo que es la aplicacion Flask y intentar traducir todo a Flask (Peñaso+)
+	3) Crear la función python que devuelva TODAS las pelis
+	4) Crear la función python que devuelva las pelis de una categoría
+	5) Crear la función python que devuelva las pelis filtradas por ¿nombre?
+	6) Crear la función python que devuelva las pelis de una categoria filtradas por ¿nombre?
+	7) Transformar el HTML de una peli para que sea una plantilla.
+	8) Crear la función python que rellene la plantilla anterior. 
+
+	Propuestas:
+
+	1) {
+		"peliculas": [{
+			"titulo": "La guerra de las galaxias: Episodio 1-La amenaza fantasma",
+			"poster": "/imagenes/guerraepisodio1.jpg",
+			"director": "George Lucas",
+			"precio": 18.99,
+			"categoria": "Aventura",
+			"anno": 1999,
+			"actores": [{
+				"nombre": "Jake Lloyd"
+			},
+			{
+				"nombre": "Ewan McGregor"
+			}]
+		}
+		{
+			"titulo": "Patatas bravas",
+			"poster": "/imagenes/guerraepisodio1.jpg",
+			"director": "George Lucas",
+			"precio": 18.99,
+			"categoria": "Aventura",
+			"anno": 1999,
+			"actores": [{
+				"nombre": "Jake Lloyd"
+			},
+			{
+				"nombre": "Ewan McGregor"
+			}]
+		}]
+	}
+
+	3) getPelis(){
+		d = cogerdiccionario()
+		d["peliculas"][0]["titulo"] -> La guerra .....
+
+		return d["peliculas"]
+	}
+
+	4) NOMBRE{
+		B = getPelis(){
+		return [a for a in B if a["categoria"] == sdvkjbfc]
+	}
+
+	5) @app.route('/films/<name>')
+		def show_page(name):
+				retunr getHTML.getFilm(name)

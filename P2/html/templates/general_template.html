@@ -23,15 +23,15 @@
           <a href="/index.wsgi/"><img alt="La casa del dvd" src="{{ url_for('static', filename = 'media/img/la_casa_del_dvd.png') }}"></a>
           <h4>La casa del DVD</h4>
           <div class="login_buttons">
-            <a class="button1 hov" href="/users/login.html">Login</a>
-            <a class="button1 hov" href="/users/register.html">Registro</a>
+            <a class="button1 hov" href="/index.wsgi/login/">Login</a>
+            <a class="button1 hov" href="/index.wsgi/register/">Registro</a>
           </div>
         </div>
         <div class="flex-row green flex-1-bottom">
           <a class="button2 hov green flex-row" href="/index.wsgi/"><img alt="Home" class="link-image" src="{{ url_for('static', filename = 'media/img/home.png') }}"></a>
           <a class="hov green flex-row button2" href="/films/peliculas1.html"><p>Pel&iacute;culas</p></a>
           <a class="hov green flex-row button2" href="/films/categorias/generos.html"><p>G&eacute;neros</p></a>
-          <a class="hov green flex-row button2" href="/users/contacto.html"><p>Contacto</p></a>
+          <a class="hov green flex-row button2" href="/index.wsgi/contacto/"><p>Contacto</p></a>
           <form class="green flex-row">
               <input type="text" placeholder="Buscar..." name="search">
               <button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>

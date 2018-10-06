@@ -1,0 +1,26 @@
+{% extends "general_template.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1>Accede a tu cuenta</h1>
+	<div class="flex-row register wrap">
+		<div class="register-form">
+			<p>
+			<br>
+			<H2><b>Introduce tus datos:</b></H2>
+
+			<p><b>Nombre de usuario:</b>
+			 	  <input type="text" name="UserName"></p>
+			<p><b>Contrase&nacute;a:</b>
+				  <input type="text" name="Contrasena"></p>
+			<br>
+			<br>
+			<input type="button" value="Entrar" class="register-button green hov">
+			<br>
+			<br>
+			<a href="/index.wsgi/register/">¿No tienes cuenta?Reg&iacute;strate</a>
+		</div>
+		<div class="black-border frase-motivadora">
+			<p><i>En casa, siempre los cl&aacute;sicos del cine</i></p>
+		</div>
+	</div>
+{% endblock %}

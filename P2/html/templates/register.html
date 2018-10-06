@@ -1,0 +1,31 @@
+{% extends "general_template.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>&iexcl;Reg&iacute;strate!</h1>
+	<div class="flex-row register wrap">
+		<div class="register-form">
+			<p>
+			<br>
+			<H2><b>Introduce tus datos:</b></H2>
+
+			<p><b>Nombre de usuario:</b>
+			 	  <input type="text" name="UserName"></p>
+			<p><b>Correo:</b>
+				  <input type="text" name="Correo"></p>
+			<p><b>Contrase&nacute;a:</b>
+				  <input type="text" name="Contrasena"></p>
+			<p><b>Repita contrase&nacute;a:</b>
+				  <input type="text" name="RepContrasena"></p>
+			<p><b>Tarjeta de cr&eacute;dito:</b>
+				  <input type="text" name="Tarjeta"></p>
+			<br><input type="checkbox" id="Condiciones" name="Condiciones" /><label for="Condiciones">Acepta las <a href="{{ url_for('static', filename = 'media/others/pagina_condiciones.html') }}">condiciones y t&eacute;rminos de esta p&aacute;gina</a></label>
+			<br>
+			<br>
+			<input type="button" value="Registrar" class="register-button green hov">
+		</div>
+		<div class="black-border frase-motivadora">
+			<p><i>Carpe diem, aprovechad el momento, haced que vuestra vida sea extraordinaria.</i></p>
+			<p>~El club de los poetas muertos~</p>
+		</div>
+	</div>
+{% endblock %}

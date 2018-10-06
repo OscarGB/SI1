@@ -236,6 +236,12 @@ h3 {
 	transform: rotate(-90deg) translateX(-450%);
 }
 
+.lupa-img{
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+}
+
 .film-container {
 	padding-left: 20px;
 	flex-wrap: wrap;

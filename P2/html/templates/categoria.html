@@ -1,0 +1,65 @@
+{% extends "general_template.html" %}
+{% block title %}{{ Titulo }}{% endblock %}
+{% block content %}
+<!--                 CONTENIDO                       -->
+
+				<h1>{{ Titulo }}</h1>
+				<p><b>Ordeanar por:</b>
+					<select>
+						<option value="1">Seleccione una opci&oacute;n</option>
+						<option value="2">Menor precio</option>
+						<option value="3">Mejor valoradas</option>
+						<option value="4">M&aacute;s compradas</option>
+						<option value="5">M&aacute;s recientes</option>
+					</select></p>
+				<div class="flex-row wrap peliculas-gen">
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones/"><img alt="Indiana Jones" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones.jpg') }}"></a>
+						<h4><b>Indiana Jones y la &uacute;ltima cruzada</b></h4>
+						<h4><b>Precio: 12,20&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones 2/"><img alt="Indiana Jones 2" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones2.jpg') }}"></a>
+						<h4><b>Indiana Jones y el arca perdida</b></h4>
+						<h4><b>Precio: 11,40&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones 3/"><img alt="Indiana Jones 3" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones3.jpg') }}"></a>
+						<h4><b>Indiana Jones y el reino de la calavera de cristal</b></h4>
+						<h4><b>Precio: 11,40&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Capitán América/"><img alt="Capitan America" class="sb-img" src="{{ url_for('static', filename = 'media/img/capitan_america.jpg') }}"></a>
+						<h4><b>Capit&aacute;n Am&eacute;rica: Civil War</b></h4>
+						<h4><b>Precio: 11,80&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Caso Bourne/"><img alt="Caso Bourne" class="sb-img" src="{{ url_for('static', filename = 'media/img/caso_bourne.jpg') }}"></a>
+						<h4><b>El caso Bourne</b></h4>
+						<h4><b>Precio: 9,50&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Gladiator/"><img alt="Gladiator" class="sb-img" src="{{ url_for('static', filename = 'media/img/gladiator.jpg') }}"></a>
+						<h4><b>Gladiator</b></h4>
+						<h4><b>Precio: 10,50&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/James Bond/"><img alt="James Bond" class="sb-img" src="{{ url_for('static', filename = 'media/img/james_bond.jpg') }}"></a>
+						<h4><b>Spectre</b></h4>
+						<h4><b>Precio: 11,80&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Misión Imposible/"><img alt="Accion Imposible" class="sb-img" src="{{ url_for('static', filename = 'media/img/mision_imposible.jpg') }}"></a>
+						<h4><b>Misi&oacute;n Imposible</b></h4>
+						<h4><b>Precio: 13,30&euro;</b></h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Rambo/"><img alt="Rambo" class="sb-img" src="{{ url_for('static', filename = 'media/img/rambo.jpg') }}"></a>
+						<h4><b>Acorralado (Rambo)</b></h4>
+						<h4><b>Precio: 9,80&euro;</b></h4>
+					</div>
+				</div>
+				
+
+<!--                  FIN-DE-CONTENIDO                      -->
+{% endblock %}

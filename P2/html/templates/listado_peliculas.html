@@ -1,0 +1,75 @@
+{% extends "general_template.html" %}
+{% block title %}Películas{% endblock %}
+{% block content %}
+<!--                 CONTENIDO                       -->
+
+				<h1>Pel&iacute;culas</h1>
+				<div class="flex-row wrap peliculas-gen">
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Capitán América/"><img alt="Capitan america" class="sb-img" src="{{ url_for('static', filename = 'media/img/capitan_america.jpg') }}"></a>
+						<h4>Capit&aacute;n Am&eacute;rica</h4>
+						<h4>Precio: 11,80&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Gladiator/"><img alt="Gladiator" class="sb-img" src="{{ url_for('static', filename = 'media/img/gladiator.jpg') }}"></a>
+						<h4>Gladiator</h4>
+						<h4>Precio: 10,50&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/El gran Showman/"><img alt="El gran showman" class="sb-img" src="{{ url_for('static', filename = 'media/img/el_gran_showman.jpg') }}"></a>
+						<h4>El gran showman</h4>
+						<h4>Precio: 14,50&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones/"><img alt="Indiana jones" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones.jpg') }}"></a>
+						<h4>Indiana Jones y la &uacute;ltima cruzada</h4>
+						<h4>Precio: 12,20&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Rambo/"><img alt="Rambo" class="sb-img" src="{{ url_for('static', filename = 'media/img/rambo.jpg') }}"></a>
+						<h4>Acorralado (Rambo)</h4>
+						<h4>Precio: 9,80&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Dirty Dancing/"><img alt="Dirty Dancing" class="sb-img" src="{{ url_for('static', filename = 'media/img/dirty_dancing.jpg') }}"></a>
+						<h4>Dirty dancing</h4>
+						<h4>Precio: 9,50&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones 2/"><img alt="Indiana Jones 2" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones2.jpg') }}"></a>
+						<h4>Indiana Jones y el arca perdida</h4>
+						<h4>Precio: 11,40&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Indiana Jones 3/"><img alt="Indiana Jones 3" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones3.jpg') }}"></a>
+						<h4>Indiana Jones y la clavera de cristal</h4>
+						<h4>Precio: 11,40&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/La bella y la bestia/"><img alt="Bella y Bestia" class="sb-img" src="{{ url_for('static', filename = 'media/img/bella_y_bestia.jpg') }}"></a>
+						<h4>La bella y la bestia</h4>
+						<h4>Precio: 10,50&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Anastasia/"><img alt="Anastasia" class="sb-img" src="{{ url_for('static', filename = 'media/img/anastasia.jpg') }}"></a>
+						<h4>Anastasia</h4>
+						<h4>Precio: 9,40&euro;</h4>
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/El príncipe de Egipto/"><img alt="El principe de egipto" class="sb-img" src="{{ url_for('static', filename = 'media/img/el_principe_de_egipto.jpg') }}"></a>
+						<h4>El pr&iacute;ncipe de Egipto</h4>
+						<h4>Precio: 11,50&euro;</h4>		
+					</div>
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/Wall-e/"><img alt="Wall-e" class="sb-img" src="{{ url_for('static', filename = 'media/img/walle.jpg') }}"></a>
+						<h4>Wall-E</h4>
+						<h4>Precio: 10,75&euro;</h4>
+					</div>
+				</div>
+				<div class="flex-row wrap gen-down">
+					<a class="button3 hov" href="/index.wsgi/listado_peliculas/">Siguiente</a>
+					<p>P&aacute;gina: 1/5</p>	
+				</div>
+
+<!--                  FIN-DE-CONTENIDO                      -->
+{% endblock %}

@@ -17,3 +17,5 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+
+si1pyenv/

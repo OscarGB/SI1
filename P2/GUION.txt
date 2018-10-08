@@ -6,7 +6,7 @@ SEMANA 1:
 		Done 2.1) Index
 		Done 2.2) Shop
 		Done 2.3) Users
-		2.4) Films
+		Done 2.4) Films
 	3) Crear la función python que devuelva TODAS las pelis
 	4) Crear la función python que devuelva las pelis de una categoría
 	5) Crear la función python que devuelva las pelis filtradas por ¿nombre?

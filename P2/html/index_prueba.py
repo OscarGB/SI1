@@ -7,7 +7,7 @@ import json,os
 
 app.secret_key = 'esto-es-una-clave-muy-secreta'
 
-Data = open(os.path.dirname(__file__)+"/peliculas.json", "r").read()
+Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
 aux = list(set([a["categoria"] for a in Data["peliculas"]]))
@@ -77,7 +77,7 @@ def login_fun():
     return render_template("login.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
 
-@app.route("/login/activate/")
+@app.route("/login/activate/", methods=['POST'])
 def login():
     user = request.form["user"]
     pwd = request.form["password"]

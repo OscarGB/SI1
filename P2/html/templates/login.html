@@ -4,10 +4,13 @@
 <h1>Accede a tu cuenta</h1>
 	<div class="flex-row register wrap overflow">
 		<div class="register-form overflow">
+			{% if wrong %}
+			<p class="red">Usuario o contraseña incorrectos</p>
+			{% endif %}
 			<H2><b>Introduce tus datos:</b></H2>
-			<form action="/index.wsgi/login/">
+			<form action="/index.wsgi/login/activate/" method="post">
           		<p>Usuario: <input type="text" placeholder="Usuario" name="user" pattern="[	A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required"></p>
-              	<p>Contraseña: <input type="text" placeholder="Contraseña" name="password" required="required"></p>
+              	<p>Contraseña: <input type="password" placeholder="Contraseña" name="password" required="required"></p>
               	<button type="submit" class="button3 hov">Entrar</button>
           	</form><br><br>
 			<a href="/index.wsgi/register/">¿No tienes cuenta?Reg&iacute;strate</a>

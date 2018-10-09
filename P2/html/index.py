@@ -7,7 +7,7 @@ import json,os
 
 
 
-Data = open(os.path.dirname(__file__)+"/peliculas.json", "r").read()
+Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
 aux = list(set([a["categoria"] for a in Data["peliculas"]]))

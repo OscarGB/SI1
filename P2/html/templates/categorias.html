@@ -4,30 +4,12 @@
 <!--                 CONTENIDO                       -->
 <h1>G&eacute;neros</h1>
 <div class="flex-row wrap peliculas-gen">
+	{% for c in categorias %}
 	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Acción"><img alt="Accion" class="sb-img" src="{{ url_for('static', filename = 'media/img/gladiator.jpg') }}"></a>
-		<h1>Acci&oacute;n</h1>
+		<a href="/index.wsgi/categorias/{{ c.nombre }}"><img alt="{{ c.nombre }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ c.imagen }}"></a>
+		<h1>{{ c.nombre }}</h1>
 	</div>
-	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Animación"><img alt="Animacion" class="sb-img" src="{{ url_for('static', filename = 'media/img/del_reves.jpg') }}"></a>
-		<h1>Animaci&oacute;n</h1>
-	</div>
-	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Comedia"><img alt="Comedia" class="sb-img" src="{{ url_for('static', filename = 'media/img/ocho_apellidos_vascos.jpg') }}"></a>
-		<h1>Comedia</h1>
-	</div>
-	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Drama"><img alt="Drama" class="sb-img" src="{{ url_for('static', filename = 'media/img/titanic.jpg') }}"></a>
-		<h1>Drama</h1>
-	</div>
-	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Ficción"><img alt="Ficcion" class="sb-img" src="{{ url_for('static', filename = 'media/img/avatar.jpg') }}"></a>
-		<h1>Ficci&oacute;n</h1>
-	</div>
-	<div class="img-gen">
-		<a href="/index.wsgi/categorias/Musical"><img alt="Musical" class="sb-img" src="{{ url_for('static', filename = 'media/img/mamma_mia.jpg') }}"></a>
-		<h1>Musical</h1>
-	</div>
+	{% endfor %}
 </div>
 <!--                  FIN-DE-CONTENIDO                      -->
 {% endblock %}

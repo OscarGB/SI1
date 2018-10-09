@@ -7,7 +7,7 @@ import json,os
 
 
 
-Data = open(os.path.dirname(__file__)+"/peliculas.json", "r").read()
+Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
 aux = list(set([a["categoria"] for a in Data["peliculas"]]))
@@ -32,10 +32,23 @@ Recomendadas = sorted(Data["peliculas"], key=lambda x: sort_rec(x))
 def get_pelis_en_categoria(categoria):
     return [a for a in Data["peliculas"] if (categoria == a["categoria"])]
 
+def normalize(s):
+    replacements = (
+        (u"á", u"a"),
+        (u"é", u"e"),
+        (u"í", u"i"),
+        (u"ó", u"o"),
+        (u"ú", u"u"),
+        (u"ñ", u"n")
+    )
+    for a, b in replacements:
+        s = s.replace(a, b).replace(a.upper(), b.upper())
+    return s.lower()
+
 def get_pelis_by_name(name, categoria):
     if categoria is None:
-        return [a for a in Data["peliculas"] if (name in a["titulo"])]
-    return [a for a in Data["peliculas"] if (name in a["titulo"] and categoria == a["categoria"])]
+        return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]))]
+    return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]) and categoria == a["categoria"])]
 
 app = Flask(__name__)
 @app.route("/")
@@ -83,12 +96,14 @@ def listado_peliculas():
 @app.route("/categorias/")
 def categorias():
     return render_template("categorias.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     categorias=Categorias)
 
 @app.route("/categorias/<categoria>/")
 def categorias_categoria(categoria):
     return render_template("categoria.html",\
-     Titulo=categoria, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     Titulo=categoria, peliculas=get_pelis_en_categoria(categoria))
 
 @app.route("/peliculas/<pelicula>/")
 def pelicula(pelicula):

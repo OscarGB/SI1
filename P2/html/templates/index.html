@@ -24,7 +24,7 @@
 					</div>
 					<div class="flex-column index-down-right">
 						<form action="/index.wsgi/busqueda/" class="flex-column wrap flex-1-top full">
-              				<input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9]{1,20}" required="required">
+              				<input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required">
               				<select name="categoria">
 								<option value="0">Seleccione categoria</option>
 								{% for dest in destacadas %}

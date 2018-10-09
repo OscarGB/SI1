@@ -33,7 +33,7 @@
           <a class="hov green flex-row button2" href="/index.wsgi/categorias/"><p>G&eacute;neros</p></a>
           <a class="hov green flex-row button2" href="/index.wsgi/contacto/"><p>Contacto</p></a>
           <form class="green flex-row" action="/index.wsgi/busqueda/">
-              <input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9]{1,20}" required="required">
+              <input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required">
               <button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>
           </form>
           <a class="hov green flex-row button2" href="/index.wsgi/carrito/"><img alt="Carrito" class="link-image" src="{{ url_for('static', filename = 'media/img/carrito.png') }}"></a>

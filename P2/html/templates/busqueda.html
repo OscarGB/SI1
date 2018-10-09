@@ -6,6 +6,7 @@
 					en {{ categoria }}
 				{% endif %}</h2>
 				<div class="flex-row wrap peliculas-gen">
+				{% if peliculas|length %}
 				{% for p in peliculas %}
 					<div class="img-gen">
 						<a href="/index.wsgi/peliculas/{{ p.titulo }}/"><img alt="{{ p.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ p.poster }}"></a>
@@ -13,5 +14,8 @@
 						<h4>Precio: {{ p.precio }}€</h4>
 					</div>
 				{% endfor %}
+				{% else %}
+				<p>No encontramos ningún elemento que satisfaga tu búsqueda</p>
+				{% endif %}
 				</div>
 {% endblock %}

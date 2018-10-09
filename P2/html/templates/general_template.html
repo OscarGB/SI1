@@ -32,17 +32,17 @@
           <a class="hov green flex-row button2" href="/index.wsgi/listado_peliculas/"><p>Pel&iacute;culas</p></a>
           <a class="hov green flex-row button2" href="/index.wsgi/categorias/"><p>G&eacute;neros</p></a>
           <a class="hov green flex-row button2" href="/index.wsgi/contacto/"><p>Contacto</p></a>
-          <form class="green flex-row">
-              <input type="text" placeholder="Buscar..." name="search">
+          <form class="green flex-row" action="/index.wsgi/busqueda/">
+              <input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9]{1,20}" required="required">
               <button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>
-            </form>
+          </form>
           <a class="hov green flex-row button2" href="/index.wsgi/carrito/"><img alt="Carrito" class="link-image" src="{{ url_for('static', filename = 'media/img/carrito.png') }}"></a>
         </div>
       </div>
     </div>
 
     
-    <div class="flex-row flex-bottom full">
+    <div class="flex-row flex-bottom full overflow">
       <div class="sidebar flex-column" id="sidebar">
         <div class="sidebar-section flex-row wrap">
           {% for pop in populares_sidebar %}

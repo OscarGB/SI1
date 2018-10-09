@@ -7,12 +7,13 @@ SEMANA 1:
 		Done 2.2) Shop
 		Done 2.3) Users
 		Done 2.4) Films
-	3) Crear la función python que devuelva TODAS las pelis
-	4) Crear la función python que devuelva las pelis de una categoría
+		2.5) Busqueda
+	Done 3) Crear la función python que devuelva TODAS las pelis
+	Done 4) Crear la función python que devuelva las pelis de una categoría
 	5) Crear la función python que devuelva las pelis filtradas por ¿nombre?
 	6) Crear la función python que devuelva las pelis de una categoria filtradas por ¿nombre?
-	7) Transformar el HTML de una peli para que sea una plantilla.
-	8) Crear la función python que rellene la plantilla anterior. 
+	Done 7) Transformar el HTML de una peli para que sea una plantilla.
+	Done 8) Crear la función python que rellene la plantilla anterior. 
 
 	Propuestas:
 

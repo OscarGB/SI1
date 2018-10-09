@@ -64,13 +64,13 @@ h3 {
 .wrap {
 	flex-wrap: wrap;
 }
+
+.overflow {
+	overflow: auto;
+}
 /*End general web style*/
 
 /*Specific class style*/
-
-.flex-general div>div>div>h4 {
-
-}
 
 .flex-general {
 	padding-bottom: 30px;
@@ -90,7 +90,7 @@ h3 {
 .flex-bottom {
 	justify-content: space-between;
 	align-content: center;
-	overflow: visible;
+	overflow: auto;
 }
 
 .flex-1-top {

@@ -1,7 +1,7 @@
 {
 	"peliculas": [{
 		"titulo": "Capitán América: Cilvil War",
-		"poster": "/imagenes/capitan_america.jpg",
+		"poster": "capitan_america.jpg",
 		"director": "Anthony Russo, Joe Russo ",
 		"precio": 11.80\u20ac,
 		"categoria": "Acción",
@@ -34,7 +34,7 @@
 	}
 	{
 		"titulo": "El caso Bourne",
-		"poster": "/imagenes/caso_bourne.jpg",
+		"poster": "caso_bourne.jpg",
 		"director": "Doug Liman",
 		"precio": 9.50\u20ac,
 		"categoria": "Acción",
@@ -59,7 +59,7 @@
 	}
 	{
 		"titulo": "Gladiator",
-		"poster": "/imagenes/gladiator.jpg",
+		"poster": "gladiator.jpg",
 		"director": "Ridley Scott",
 		"precio": 10.50\u20ac,
 		"categoria": "Acción",
@@ -92,7 +92,7 @@
 	}
 	{
 		"titulo": "Indiana Jones y la última cruzada",
-		"poster": "/imagenes/indiana_jones.jpg",
+		"poster": "indiana_jones.jpg",
 		"director": "Steven Spielberg",
 		"precio": 12.20\u20ac,
 		"categoria": "Acción",
@@ -123,7 +123,7 @@
 	}
 	{
 		"titulo": "Indiana Jones y el arca pérdida",
-		"poster": "/imagenes/indiana_jones2.jpg",
+		"poster": "indiana_jones2.jpg",
 		"director": "Steven Spielberg",
 		"precio": 11.40\u20ac,
 		"categoria": "Acción",
@@ -156,7 +156,7 @@
 	}
 	{
 		"titulo": "Indiana Jones y el reino de la calavera de cristal",
-		"poster": "/imagenes/indiana_jones3.jpg",
+		"poster": "indiana_jones3.jpg",
 		"director": "Steven Spielberg",
 		"precio": 11.40\u20ac,
 		"categoria": "Acción",
@@ -189,7 +189,7 @@
 	}
 	{
 		"titulo": "James Bond",
-		"poster": "/imagenes/james_bond.jpg",
+		"poster": "james_bond.jpg",
 		"director": "Sam Mendes",
 		"precio": 11.80\u20ac,
 		"categoria": "Acción",
@@ -219,7 +219,7 @@
 	}
 	{
 		"titulo": "Misión imposible",
-		"poster": "/imagenes/mision_imposible.jpg",
+		"poster": "mision_imposible.jpg",
 		"director": "Brian De Palma",
 		"precio": 13.30\u20ac,
 		"categoria": "Acción",
@@ -246,7 +246,7 @@
 	}
 	{
 		"titulo": "Acorralado (Rambo)",
-		"poster": "/imagenes/rambo.jpg",
+		"poster": "rambo.jpg",
 		"director": "Ted Kotcheff",
 		"precio": 9.80\u20ac,
 		"categoria": "Acción",
@@ -267,7 +267,7 @@
 	}
 	{
 		"titulo": "Anastasia",
-		"poster": "/imagenes/anastasi.jpg",
+		"poster": "anastasi.jpg",
 		"director": "Don Bluth, Gary Goldman  ",
 		"precio": 9.40\u20ac,
 		"categoria": "Animación",
@@ -283,7 +283,7 @@
 	}
 	{
 		"titulo": "Del revés",
-		"poster": "/imagenes/del_reves.jpg",
+		"poster": "del_reves.jpg",
 		"director": "Pete Docter, Ronnie Del Carmen",
 		"precio": 11.50\u20ac,
 		"categoria": "Animación",
@@ -303,7 +303,7 @@
 	}
 	{
 		"titulo": "El príncipe de Egipto",
-		"poster": "/imagenes/el_principe_de_egipto.jpg",
+		"poster": "el_principe_de_egipto.jpg",
 		"director": "Simon Wells, Steve Hickner, Brenda Chapman ",
 		"precio": 11.50\u20ac,
 		"categoria": "Animación",
@@ -317,7 +317,7 @@
 	}
 	{
 		"titulo": "El rey león",
-		"poster": "/imagenes/el_rey_leon.jpg",
+		"poster": "el_rey_leon.jpg",
 		"director": "Don Bluth, Gary Goldman  ",
 		"precio": 9.75\u20ac,
 		"categoria": "Animación",
@@ -337,7 +337,7 @@
 	}
 	{
 		"titulo": "Gru, mi villano favorito",
-		"poster": "/imagenes/gru.jpg",
+		"poster": "gru.jpg",
 		"director": "Pierre Coffin, Chris Renaud",
 		"precio": 10.60\u20ac,
 		"categoria": "Animación",
@@ -357,7 +357,7 @@
 	}
 	{
 		"titulo": "Hércules",
-		"poster": "/imagenes/hercules.jpg",
+		"poster": "hercules.jpg",
 		"director": "John Musker, Ron Clements",
 		"precio": 9.50\u20ac,
 		"categoria": "Animación",
@@ -373,7 +373,7 @@
 	}
 	{
 		"titulo": "Los increíbles 2",
-		"poster": "/imagenes/los_increibles2.jpg",
+		"poster": "los_increibles2.jpg",
 		"director": "Brad Bird",
 		"precio": 13.50\u20ac,
 		"categoria": "Animación",
@@ -388,7 +388,7 @@
 	}
 	{
 		"titulo": "Rango",
-		"poster": "/imagenes/rango.jpg",
+		"poster": "rango.jpg",
 		"director": "Gore Verbinski",
 		"precio": 12.30\u20ac,
 		"categoria": "Animación",
@@ -407,7 +407,7 @@
 	}
 	{
 		"titulo": "Vaiana",
-		"poster": "/imagenes/vaiana.jpg",
+		"poster": "vaiana.jpg",
 		"director": "John Musker, Ron Clements, Don Hall, Chris Williams",
 		"precio": 11.40\u20ac,
 		"categoria": "Animación",
@@ -426,7 +426,7 @@
 	}
 	{
 		"titulo": "Campeones",
-		"poster": "/imagenes/campeones.jpg",
+		"poster": "campeones.jpg",
 		"director": "Javier Fesser",
 		"precio": 10.30\u20ac,
 		"categoria": "Comedia",
@@ -450,7 +450,7 @@
 	}
 	{
 		"titulo": "Los cazafantasmas",
-		"poster": "/imagenes/cazafantasmas.jpg",
+		"poster": "cazafantasmas.jpg",
 		"director": "Ivan Reitman",
 		"precio": 8.75\u20ac,
 		"categoria": "Comedia",
@@ -476,7 +476,7 @@
 	}
 	{
 		"titulo": "Deadpool 2",
-		"poster": "/imagenes/deadpool.jpg",
+		"poster": "deadpool.jpg",
 		"director": "David Leitch",
 		"precio": 10.50\u20ac,
 		"categoria": "Comedia",
@@ -500,7 +500,7 @@
 	}
 	{
 		"titulo": "La máscara",
-		"poster": "/imagenes/la_mascara.jpg",
+		"poster": "la_mascara.jpg",
 		"director": "Chuck Russell",
 		"precio": 10.20\u20ac,
 		"categoria": "Comedia",
@@ -529,7 +529,7 @@
 	}
 	{
 		"titulo": "Los padres de ella",
-		"poster": "/imagenes/los_padres_de_ella.jpg",
+		"poster": "los_padres_de_ella.jpg",
 		"director": "Jay Roach",
 		"precio": 9.50\u20ac,
 		"categoria": "Comedia",
@@ -552,7 +552,7 @@
 	}
 	{
 		"titulo": "Ocho apellidos vascos",
-		"poster": "/imagenes/ocho_apellidos_vascos.jpg",
+		"poster": "ocho_apellidos_vascos.jpg",
 		"director": "Emilio Martínez-Lázaro",
 		"precio": 9.50\u20ac,
 		"categoria": "Comedia",
@@ -575,7 +575,7 @@
 	}
 	{
 		"titulo": "Resacón en Las Vegas",
-		"poster": "/imagenes/resacon_en_las_vegas.jpg",
+		"poster": "resacon_en_las_vegas.jpg",
 		"director": "Todd Phillips",
 		"precio": 8.75\u20ac,
 		"categoria": "Comedia",
@@ -606,7 +606,7 @@
 	}
 	{
 		"titulo": "Solo en casa",
-		"poster": "/imagenes/solo_en_casa.jpg",
+		"poster": "solo_en_casa.jpg",
 		"director": "John Hughes",
 		"precio": 7.50\u20ac,
 		"categoria": "Comedia",
@@ -634,7 +634,7 @@
 	}
 	{
 		"titulo": "Yucatán",
-		"poster": "/imagenes/yucatan.jpg",
+		"poster": "yucatan.jpg",
 		"director": "Daniel Monzón",
 		"precio": 7.50\u20ac,
 		"categoria": "Comedia",
@@ -660,7 +660,7 @@
 	}
 	{
 		"titulo": "12 a&ntilde;os de esclavitud",
-		"poster": "/imagenes/esclavitud.jpg",
+		"poster": "esclavitud.jpg",
 		"director": "Steve McQueen",
 		"precio": 15.50\u20ac,
 		"categoria": "Drama",
@@ -690,7 +690,7 @@
 	}
 	{
 		"titulo": "Bajo la misma estrella",
-		"poster": "/imagenes/bajo_la_misma_estrella.jpg",
+		"poster": "bajo_la_misma_estrella.jpg",
 		"director": "Josh Boone",
 		"precio": 13.30\u20ac,
 		"categoria": "Drama",
@@ -715,7 +715,7 @@
 	}
 	{
 		"titulo": "Descifrando Enigma",
-		"poster": "/imagenes/the_imitation_game.jpg",
+		"poster": "the_imitation_game.jpg",
 		"director": "Morten Tyldum",
 		"precio": 12.20\u20ac,
 		"categoria": "Drama",
@@ -743,7 +743,7 @@
 	}
 	{
 		"titulo": "El padrino",
-		"poster": "/imagenes/padrino.jpg",
+		"poster": "padrino.jpg",
 		"director": "Francis Ford Coppola",
 		"precio": 9.99\u20ac,
 		"categoria": "Drama",
@@ -772,7 +772,7 @@
 	}
 	{
 		"titulo": "La forma del agua",
-		"poster": "/imagenes/la_forma_del_agua.jpg",
+		"poster": "la_forma_del_agua.jpg",
 		"director": "Guillermo del Toro",
 		"precio": 13.99\u20ac,
 		"categoria": "Drama",
@@ -801,7 +801,7 @@
 	}
 	{
 		"titulo": "Lo imposible",
-		"poster": "/imagenes/lo_imposible.jpg",
+		"poster": "lo_imposible.jpg",
 		"director": "J.A. Bayona",
 		"precio": 12\u20ac,
 		"categoria": "Drama",
@@ -830,7 +830,7 @@
 	}
 	{
 		"titulo": "Titanic",
-		"poster": "/imagenes/titanic.jpg",
+		"poster": "titanic.jpg",
 		"director": "James Cameron",
 		"precio": 9.90\u20ac,
 		"categoria": "Drama",
@@ -859,7 +859,7 @@
 	}
 	{
 		"titulo": "Tres carteles a las afueras",
-		"poster": "/imagenes/tres_carteles_a_las_afueras.jpg",
+		"poster": "tres_carteles_a_las_afueras.jpg",
 		"director": "Martin McDonagh",
 		"precio": 11.50\u20ac,
 		"categoria": "Drama",
@@ -888,7 +888,7 @@
 	}
 	{
 		"titulo": "Una mente maravillosa",
-		"poster": "/imagenes/una_mente_maravillosa.jpg",
+		"poster": "una_mente_maravillosa.jpg",
 		"director": "Ron Howard",
 		"precio": 10.30\u20ac,
 		"categoria": "Drama",
@@ -917,7 +917,7 @@
 	}
 	{
 		"titulo": "Alien, el octavo pasajero",
-		"poster": "/imagenes/alien.jpg",
+		"poster": "alien.jpg",
 		"director": "Ridley Scott",
 		"precio": 8.75\u20ac,
 		"categoria": "Ficcion",
@@ -941,7 +941,7 @@
 	}
 	{
 		"titulo": "Avatar",
-		"poster": "/imagenes/avatar.jpg",
+		"poster": "avatar.jpg",
 		"director": "James Cameron",
 		"precio": 12.90\u20ac,
 		"categoria": "Ficcion",
@@ -964,7 +964,7 @@
 	}
 	{
 		"titulo": "Gravity",
-		"poster": "/imagenes/gravity.jpg",
+		"poster": "gravity.jpg",
 		"director": "Alfonso Cuarón",
 		"precio": 13.90\u20ac,
 		"categoria": "Ficcion",
@@ -982,7 +982,7 @@
 	}
 	{
 		"titulo": "Independence Day",
-		"poster": "/imagenes/independence_day.jpg",
+		"poster": "independence_day.jpg",
 		"director": "Roland Emmerich",
 		"precio": 11.75\u20ac,
 		"categoria": "Ficcion",
@@ -1005,7 +1005,7 @@
 	}
 	{
 		"titulo": "La guera de las galaxias:Episodio IV- Una nueva esperanza",
-		"poster": "/imagenes/la_guerra_de_las_galaxias.jpg",
+		"poster": "la_guerra_de_las_galaxias.jpg",
 		"director": "George Lucas",
 		"precio": 15.50\u20ac,
 		"categoria": "Ficcion",
@@ -1028,7 +1028,7 @@
 	}
 	{
 		"titulo": "Marte",
-		"poster": "/imagenes/marte.jpg",
+		"poster": "marte.jpg",
 		"director": "Riddley Scott",
 		"precio": 11.50\u20ac,
 		"categoria": "Ficcion",
@@ -1051,7 +1051,7 @@
 	}
 	{
 		"titulo": "Matrix",
-		"poster": "/imagenes/matrix.jpg",
+		"poster": "matrix.jpg",
 		"director": "Lilly Wachowski, Lana Wachowski, Hermanas Wachowski",
 		"precio": 9.50\u20ac,
 		"categoria": "Ficcion",
@@ -1074,7 +1074,7 @@
 	}
 	{
 		"titulo": "Parque Jurásico",
-		"poster": "/imagenes/parque_jurasico.jpg",
+		"poster": "parque_jurasico.jpg",
 		"director": "Steven Spielberg",
 		"precio": 10.50\u20ac,
 		"categoria": "Ficcion",
@@ -1097,7 +1097,7 @@
 	}
 	{
 		"titulo": "Wall-E",
-		"poster": "/imagenes/walle.jpg",
+		"poster": "walle.jpg",
 		"director": "Andrew Stanton",
 		"precio": 10.75\u20ac,
 		"categoria": "Ficcion",
@@ -1114,7 +1114,7 @@
 	}
 	{
 		"titulo": "La bella y la bestia",
-		"poster": "/imagenes/la_bella_y_la_bestia.jpg",
+		"poster": "la_bella_y_la_bestia.jpg",
 		"director": "Bill Condon",
 		"precio": 10.50\u20ac,
 		"categoria": "Musical",
@@ -1137,7 +1137,7 @@
 	}
 	{
 		"titulo": "Dirty Dancing",
-		"poster": "/imagenes/dirty_dancing.jpg",
+		"poster": "dirty_dancing.jpg",
 		"director": "Emile Ardolino",
 		"precio": 9.50\u20ac,
 		"categoria": "Musical",
@@ -1160,7 +1160,7 @@
 	}
 	{
 		"titulo": "El Gran Showman",
-		"poster": "/imagenes/el_gran_showman.jpg",
+		"poster": "el_gran_showman.jpg",
 		"director": "Michael Gracey",
 		"precio": 14.50\u20ac,
 		"categoria": "Musical",
@@ -1183,7 +1183,7 @@
 	}
 	{
 		"titulo": "Grease",
-		"poster": "/imagenes/grease.jpg",
+		"poster": "grease.jpg",
 		"director": "Randal Kleiser",
 		"precio": 12.20\u20ac,
 		"categoria": "Musical",

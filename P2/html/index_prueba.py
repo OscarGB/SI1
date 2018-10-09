@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from random import shuffle
 from urlparse import urlparse
 import json,os
 
-
+app.secret_key = 'esto-es-una-clave-muy-secreta'
 
 Data = open(os.path.dirname(__file__)+"/peliculas.json", "r").read()
 Data = json.loads(Data)
@@ -73,9 +73,21 @@ def contacto():
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
 
 @app.route("/login/")
-def login():
+def login_fun():
     return render_template("login.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
+
+@app.route("/login/activate/")
+def login():
+    user = request.form["user"]
+    pwd = request.form["password"]
+    path = os.path.dirname(__file__)+ "/usuarios/"+user+"/datos.dat"
+    if(os.path.exists(path)):
+        if(check_password(user, pwd)):
+            session["user"] = user
+            return index()
+    return render_template("login.html",\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], wrong=True)
 
 @app.route("/register/")
 def register():

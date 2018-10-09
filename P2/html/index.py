@@ -1,9 +1,31 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
 @app.route("/")
 def index():
-    return render_template("index.html")
+    destacadas = [
+    {"nombre":u"Acción", "imagen":"gladiator.jpg"},
+    {"nombre":u"Animación", "imagen":"del_reves.jpg"},
+    {"nombre":u"Comedia", "imagen":"ocho_apellidos_vascos.jpg"},
+    {"nombre":u"Ficción", "imagen":"avatar.jpg"},
+    {"nombre":u"Musical", "imagen":"la_la_land.jpg"},
+    {"nombre":u"Drama", "imagen":"titanic.jpg"}
+    ]
+    novedades = [
+    {"nombre":u"Indiana Jones", "imagen":"indiana_jones.jpg"},
+    {"nombre":u"Indiana Jones 2", "imagen":"indiana_jones2.jpg"},
+    {"nombre":u"Campeones", "imagen":"campeones.jpg"},
+    {"nombre":u"Lo Imposible", "imagen":"lo_imposible.jpg"},
+    {"nombre":u"La La Land", "imagen":"la_la_land.jpg"},
+    {"nombre":u"os increibles 2", "imagen":"los_increibles2.jpg"},
+    {"nombre":u"Ocho Apellidos Vascos", "imagen":"ocho_apellidos_vascos.jpg"},
+    {"nombre":u"Bajo La Misma Estrella", "imagen":"bajo_la_misma_estrella.jpg"},
+    {"nombre":u"El gran Showman", "imagen":"el_gran_showman.jpg"},
+    {"nombre":u"Del Revés", "imagen":"del_reves.jpg"},
+    ]
+    return render_template("index.html", destacadas=destacadas, novedades=novedades)
 
 @app.route("/carrito/")
 def carrito():

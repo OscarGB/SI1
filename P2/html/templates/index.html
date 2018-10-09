@@ -3,66 +3,23 @@
 {% block content %}
 				<h2>Novedades</h2>
 				<div class="flex-row wrap index-down">
+					{% for nov in novedades %}
 					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Indiana Jones/"><img alt="Indiana Jones" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones.jpg') }}"></a>
+						<a href="/index.wsgi/peliculas/{{ nov.nombe }}/"><img alt="{{ nov.nombe }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.imagen }}"></a>
 					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Indiana Jones 2/"><img alt="Indiana Jones 2" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones2.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Campeones/"><img alt="Campeones" class="sb-img" src="{{ url_for('static', filename = 'media/img/campeones.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Lo Imposible/"><img alt="Lo imposible" class="sb-img" src="{{ url_for('static', filename = 'media/img/lo_imposible.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/La La Land/"><img alt="lalaland" class="sb-img" src="{{ url_for('static', filename = 'media/img/la_la_land.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Los Increibles 2/"><img alt="Los increibles 2" class="sb-img" src="{{ url_for('static', filename = 'media/img/los_increibles2.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Ocho apellidos vascos/"><img alt="Ocho apellidos vascos" class="sb-img" src="{{ url_for('static', filename = 'media/img/ocho_apellidos_vascos.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Bajo la misma estrella/"><img alt="Bajo la misma estrella" class="sb-img" src="{{ url_for('static', filename = 'media/img/bajo_la_misma_estrella.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/El gran Showman/"><img alt="El gran showman" class="sb-img" src="{{ url_for('static', filename = 'media/img/el_gran_showman.jpg') }}"></a>
-					</div>
-					<div class="img-index">
-						<a href="/index.wsgi/peliculas/Del revés/"><img alt="Del reves" class="sb-img" src="{{ url_for('static', filename = 'media/img/del_reves.jpg') }}"></a>
-					</div>
+					{% endfor %}
 				</div>
 
 				<div class="flex-row wrap">
 					<div class="flex-column index-down-left">
 						<h2>Categor&iacute;as destacadas</h2>	
 						<div class="flex-row wrap ">
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Acción/"><img alt="Accion" class="sb-img" src="{{ url_for('static', filename = 'media/img/gladiator.jpg') }}"></a>
-								<h4>Acci&oacute;n</h4>
+							{% for dest in destacadas %}
+							<div class="img-index"> <!-- Holaaa -->
+								<a href="/index.wsgi/categorias/{{ dest.nombre }}/"><img alt="{{ dest.nombre }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ dest.imagen }}"></a>
+								<h4>{{ dest.nombre }}</h4>
 							</div>
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Animación/"><img alt="Animacion" class="sb-img" src="{{ url_for('static', filename = 'media/img/del_reves.jpg') }}"></a>
-								<h4>Animaci&oacute;n</h4>
-							</div>
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Comedia/"><img alt="Comedia" class="sb-img" src="{{ url_for('static', filename = 'media/img/ocho_apellidos_vascos.jpg') }}"></a>
-								<h4>Co/media</h4>
-							</div>
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Ficción/"><img alt="Ficción" class="sb-img" src="{{ url_for('static', filename = 'media/img/avatar.jpg') }}"></a>
-								<h4>Ficción</h4>
-							</div>
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Musical/"><img alt="Musical" class="sb-img" src="{{ url_for('static', filename = 'media/img/la_la_land.jpg') }}"></a>
-								<h4>Co/media</h4>
-							</div>
-							<div class="img-index">
-								<a href="/index.wsgi/categorias/Drama/"><img alt="Drama" class="sb-img" src="{{ url_for('static', filename = 'media/img/titanic.jpg') }}"></a>
-								<h4>Drama</h4>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 					<div class="flex-column index-down-right">

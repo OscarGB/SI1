@@ -5,7 +5,7 @@
 				<div class="flex-row wrap index-down">
 					{% for nov in novedades %}
 					<div class="img-index">
-						<a href="/index.wsgi/peliculas/{{ nov.nombe }}/"><img alt="{{ nov.nombe }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.imagen }}"></a>
+						<a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
 					</div>
 					{% endfor %}
 				</div>

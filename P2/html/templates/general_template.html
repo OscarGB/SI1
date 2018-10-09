@@ -45,36 +45,22 @@
     <div class="flex-row flex-bottom full">
       <div class="sidebar flex-column" id="sidebar">
         <div class="sidebar-section flex-row wrap">
+          {% for pop in populares_sidebar %}
           <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Indiana Jones/"><img alt="Indiana Jones" class="sb-img" src="{{ url_for('static', filename = 'media/img/indiana_jones.jpg') }}"></a>
+          <a href="/index.wsgi/peliculas/{{ pop.titulo }}/"><img alt="{{ pop.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ pop.poster }}"></a>
           </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Yucatan/"><img alt="Yucatan" class="sb-img" src="{{ url_for('static', filename = 'media/img/yucatan.jpg') }}"></a>
-          </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Gladiator/"><img alt="Gladiator" class="sb-img" src="{{ url_for('static', filename = 'media/img/gladiator.jpg') }}"></a>
-          </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Lo Imposible/"><img alt="Lo imposible" class="sb-img" src="{{ url_for('static', filename = 'media/img/lo_imposible.jpg') }}"></a>
-          </div>
+          {% endfor %}
         </div>
         <div class="sidebar-section flex-row wrap">
+          {% for nov in novedades_sidebar %}
           <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Mamma Mia/"><img alt="Mamma mia" class="sb-img" src="{{ url_for('static', filename = 'media/img/mamma_mia.jpg') }}"></a>
+          <a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
           </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Alien/"><img alt="Alien" class="sb-img" src="{{ url_for('static', filename = 'media/img/alien.jpg') }}"></a>
-          </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/La La Land/"><img alt="La la land" class="sb-img" src="{{ url_for('static', filename = 'media/img/la_la_land.jpg') }}"></a>
-          </div>
-          <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/Campeones/"><img alt="Campeones" class="sb-img" src="{{ url_for('static', filename = 'media/img/campeones.jpg') }}"></a>
-          </div>
+          {% endfor %}
         </div>
       </div>
       <div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
-        <div class="sidebar-section hov"><div class="rotated">Populares</div></div>
+        <div class="sidebar-section hov"><div class="rotated">Recomendadas</div></div>
         <div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
       </div>
       <div class="flex-2-right flex-column">

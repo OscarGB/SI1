@@ -3,7 +3,10 @@
 from flask import Flask, render_template, request, session
 from random import shuffle
 from urlparse import urlparse
+from hashlib import md5
 import json,os
+
+app = Flask(__name__)
 
 app.secret_key = 'esto-es-una-clave-muy-secreta'
 
@@ -50,7 +53,15 @@ def get_pelis_by_name(name, categoria):
         return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]))]
     return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]) and categoria == a["categoria"])]
 
-app = Flask(__name__)
+def check_password(path,password):
+    user_data = open(path, "r").read()
+    user_data = json.loads(user_data)
+    m = md5()
+    m.update(password)
+    password = m.hexdigest()
+    return (user_data["contrasena"] == password)
+
+
 @app.route("/")
 def index():
     return render_template("index.html",\
@@ -83,7 +94,7 @@ def login():
     pwd = request.form["password"]
     path = os.path.dirname(__file__)+ "/usuarios/"+user+"/datos.dat"
     if(os.path.exists(path)):
-        if(check_password(user, pwd)):
+        if(check_password(path, pwd)):
             session["user"] = user
             return index()
     return render_template("login.html",\

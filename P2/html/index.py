@@ -1,18 +1,23 @@
 # -*- coding: utf-8 -*-
 
+#Imports
 from flask import Flask, render_template, request, session
 from random import shuffle
 from urlparse import urlparse
 from hashlib import md5
 import json,os
 
+#Flask App
 app = Flask(__name__)
 
+#Secret Key for cookie encryption
 app.secret_key = 'esto-es-una-clave-muy-secreta'
 
+#Datos del catalogo (Data es un diccionario)
 Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
+#Conseguir todas las categorias, sin repetidos
 aux = list(set([a["categoria"] for a in Data["peliculas"]]))
 Categorias = []
 for a in aux:
@@ -23,8 +28,10 @@ for a in aux:
             break
     Categorias.append(auxdic)
 
+#Ordenar las peliculas por año (las mas nuevas primero)
 Novedades = sorted(Data["peliculas"], key=lambda x: -int(x["anno"]))
 
+#Obtener las peliculas ordenadas por puntuacion de los criticos
 def sort_rec(x):
     aux = 0.0
     for a in x["opiniones"]:
@@ -35,6 +42,7 @@ Recomendadas = sorted(Data["peliculas"], key=lambda x: sort_rec(x))
 def get_pelis_en_categoria(categoria):
     return [a for a in Data["peliculas"] if (categoria == a["categoria"])]
 
+#Elimina acentos y eñes (para busquedas)
 def normalize(s):
     replacements = (
         (u"á", u"a"),
@@ -133,12 +141,9 @@ def login_fun():
 @app.route("/register/")
 def register():
     if "user" in session:
-        user = session["user"]
-    else:
-        user = None
+        return index()
     return render_template("register.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
-     user=user)
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4]    )
 
 @app.route("/users/<userc>/")
 def user_info(userc):
@@ -153,15 +158,16 @@ def user_info(userc):
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
      user=user, email=email)
 
-@app.route("/listado_peliculas/")
-def listado_peliculas():
+@app.route("/listado_peliculas/<i>")
+def listado_peliculas(i):
     if "user" in session:
         user = session["user"]
     else:
         user = None
+    i = int(i)
     return render_template("listado_peliculas.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
-     peliculas = Data["peliculas"], user=user)
+     peliculas = Data["peliculas"][12*(i-1):12*i], user=user, i=i)
 
 @app.route("/categorias/")
 def categorias():

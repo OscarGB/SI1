@@ -23,8 +23,13 @@
           <a href="/index.wsgi/"><img alt="La casa del dvd" src="{{ url_for('static', filename = 'media/img/la_casa_del_dvd.png') }}"></a>
           <h4>La casa del DVD</h4>
           <div class="login_buttons">
-            <a class="button1 hov" href="/index.wsgi/login/">Login</a>
-            <a class="button1 hov" href="/index.wsgi/register/">Registro</a>
+            {% if user %}
+              <a class="button1 hov" href="/index.wsgi/logout/">Logout</a>
+              <a class="button1 hov" href="/index.wsgi/users/{{ user }}/">Mi cuenta</a>
+            {% else %}
+              <a class="button1 hov" href="/index.wsgi/login/">Login</a>
+              <a class="button1 hov" href="/index.wsgi/register/">Registro</a>
+            {% endif %}
           </div>
         </div>
         <div class="flex-row green flex-1-bottom">

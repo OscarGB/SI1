@@ -1,5 +1,5 @@
 {% extends "general_template.html" %}
-{% block title %}Register{% endblock %}
+{% block title %}Tu cuenta{% endblock %}
 {% block content %}
 <h1>Tu cuenta</h1>
 <div class="flex-row user-info wrap">
@@ -9,8 +9,8 @@
 			<div class="user-data">
 				<H2>Tus datos:</H2>
 
-				<h3>Nombre de usuario:</h3><p> Lucia Colmenarejo Perez</p>
-				<h3>Correo:</h3><p> lucicolpe@gmail.com</p>
+				<h3>Nombre de usuario:</h3><p> {{ user }}</p>
+				<h3>Correo:</h3><p> {{ email }}</p>
 			</div>
 		</div>
 		<div class="black-border frase-motivadora">

@@ -2,7 +2,7 @@
 
 #Imports
 from flask import Flask, render_template, request, session
-from random import shuffle
+from random import shuffle, randint
 from urlparse import urlparse
 from hashlib import md5
 import json,os
@@ -70,8 +70,24 @@ def check_password(path,password):
     if(user_data["contrasena"] == password):
         session["user"] = user_data["usuario"]
         session["email"] = user_data["email"]
+        session["saldo"] = user_data["saldo"]
         return True
     return False
+
+def create_user_and_login(user, pwd, email, card, path):
+    m = md5()
+    m.update(pwd)
+    password = m.hexdigest()
+    os.mkdir(path)
+    dic={"contrasena": password,\
+        "email": email,\
+        "usuario": user,\
+        "tarjeta": card,\
+        "saldo": randint(0,100)}
+    open(path+"datos.dat", "w").write(json.dumps(dic))
+    session["user"] = dic["usuario"]
+    session["email"] = dic["email"]
+    session["saldo"] = dic["saldo"]
 
 
 @app.route("/")
@@ -143,20 +159,37 @@ def register():
     if "user" in session:
         return index()
     return render_template("register.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4]    )
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
+
+@app.route("/register/activate/", methods=['POST'])
+def register_fun():
+    if "user" in session:
+        return index()
+    user = request.form["user"]
+    pwd = request.form["passwd"]
+    email = request.form["email"]
+    card = request.form["card"]
+    path = os.path.dirname(__file__)+ "/usuarios/"+user+"/"
+    if(os.path.exists(path)):
+        return render_template("register.html",\
+         novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+         error=True)
+    create_user_and_login(user, pwd, email, card, path)
+    return index()
 
 @app.route("/users/<userc>/")
 def user_info(userc):
     if "user" in session:
         user = session["user"]
         email = session["email"]
+        saldo = session["saldo"]
         if userc != user:
             return index()
     else:
         return index()
     return render_template("user-info.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
-     user=user, email=email)
+     user=user, email=email, saldo=saldo)
 
 @app.route("/listado_peliculas/<i>")
 def listado_peliculas(i):

@@ -400,6 +400,10 @@ h3 {
 	height: 100%;
 }
 
+.center_table{
+	margin: 0 auto;
+}
+
 .carrito-right{
 	flex-basis: 20%;
 	border-left: 1px solid black;
@@ -462,6 +466,38 @@ h3 {
 .red {
 	color: red;
 }
+
+meter {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  margin: 0 auto 1em;
+  width: 100%;
+  height: 0.5em;
+
+  /* Applicable only to Firefox */
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: green; }
+meter[value="4"]::-webkit-meter-optimum-value { background: deepskyblue; }
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: green; }
+meter[value="4"]::-moz-meter-bar { background: deepskyblue; }
 /*End specific class style */
 
 /*Media queries*/

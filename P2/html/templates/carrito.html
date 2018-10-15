@@ -5,34 +5,24 @@
 <div class="flex-row wrap">
 	<div class="carrito-left">
 		<div class="flex-column pedidos">
+			{% for a in compradas %}
 			<div class="black-border flex-row">
-				<img alt="Indiana Jones" src="{{ url_for('static', filename = 'media/img/indiana_jones.jpg') }}" class="pedidos-img">
+				<img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ a.poster }}" class="pedidos-img">
 				<div>
-					<h4><b>Indiana Jones y la &uacute;ltima cruzada</b></h4>
-					<h4><b>Cantidad: 1</b></h4>
-					<h4 class="pedidos-right">Precio: 12,99&euro;</h4>
+					<h4><b>{{ a.titulo }}</b></h4>
+					<h4><b>Cantidad: 
+						<form method="post" class="inline" action="/index.wsgi/carrito/{{ a.titulo }}/modificar/">
+							<input name="cantidad" type="number" step="1" min="0" max="10" value="{{ a.cantidad }}"/>&nbsp;
+							<button type="submit" class="button1 hov">Confirmar</button></b></form>
+						<a href="/index.wsgi/carrito/{{ a.titulo }}/borrar/" class="button1 hov inline">Eliminar</a></h4>
+					<h4 class="pedidos-right">Precio: {{ a.precio }}&euro;x{{ a.cantidad }}</h4>
 				</div>
 			</div>
-			<div class="black-border flex-row">
-				<img alt="Star Wars" src="{{ url_for('static', filename = 'media/img/la_guerra_de_las_galaxias.jpg') }}" class="pedidos-img">
-				<div>
-					<h4><b>La guerra de las galaxias:Episodio IV- Una nueva esperanza</b></h4>
-					<h4><b>Cantidad: 1</b></h4>
-					<h4 class="pedidos-right">Precio: 10,99&euro;</h4>
-				</div>
-			</div>
-			<div class="black-border flex-row">
-				<img alt="Ocho apellidos vascos" src="{{ url_for('static', filename = 'media/img/ocho_apellidos_vascos.jpg') }}" class="pedidos-img">
-				<div>
-					<h4><b>Ocho apellidos vascos</b></h4>
-					<h4><b>Cantidad: 1</b></h4>
-					<h4 class="pedidos-right">Precio: 8.50&euro;</h4>
-				</div>
-			</div>
+			{% endfor %}
 			<div class="black-border flex-row">
 				<div class="full">
 					<h4>TOTAL</h4>
-					<h1 class="pedidos-right">32,48&euro;</h1>
+					<h1 class="pedidos-right">{{ total }}&euro;</h1>
 				</div>
 			</div>
 		</div>

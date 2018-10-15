@@ -5,7 +5,9 @@ from flask import Flask, render_template, request, session
 from random import shuffle, randint
 from urlparse import urlparse
 from hashlib import md5
-import json,os
+import json, os, re
+
+non_decimal = re.compile(r'[^\d.]+')
 
 #Flask App
 app = Flask(__name__)
@@ -89,6 +91,12 @@ def create_user_and_login(user, pwd, email, card, path):
     session["email"] = dic["email"]
     session["saldo"] = dic["saldo"]
 
+def change_saldo():
+    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
+    user_data = open(path, "r").read()
+    user_data = json.loads(user_data)
+    user_data["saldo"] = session["saldo"]
+    open(path, "w").write(json.dumps(user_data))
 
 @app.route("/")
 def index():
@@ -96,8 +104,12 @@ def index():
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("index.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      destacadas=Categorias, novedades=Novedades[:10], user=user)
 
 @app.route("/carrito/")
@@ -106,9 +118,75 @@ def carrito():
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+        suma = 0
+        for a in session["compra"]:
+            suma += float(non_decimal.sub('', a["precio"]))*a["cantidad"]
+    else:
+        ncompra = 0
+        suma = 0
     return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
-     user=user)
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     user=user, compradas=session["compra"], total=suma)
+
+@app.route("/carrito/<valor>/modificar/", methods=["POST"])
+def carrito_modificar(valor):
+    if "user" in session:
+        user = session["user"]
+    else:
+        user = None
+    if "ncompra" in session:
+        nueva_can = request.form["cantidad"]
+        vieja_can = nueva_can
+        for a in session["compra"]:
+            if a["titulo"] == valor:
+                vieja_can = a["cantidad"]
+                a["cantidad"] = nueva_can
+                if nueva_can == "0":
+                    session["compra"].remove(a)
+                break
+        session["ncompra"] += (int(nueva_can) - int(vieja_can))
+        if(session["ncompra"] <= 0):
+            session.pop("ncompra", None)
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+        suma = 0
+        for a in session["compra"]:
+            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
+    else:
+        ncompra = 0
+        suma = 0
+    return render_template("carrito.html",\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     user=user, compradas=session["compra"], total=suma)
+
+@app.route("/carrito/<valor>/borrar/")
+def carrito_borrar(valor):
+    if "user" in session:
+        user = session["user"]
+    else:
+        user = None
+    if "ncompra" in session:
+        for a in session["compra"]:
+            if a["titulo"] == valor:
+                vieja_can = a["cantidad"]
+                session["compra"].remove(a)
+                break
+        session["ncompra"] += (-int(vieja_can))
+        if(session["ncompra"] <= 0):
+            session.pop("ncompra", None)
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+        suma = 0
+        for a in session["compra"]:
+            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
+    else:
+        ncompra = 0
+        suma = 0
+    return render_template("carrito.html",\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     user=user, compradas=session["compra"], total=suma)
 
 @app.route("/pagar/")
 def pagar():
@@ -116,9 +194,43 @@ def pagar():
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+        suma = 0
+        for a in session["compra"]:
+            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
+    else:
+        ncompra = 0
+        suma = 0
     return render_template("pagar.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
-     user=user)
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     user=user, total=suma)
+
+@app.route("/pagar/confirmar/", methods=["POST"])
+def pagar_1():
+    if "user" in session:
+        user = session["user"]
+    else:
+        return login()
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+        suma = 0
+        for a in session["compra"]:
+            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
+    else:
+        ncompra = 0
+        suma = 0
+
+    if suma > session["saldo"]:
+        return render_template("pagar.html",\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     user=user, total=suma, error=1)
+    else:
+        session["saldo"] -= suma
+        change_saldo()
+        session.pop("ncompra", None)
+        session.pop("compra", None)
+    return index()
 
 @app.route("/contacto/")
 def contacto():
@@ -126,8 +238,12 @@ def contacto():
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("contacto.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      user=user)
 
 @app.route("/login/")
@@ -136,8 +252,12 @@ def login():
         return index()
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("login.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      user=user)
 
 @app.route("/login/activate/", methods=['POST'])
@@ -150,16 +270,24 @@ def login_fun():
     if(os.path.exists(path)):
         if(check_password(path, pwd)):
             return index()
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("login.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      wrong=True)
 
 @app.route("/register/")
 def register():
     if "user" in session:
         return index()
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("register.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4])
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra)
 
 @app.route("/register/activate/", methods=['POST'])
 def register_fun():
@@ -171,8 +299,12 @@ def register_fun():
     card = request.form["card"]
     path = os.path.dirname(__file__)+ "/usuarios/"+user+"/"
     if(os.path.exists(path)):
+        if "ncompra" in session:
+            ncompra = session["ncompra"]
+        else:
+            ncompra = 0
         return render_template("register.html",\
-         novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+         novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
          error=True)
     create_user_and_login(user, pwd, email, card, path)
     return index()
@@ -187,8 +319,12 @@ def user_info(userc):
             return index()
     else:
         return index()
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("user-info.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      user=user, email=email, saldo=saldo)
 
 @app.route("/listado_peliculas/<i>")
@@ -198,8 +334,12 @@ def listado_peliculas(i):
     else:
         user = None
     i = int(i)
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("listado_peliculas.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      peliculas = Data["peliculas"][12*(i-1):12*i], user=user, i=i)
 
 @app.route("/categorias/")
@@ -208,8 +348,12 @@ def categorias():
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("categorias.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      categorias=Categorias, user=user)
 
 @app.route("/categorias/<categoria>/")
@@ -218,8 +362,12 @@ def categorias_categoria(categoria):
         user = session["user"]
     else:
         user = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("categoria.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      Titulo=categoria, peliculas=get_pelis_en_categoria(categoria), user=user)
 
 @app.route("/peliculas/<pelicula>/")
@@ -232,8 +380,44 @@ def pelicula(pelicula):
     Similares = [a for a in get_pelis_en_categoria(Peli["categoria"]) if (Peli["titulo"] != a["titulo"])]
     shuffle(Similares)
 
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("pelicula.html",\
-     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     pelicula=Peli, similares=Similares[:8], user=user)
+
+@app.route("/peliculas/<pelicula>/comprar/")
+def comprar(pelicula):
+    if "user" in session:
+        user = session["user"]
+    else:
+        user = None
+    Peli = [a for a in Data["peliculas"] if a["titulo"] == pelicula][0]
+    Peli["cantidad"] = 1;
+    flag = 0
+    if "ncompra" in session:
+        session["ncompra"] += 1
+        session["compra"]
+        for a in session["compra"]:
+            if(a["titulo"] == Peli["titulo"]):
+                a["cantidad"] += 1
+                flag = 1
+        if flag == 0:
+            session["compra"].append(Peli)
+    else:
+        session["ncompra"] = 1
+        session["compra"] = [Peli, ]
+    Similares = [a for a in get_pelis_en_categoria(Peli["categoria"]) if (Peli["titulo"] != a["titulo"])]
+    shuffle(Similares)
+
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
+    return render_template("pelicula.html",\
+     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      pelicula=Peli, similares=Similares[:8], user=user)
 
 @app.route("/busqueda/")
@@ -246,8 +430,12 @@ def busqueda():
     categoria = request.args.get('categoria')
     if categoria == '0':
         categoria = None
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
     return render_template("busqueda.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4],\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      peliculas=get_pelis_by_name(nombre, categoria), nombre=nombre, categoria=categoria,\
      user=user)
 

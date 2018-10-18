@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, session
 from random import shuffle, randint
 from urlparse import urlparse
 from hashlib import md5
+import time
 import json, os, re
 
 non_decimal = re.compile(r'[^\d.]+')
@@ -93,10 +94,35 @@ def create_user_and_login(user, pwd, email, card, path):
 
 def change_saldo():
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
+    
     user_data = open(path, "r").read()
     user_data = json.loads(user_data)
     user_data["saldo"] = session["saldo"]
     open(path, "w").write(json.dumps(user_data))
+
+def anadir_historial():
+    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
+    if(os.path.exists(path)):
+        historial = open(path, "r").read()
+        historial = json.loads(historial)
+        for a in session["compra"]:
+            a["fecha"] = time.strftime("%y/%m/%d %H:%M")
+            historial.append(a)
+    else:
+        historial = []
+        for a in session["compra"]:
+            a["fecha"] = time.strftime("%y/%m/%d %H:%M")
+            historial.append(a)
+    open(path, "w").write(json.dumps(historial, indent=4))
+
+def get_historial():
+    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
+    if(os.path.exists(path)):
+        historial = open(path, "r").read()
+        historial = json.loads(historial)
+    else:
+        historial = []
+    return historial
 
 @app.route("/")
 def index():
@@ -121,14 +147,16 @@ def carrito():
     if "ncompra" in session:
         ncompra = session["ncompra"]
         suma = 0
+        compra = session["compra"]
         for a in session["compra"]:
             suma += float(non_decimal.sub('', a["precio"]))*a["cantidad"]
     else:
+        compra = None
         ncompra = 0
         suma = 0
     return render_template("carrito.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
-     user=user, compradas=session["compra"], total=suma)
+     user=user, compradas=compra, total=suma)
 
 @app.route("/carrito/<valor>/modificar/", methods=["POST"])
 def carrito_modificar(valor):
@@ -228,6 +256,7 @@ def pagar_1():
     else:
         session["saldo"] -= suma
         change_saldo()
+        anadir_historial()
         session.pop("ncompra", None)
         session.pop("compra", None)
     return index()
@@ -315,6 +344,7 @@ def user_info(userc):
         user = session["user"]
         email = session["email"]
         saldo = session["saldo"]
+        historial = sorted(get_historial(), reverse=True, key=lambda x: time.strptime(x["fecha"], "%y/%m/%d %H:%M"))[:5]
         if userc != user:
             return index()
     else:
@@ -325,7 +355,7 @@ def user_info(userc):
         ncompra = 0
     return render_template("user-info.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
-     user=user, email=email, saldo=saldo)
+     user=user, email=email, saldo=saldo, historial=historial)
 
 @app.route("/listado_peliculas/<i>")
 def listado_peliculas(i):
@@ -442,6 +472,8 @@ def busqueda():
 @app.route("/logout/")
 def logout():
     session.pop("user", None)
+    session.pop("ncompra", None)
+    session.pop("compra", None)
     return index()
 
 if __name__ == "__main__":

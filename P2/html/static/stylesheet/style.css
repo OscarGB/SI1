@@ -393,19 +393,27 @@ h3 {
 }
 
 .pedidos {
-	background-color: Khaki;
 	padding: 0;
 	flex-basis: 40%;
 	min-width: 200px;
 }
 
 .pedidos img, .pedidos div{
+	max-height: 180px;
+	background-color: Khaki;
 	padding: 5px;
 	float: left;
 }
 
 .pedidos div{
 	flex-basis: 80%;
+}
+
+.desplegable {
+	align-self: right;
+	display: none;
+	background-color: rgb(85, 111, 52) !important;
+  	color: white;
 }
 
 .pedidos-right {

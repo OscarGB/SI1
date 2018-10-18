@@ -1,0 +1,499 @@
+[
+    {
+        "categoria": "Comedia", 
+        "director": "Daniel Monz\u00f3n", 
+        "sinopsis": "Lucas (Luis Tosar) y Clayderman (Rodrigo de la Serna) son dos estafadores que se dedican a timar a turistas ingenuos en cruceros de lujo. Hace a&ntilde;os trabajaban juntos, pero la rivalidad amorosa por Ver\u00f3nica (Stephanie Cayo), la bell\u00edsima bailarina del barco, les hizo perder la cabeza y dio al traste con su sociedad. Ahora trabajan por separado, Lucas en el Mediterr\u00e1neo y Clayderman en el Atl\u00e1ntico. Ese fue el acuerdo. Pero un inesperado bot\u00edn impulsa a Lucas a irrumpir en el barco de su exsocio, lo que convierte la ex\u00f3tica traves\u00eda de Barcelona a Canc\u00fan -pasando por Casablanca, Tenerife, Brasil y la selva de Yucat\u00e1n- en un encarnizado duelo de tramposos, sin ninguna regla pero con muchos golpes bajos.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "La contenci\u00f3n, la sutileza y la gama de matices que Pera aporta a su personaje es, definitivamente, el gran efecto especial de una comedia elegante y entretenid\u00edsima, que nunca sacrifica la inteligencia en favor de la risa f\u00e1cil.", 
+                "nombre_op": "Sergi S\u00e1nchez"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "La capacidad de Monz\u00f3n para orquestar todo ese bullicioso universo coral y darle un sentido, requiere de una una pericia a la altura de muy pocos autores. Lo consigue sobre todo por la explosiva variedad de g\u00e9neros que congrega.", 
+                "nombre_op": "Beatriza Lonja"
+            }
+        ], 
+        "poster": "yucatan.jpg", 
+        "fecha": "18/10/18 17:14", 
+        "precio": "7.50", 
+        "anno": "2018", 
+        "premios": [], 
+        "pais": "Espa\u00f1a", 
+        "actores": [
+            {
+                "nombre": "Luis Tosar"
+            }, 
+            {
+                "nombre": "Rodrigo de la Serna"
+            }, 
+            {
+                "nombre": "Joan Pera"
+            }, 
+            {
+                "nombre": "Stephanie Cayo"
+            }, 
+            {
+                "nombre": " Jorge As\u00edn"
+            }, 
+            {
+                "nombre": "Agust\u00edn Jim\u00e9nez"
+            }, 
+            {
+                "nombre": "Toni Acosta"
+            }, 
+            {
+                "nombre": "Adri\u00e1n N\u00fa&ntilde;ez"
+            }, 
+            {
+                "nombre": "Txell Aixendri"
+            }, 
+            {
+                "nombre": "Alicia Fern\u00e1ndez"
+            }, 
+            {
+                "nombre": "Leticia Etala"
+            }, 
+            {
+                "nombre": "Xavi Lite"
+            }
+        ], 
+        "duracion": " 130 min.", 
+        "titulo": "Yucat\u00e1n"
+    }, 
+    {
+        "categoria": "Acci\u00f3n", 
+        "anno": "2000", 
+        "sinopsis": "En el a&ntilde;o 180, el Imperio Romano domina todo el mundo conocido. Tras una gran victoria sobre los b\u00e1rbaros del norte, el anciano emperador Marco Aurelio (Richard Harris) decide transferir el poder a M\u00e1ximo (Russell Crowe), bravo general de sus ej\u00e9rcitos y hombre de inquebrantable lealtad al imperio. Pero su hijo C\u00f3modo (Joaquin Phoenix), que aspiraba al trono, no lo acepta y trata de asesinar a M\u00e1ximo.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "El talento y fuerza visual de Ridley Scott vuelven a alcanzar altas cotas en esta entretenid\u00edsima pel\u00edcula de aventuras que adolece de un gui\u00f3n excesivamente plano (curiosamente, casi todos sus di\u00e1logos por separado son excelentes, pero la historia como conjunto es maniquea y bastante exagerada). Lo cierto es que a sus productores -y a los miembros de la academia de Hollywood- poco pareci\u00f3 importarles, pues los primeros ya anunciaban su tono \u00e9pico en la leyenda de promoci\u00f3n: &laquo;El general que se convirti\u00f3 en esclavo, el esclavo que se convirti\u00f3 en gladiador, el gladiador que desafi\u00f3 a un imperio&raquo; y los segundos se rindieron a frases tan contundentes como: &laquo;Mi nombre es M\u00e1ximo D\u00e9cimo Meridio, comandante de las tropas del norte, general de las legiones F\u00e9lix, leal servidor del verdadero emperador, Marco Aurelio. Padre de un hijo asesinado, marido de una mujer asesinada, y alcanzar\u00e9 mi venganza, en esta vida o en la otra&raquo;. En cualquier caso, su impresionante comienzo y los realistas combates de los gladiadores hacen de este 'taquillazo' un espect\u00e1culo digno de ver, oir -atenci\u00f3n a su maravillosa y potente banda sonora- y disfrutar.", 
+                "nombre_op": "Laura Frooster"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Litz Rose"
+            }
+        ], 
+        "poster": "gladiator.jpg", 
+        "fecha": "18/10/18 17:15", 
+        "precio": "10.50", 
+        "director": "Ridley Scott", 
+        "premios": [
+            {
+                "premio": "2000: 5 Oscars: Pel\u00edcula, actor (Crowe), vestuario, sonido, efectos visuales. 12 nom."
+            }, 
+            {
+                "premio": "2000: 2 Globos de Oro: Mejor pel\u00edcula drama y BSO. 5 nominaciones, incl. Director"
+            }, 
+            {
+                "premio": "2000: 4 Premios BAFTA: Mejor pel\u00edcula, fotograf\u00eda, montaje y dise\u00f1o prod. 14 nom"
+            }, 
+            {
+                "premio": "2000: 2 premios National Board of Review: Mejor dise\u00f1o de producci\u00f3n y actor sec"
+            }, 
+            {
+                "premio": "2000: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
+            }
+        ], 
+        "duracion": " 150 min.", 
+        "actores": [
+            {
+                "nombre": " Russell Crowe"
+            }, 
+            {
+                "nombre": "Joaquin Phoenix"
+            }, 
+            {
+                "nombre": " Connie Nielsen"
+            }, 
+            {
+                "nombre": "Oliver Reed"
+            }, 
+            {
+                "nombre": "Richard Harris"
+            }, 
+            {
+                "nombre": "Ralf Moeller"
+            }, 
+            {
+                "nombre": "Derek Jacobi"
+            }, 
+            {
+                "nombre": "Djimon Hounsou"
+            }, 
+            {
+                "nombre": "David Schofield"
+            }, 
+            {
+                "nombre": " John Shrapnel"
+            }, 
+            {
+                "nombre": "Spencer Treat Clark"
+            }, 
+            {
+                "nombre": "Tomas Arana"
+            }, 
+            {
+                "nombre": "David Hemmings"
+            }, 
+            {
+                "nombre": "Tommy Flanagan"
+            }, 
+            {
+                "nombre": "Sven-Ole Thorsen"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "titulo": "Gladiator"
+    }, 
+    {
+        "categoria": "Acci\u00f3n", 
+        "director": "Steven Spielberg", 
+        "sinopsis": "A&ntilde;o 1957, en plena guerra fr\u00eda. Indiana Jones (Harrison Ford) consigue de milagro salir ileso de una explosiva situaci\u00f3n con unos agentes sovi\u00e9ticos en un remoto desierto al que lleg\u00f3 detenido junto a su amigo Mac (Ray Winstone). El decano de la Universidad (Jim Broadbent) le confiesa a su amigo el profesor Jones que las \u00faltimas misiones de Indy han fracasado, y que est\u00e1 a punto de ser despedido. Mientras tanto, Indiana conoce a Mutt (Shia LaBeouf), un joven rebelde que le propone un trato: si le ayuda a resolver un problema personal, \u00e9l, a cambio, le facilitar\u00eda uno de los descubrimientos m\u00e1s espectaculares de la historia: la Calavera de Cristal de Akator, que se encuentra en un lugar remoto del Per\u00fa. Pero los agentes sovi\u00e9ticos, dirigidos por la fr\u00eda y bella Irina Spalko (Cate Blanchett), tienen el mismo objetivo.", 
+        "cantidad": 9, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Las escenas de acci\u00f3n, geniales; la historia, por debajo de las anteriores.", 
+                "nombre_op": "Roger Ebert"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Indiana Jones y el reino de la calavera de cristal. Dilo en alto. El simple t\u00edtulo ya te acelera el coraz\u00f3n. Si te gustaron las otras, te gustar\u00e1 esta. Y si no, pues no estoy hablando contigo.", 
+                "nombre_op": "Dave Hanks"
+            }
+        ], 
+        "poster": "indiana_jones3.jpg", 
+        "fecha": "18/10/18 17:16", 
+        "precio": "11.40", 
+        "anno": "2008", 
+        "premios": [
+            {
+                "premio": "2008: Nominada a los BAFTA: Mejores efectos especiales visuales."
+            }, 
+            {
+                "premio": "2008: Premio Razzie: Peor precuela, remake, copia o secuela"
+            }, 
+            {
+                "premio": "2008: Nominada a Critics' Choice Awards: Mejor pel\u00edcula de acci\u00f3n"
+            }, 
+            {
+                "premio": "2008: Sindicato de Actores (SAG): Nom. Mejores especialistas de acci\u00f3n (Largometraje)"
+            }, 
+            {
+                "premio": "2008: Festival de Cannes: Secci\u00f3n Oficial (Fuera de concurso)"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "actores": [
+            {
+                "nombre": "Harrison Ford"
+            }, 
+            {
+                "nombre": "Cate Blanchett"
+            }, 
+            {
+                "nombre": "Shia LaBeouf"
+            }, 
+            {
+                "nombre": "Karen Allen"
+            }, 
+            {
+                "nombre": "John Hurt"
+            }, 
+            {
+                "nombre": "Ray Winstone"
+            }, 
+            {
+                "nombre": "Jim Broadbent"
+            }, 
+            {
+                "nombre": "Igor Jijikine"
+            }, 
+            {
+                "nombre": "Alan Dalea"
+            }, 
+            {
+                "nombre": "Joel Stoffer"
+            }, 
+            {
+                "nombre": "Neil Flynn"
+            }, 
+            {
+                "nombre": " V.J. Foster"
+            }, 
+            {
+                "nombre": "Dimitri Diatchenko"
+            }, 
+            {
+                "nombre": "Ilia Volok"
+            }, 
+            {
+                "nombre": "Andrew Divoff"
+            }
+        ], 
+        "duracion": " 125 min.", 
+        "titulo": "Indiana Jones y el reino de la calavera de cristal"
+    }, 
+    {
+        "categoria": "Acci\u00f3n", 
+        "anno": "2002", 
+        "sinopsis": "Un hombre amn\u00e9sico es rescatado por la tripulaci\u00f3n de un barco pesquero italiano cuando flota a la deriva en el mar. No lleva nada consigo. S\u00f3lo las balas que lleva clavadas en la espalda y un n\u00famero de cuenta de un banco suizo que lleva adherido a la cadera. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes ling&uuml;\u00edsticas, marciales y de autodefensa que sugieren una profesi\u00f3n de riesgo. Confuso y desorientado, emprende una fren\u00e9tica b\u00fasqueda para descubrir qui\u00e9n es y por qu\u00e9 su vida ha tomado un giro tan peligroso.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Una trama atractiva y nada predecible (\u00a1por fin!), con un gui\u00f3n capaz de mantener la tensi\u00f3n", 
+                "nombre_op": "Poti Valls"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Mart\u00edn Montes"
+            }
+        ], 
+        "poster": "caso_bourne.jpg", 
+        "fecha": "18/10/18 17:19", 
+        "precio": "9.50", 
+        "director": "Doug Liman", 
+        "premios": [], 
+        "duracion": " 147 min.", 
+        "actores": [
+            {
+                "nombre": "Matt Damon"
+            }, 
+            {
+                "nombre": "Franka Potente"
+            }, 
+            {
+                "nombre": " Chris Cooper"
+            }, 
+            {
+                "nombre": "Brian Cox"
+            }, 
+            {
+                "nombre": "Clive Owen"
+            }, 
+            {
+                "nombre": "Adewale Akinnuoye-Agbaje"
+            }, 
+            {
+                "nombre": "Gabriel Mann"
+            }, 
+            {
+                "nombre": "Julia Stiles"
+            }, 
+            {
+                "nombre": "Orso Maria Guerrini"
+            }, 
+            {
+                "nombre": " Tim Dutton"
+            }, 
+            {
+                "nombre": "Walton Goggins"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "titulo": "El caso Bourne"
+    }, 
+    {
+        "categoria": "Animaci\u00f3n", 
+        "director": "Pete Docter, Ronnie Del Carmen", 
+        "sinopsis": "Riley es una chica que disfruta o padece toda clase de sentimientos. Aunque su vida ha estado marcada por la Alegr\u00eda, tambi\u00e9n se ve afectada por otro tipo de emociones. Lo que Riley no entiende muy bien es por qu\u00e9 motivo tiene que existir la Tristeza en su vida. Una serie de acontecimientos hacen que Alegr\u00eda y Tristeza se mezclen en una peligrosa aventura que dar\u00e1 un vuelco al mundo de Riley.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Es original, sorprendente, apuesta por esa melancol\u00eda que ya exhalaba 'Toy Story', y a\u00fana un guion inmenso con una gloriosa imaginer\u00eda (...) ha sido recibida en Cannes con una enorme ovaci\u00f3n.", 
+                "nombre_op": "Sabela Valle"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "La lluvia de ideas y de ingenio, de gui&ntilde;os y de gags que llaman a la reflexi\u00f3n sobre infinidad de temas es constante y apabullante, convirtiendo 'Del rev\u00e9s' en una obra imprescindible en el estante de manuales para tratar de conocernos mejor.", 
+                "nombre_op": "Ricardo Mar\u00edn"
+            }
+        ], 
+        "poster": "del_reves.jpg", 
+        "fecha": "18/10/18 17:20", 
+        "precio": "11.50", 
+        "anno": "2015", 
+        "premios": [
+            {
+                "premio": "2015: Premios Oscar: mejor film de animaci\u00f3n. Nominada a mejor gui\u00f3n original."
+            }, 
+            {
+                "premio": "2015: Premios Annie: 10 premios, incluyendo Mejor pel\u00edcula y direcci\u00f3n"
+            }, 
+            {
+                "premio": "2015: Premios BAFTA: Mejor film animado"
+            }, 
+            {
+                "premio": "2015: Festival de Cannes: Secci\u00f3n oficial largometrajes (fuera de concurso)"
+            }, 
+            {
+                "premio": "2015: Globos de Oro: Mejor filme de animaci\u00f3n"
+            }, 
+            {
+                "premio": "2015: Premios David di Donatello: Nominado a mejor film extranjero"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "actores": [], 
+        "duracion": " 94 min.", 
+        "titulo": "Del rev\u00e9s"
+    }, 
+    {
+        "categoria": "Acci\u00f3n", 
+        "anno": "2000", 
+        "sinopsis": "En el a&ntilde;o 180, el Imperio Romano domina todo el mundo conocido. Tras una gran victoria sobre los b\u00e1rbaros del norte, el anciano emperador Marco Aurelio (Richard Harris) decide transferir el poder a M\u00e1ximo (Russell Crowe), bravo general de sus ej\u00e9rcitos y hombre de inquebrantable lealtad al imperio. Pero su hijo C\u00f3modo (Joaquin Phoenix), que aspiraba al trono, no lo acepta y trata de asesinar a M\u00e1ximo.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "El talento y fuerza visual de Ridley Scott vuelven a alcanzar altas cotas en esta entretenid\u00edsima pel\u00edcula de aventuras que adolece de un gui\u00f3n excesivamente plano (curiosamente, casi todos sus di\u00e1logos por separado son excelentes, pero la historia como conjunto es maniquea y bastante exagerada). Lo cierto es que a sus productores -y a los miembros de la academia de Hollywood- poco pareci\u00f3 importarles, pues los primeros ya anunciaban su tono \u00e9pico en la leyenda de promoci\u00f3n: &laquo;El general que se convirti\u00f3 en esclavo, el esclavo que se convirti\u00f3 en gladiador, el gladiador que desafi\u00f3 a un imperio&raquo; y los segundos se rindieron a frases tan contundentes como: &laquo;Mi nombre es M\u00e1ximo D\u00e9cimo Meridio, comandante de las tropas del norte, general de las legiones F\u00e9lix, leal servidor del verdadero emperador, Marco Aurelio. Padre de un hijo asesinado, marido de una mujer asesinada, y alcanzar\u00e9 mi venganza, en esta vida o en la otra&raquo;. En cualquier caso, su impresionante comienzo y los realistas combates de los gladiadores hacen de este 'taquillazo' un espect\u00e1culo digno de ver, oir -atenci\u00f3n a su maravillosa y potente banda sonora- y disfrutar.", 
+                "nombre_op": "Laura Frooster"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Litz Rose"
+            }
+        ], 
+        "poster": "gladiator.jpg", 
+        "fecha": "18/10/18 17:21", 
+        "precio": "10.50", 
+        "director": "Ridley Scott", 
+        "premios": [
+            {
+                "premio": "2000: 5 Oscars: Pel\u00edcula, actor (Crowe), vestuario, sonido, efectos visuales. 12 nom."
+            }, 
+            {
+                "premio": "2000: 2 Globos de Oro: Mejor pel\u00edcula drama y BSO. 5 nominaciones, incl. Director"
+            }, 
+            {
+                "premio": "2000: 4 Premios BAFTA: Mejor pel\u00edcula, fotograf\u00eda, montaje y dise\u00f1o prod. 14 nom"
+            }, 
+            {
+                "premio": "2000: 2 premios National Board of Review: Mejor dise\u00f1o de producci\u00f3n y actor sec"
+            }, 
+            {
+                "premio": "2000: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
+            }
+        ], 
+        "duracion": " 150 min.", 
+        "actores": [
+            {
+                "nombre": " Russell Crowe"
+            }, 
+            {
+                "nombre": "Joaquin Phoenix"
+            }, 
+            {
+                "nombre": " Connie Nielsen"
+            }, 
+            {
+                "nombre": "Oliver Reed"
+            }, 
+            {
+                "nombre": "Richard Harris"
+            }, 
+            {
+                "nombre": "Ralf Moeller"
+            }, 
+            {
+                "nombre": "Derek Jacobi"
+            }, 
+            {
+                "nombre": "Djimon Hounsou"
+            }, 
+            {
+                "nombre": "David Schofield"
+            }, 
+            {
+                "nombre": " John Shrapnel"
+            }, 
+            {
+                "nombre": "Spencer Treat Clark"
+            }, 
+            {
+                "nombre": "Tomas Arana"
+            }, 
+            {
+                "nombre": "David Hemmings"
+            }, 
+            {
+                "nombre": "Tommy Flanagan"
+            }, 
+            {
+                "nombre": "Sven-Ole Thorsen"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "titulo": "Gladiator"
+    }, 
+    {
+        "categoria": "Musical", 
+        "director": "Bill Condon", 
+        "sinopsis": "Adaptaci\u00f3n en imagen real del cl\u00e1sico de Disney &quot;La bella y la bestia&quot;, que cuenta la historia de Bella (Emma Watson), una joven brillante y en\u00e9rgica, que sue&ntilde;a con aventuras y un mundo que se extiende m\u00e1s all\u00e1 de los confines de su pueblo en Francia. Independiente y reservada, Bella no quiere saber nada con el arrogante y engre\u00eddo Gast\u00f3n, quien la persigue sin descanso. Todo cambia un d\u00eda cuando su padre Maurice (Kevin Kline) es encarcelado en el castillo de una horrible Bestia, y Bella se ofrece a intercambiarse con su padre y queda recluida en el castillo. R\u00e1pidamente se hace amiga del antiguo personal del lugar, que fue transformado en objetos del hogar tras una maldici\u00f3n lanzada por una hechicera.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Combina la animaci\u00f3n, la imagen real, la misma m\u00fasica y similar esp\u00edritu, y de una forma atractiva, entretenida y rom\u00e1ntica.", 
+                "nombre_op": "Juan P\u00e9rez"
+            }, 
+            {
+                "puntuacion": 3, 
+                "opinion": "Mejora respecto a la original cuanto m\u00e1s se parece a ella gana cuando reproduce de forma cl\u00f3nica todo aquello que nos rob\u00f3 el coraz\u00f3n entonces.", 
+                "nombre_op": "David Rooney"
+            }
+        ], 
+        "poster": "bella_y_bestia.jpg", 
+        "fecha": "18/10/18 17:22", 
+        "precio": "10.50", 
+        "anno": "2017", 
+        "premios": [
+            {
+                "premio": "2017: Premios Oscar: Nominada a mejor dise\u00f1o de producci\u00f3n y vestuario"
+            }, 
+            {
+                "premio": "2017: Premios BAFTA: Nominada Mejor dise\u00f1o de producci\u00f3n y dise\u00f1o de vestuario"
+            }, 
+            {
+                "premio": "2017: Critics Choice Awards: 4 nominaciones incluyendo mejor dir. de arte y vestuario"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "actores": [
+            {
+                "nombre": "Emma Watson"
+            }, 
+            {
+                "nombre": "Dan Stevens"
+            }, 
+            {
+                "nombre": "Luke Evans"
+            }, 
+            {
+                "nombre": "Kevin Kline"
+            }, 
+            {
+                "nombre": " Emma Thompson"
+            }, 
+            {
+                "nombre": "Ewan McGregor"
+            }, 
+            {
+                "nombre": "Josh Gad"
+            }
+        ], 
+        "duracion": " 123 min.", 
+        "titulo": "La bella y la bestia"
+    }
+]

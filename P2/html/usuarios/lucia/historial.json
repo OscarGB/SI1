@@ -1,0 +1,61 @@
+[
+    {
+        "categoria": "Musical", 
+        "director": "Michael Gracey", 
+        "sinopsis": "Biopic sobre Phineas Taylor Barnum (1810-1891), un empresario circense estadounidense que fund\u00f3 el Ringling Bros. and Barnum and Bailey Circus, conocido como el mayor espect\u00e1culo en la tierra.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Acaba siendo un imponente objeto kitsch dotado con un gratificante poder de seducci\u00f3n si uno, como este mismo cr\u00edtico, se entrega a sus barrocos encantos. La energ\u00eda de Hugh Jackman merec\u00eda este campo de juegos.", 
+                "nombre_op": "Juan P\u00e9rez"
+            }, 
+            {
+                "puntuacion": 3, 
+                "opinion": "No se encarga de juzgar la figura de P.T. Barnum, sino que se limita a convertirlo en un personaje casi disneyiano, pi\u00edcaro y buscavidas que termina simbolizando lo que significa luchar por los suen&ntilde;os.", 
+                "nombre_op": "David Rooney"
+            }
+        ], 
+        "poster": "el_gran_showman.jpg", 
+        "fecha": "18/10/18 18:16", 
+        "precio": "14.50", 
+        "anno": "2017", 
+        "premios": [
+            {
+                "premio": "2017: Premios Oscar: Nominada a mejor canci\u00f3n"
+            }, 
+            {
+                "premio": "2017: Globos de Oro: Mejor canci\u00f3n original (This is Me). 3 nominaciones"
+            }, 
+            {
+                "premio": "2017: Critics Choice Awards: Nominada a Mejor canci\u00f3n"
+            }
+        ], 
+        "pais": "Estados Unidos", 
+        "actores": [
+            {
+                "nombre": "Hugh Jackman"
+            }, 
+            {
+                "nombre": " Michelle Williams"
+            }, 
+            {
+                "nombre": "Zac Efron"
+            }, 
+            {
+                "nombre": "Zendaya"
+            }, 
+            {
+                "nombre": " Rebecca Ferguson"
+            }, 
+            {
+                "nombre": "Diahann Carroll"
+            }, 
+            {
+                "nombre": "Fredric Lehne"
+            }
+        ], 
+        "duracion": " 115 min.", 
+        "titulo": "El Gran Showman"
+    }
+]

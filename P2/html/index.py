@@ -100,6 +100,15 @@ def change_saldo():
     user_data["saldo"] = session["saldo"]
     open(path, "w").write(json.dumps(user_data))
 
+def recarga_saldo():
+    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
+    
+    user_data = open(path, "r").read()
+    user_data = json.loads(user_data)
+    user_data["saldo"] += 100
+    session["saldo"] = user_data["saldo"]
+    open(path, "w").write(json.dumps(user_data))
+
 def anadir_historial():
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
     if(os.path.exists(path)):
@@ -356,6 +365,14 @@ def user_info(userc):
     return render_template("user-info.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      user=user, email=email, saldo=saldo, historial=historial)
+
+@app.route("/recargar/<userc>/")
+def recargar(userc):
+    if "user" in session:
+        user = session["user"]
+        if(userc == user):
+            recarga_saldo()
+    return user_info(userc)
 
 @app.route("/listado_peliculas/<i>")
 def listado_peliculas(i):

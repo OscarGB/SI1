@@ -36,6 +36,22 @@ window.onload = function(){
 	  meter.value = result.score;
 	});
 
+	document.getElementById('user').addEventListener('input', function(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				if (this.responseText == "True"){
+					$(".erroruser").show();
+				}
+				else {
+					$(".erroruser").hide();
+				}
+			}
+		};
+		xhttp.open("GET", "/index.wsgi/user_exists/"+$('#user').val()+"/", true);
+		xhttp.send();
+	})
+
 	function checkEqual(){
 	  var val1 = password.value;
 	  var val2 = rep_password.value;

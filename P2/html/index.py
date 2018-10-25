@@ -370,6 +370,14 @@ def user_info(userc):
 def contador():
     return str(randint(1,99))
 
+@app.route("/user_exists/<userc>/")
+def user_exists(userc):
+    path = os.path.dirname(__file__)+ "/usuarios/"+userc+"/datos.dat"
+    if(os.path.exists(path)):
+        return "True"
+    else :
+        return "False"
+
 @app.route("/recargar/<userc>/")
 def recargar(userc):
     if "user" in session:

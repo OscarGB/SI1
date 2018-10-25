@@ -260,6 +260,11 @@ h3 {
     min-height: 250px;
 }
 
+.erroruser {
+	color:red;
+	display: none;
+}
+
 .film-description {
 	padding: 20px;
 	color: rgb(85, 111, 52);

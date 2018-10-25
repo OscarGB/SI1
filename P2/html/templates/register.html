@@ -11,12 +11,10 @@
 			<H2>Introduce tus datos:</H2>
 			<table class="center_table">
 				<tr><td><p>Nombre de usuario:</p></td><td>
-				 	  <input type="text" name="user" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required"></td></tr>
-				{% if error %}
+				 	  <input type="text" id="user" name="user" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required"></td></tr>
 				<tr><td></td><td>
-					<p class="red">Este usuario ya existe</p>
+					<p class="erroruser">Este usuario ya existe</p>
 				</td></tr>
-				{% endif %}
 				<tr><td><p>Correo:</p></td><td>
 					  <input type="email" name="email" required="required"></td></tr>
 				<tr><td><p>Contrase&nacute;a:</p></td><td>

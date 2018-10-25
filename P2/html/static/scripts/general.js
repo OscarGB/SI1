@@ -1,7 +1,5 @@
 
 function change_contador(){
-	var a = Math.floor(Math.random() * 100) + 1;
-	$(".contador").html(a);
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {

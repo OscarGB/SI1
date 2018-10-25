@@ -366,6 +366,10 @@ def user_info(userc):
      novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
      user=user, email=email, saldo=saldo, historial=historial)
 
+@app.route("/contador/")
+def contador():
+    return str(randint(1,99))
+
 @app.route("/recargar/<userc>/")
 def recargar(userc):
     if "user" in session:

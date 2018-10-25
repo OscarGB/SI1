@@ -1,0 +1,63 @@
+[
+    {
+        "categoria": "Acci\u00f3n", 
+        "director": "Doug Liman", 
+        "sinopsis": "Un hombre amn\u00e9sico es rescatado por la tripulaci\u00f3n de un barco pesquero italiano cuando flota a la deriva en el mar. No lleva nada consigo. S\u00f3lo las balas que lleva clavadas en la espalda y un n\u00famero de cuenta de un banco suizo que lleva adherido a la cadera. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes ling&uuml;\u00edsticas, marciales y de autodefensa que sugieren una profesi\u00f3n de riesgo. Confuso y desorientado, emprende una fren\u00e9tica b\u00fasqueda para descubrir qui\u00e9n es y por qu\u00e9 su vida ha tomado un giro tan peligroso.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "Una trama atractiva y nada predecible (\u00a1por fin!), con un gui\u00f3n capaz de mantener la tensi\u00f3n", 
+                "nombre_op": "Poti Valls"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Mart\u00edn Montes"
+            }
+        ], 
+        "poster": "caso_bourne.jpg", 
+        "fecha": "18/10/25 17:44", 
+        "precio": "9.50", 
+        "anno": "2002", 
+        "premios": [], 
+        "pais": "Estados Unidos", 
+        "actores": [
+            {
+                "nombre": "Matt Damon"
+            }, 
+            {
+                "nombre": "Franka Potente"
+            }, 
+            {
+                "nombre": " Chris Cooper"
+            }, 
+            {
+                "nombre": "Brian Cox"
+            }, 
+            {
+                "nombre": "Clive Owen"
+            }, 
+            {
+                "nombre": "Adewale Akinnuoye-Agbaje"
+            }, 
+            {
+                "nombre": "Gabriel Mann"
+            }, 
+            {
+                "nombre": "Julia Stiles"
+            }, 
+            {
+                "nombre": "Orso Maria Guerrini"
+            }, 
+            {
+                "nombre": " Tim Dutton"
+            }, 
+            {
+                "nombre": "Walton Goggins"
+            }
+        ], 
+        "duracion": " 147 min.", 
+        "titulo": "El caso Bourne"
+    }
+]

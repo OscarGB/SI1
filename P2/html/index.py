@@ -109,19 +109,21 @@ def recarga_saldo():
     session["saldo"] = user_data["saldo"]
     open(path, "w").write(json.dumps(user_data))
 
-def anadir_historial():
+def anadir_historial(suma):
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
     if(os.path.exists(path)):
         historial = open(path, "r").read()
         historial = json.loads(historial)
+        pedido = {"fecha": time.strftime("%d/%m/%y %H:%M"), "peliculas": []}
         for a in session["compra"]:
-            a["fecha"] = time.strftime("%d/%m/%y")
-            historial.append(a)
+            pedido["peliculas"].append(a)
     else:
         historial = []
+        pedido = {"fecha": time.strftime("%d/%m/%y %H:%M"), "peliculas": []}
         for a in session["compra"]:
-            a["fecha"] = time.strftime("%d/%m/%y")
-            historial.append(a)
+            pedido["peliculas"].append(a)
+    pedido["precio"] = str(suma)+"€"
+    historial.append(pedido)
     open(path, "w").write(json.dumps(historial, indent=4))
 
 def get_historial():
@@ -265,7 +267,7 @@ def pagar_1():
     else:
         session["saldo"] -= suma
         change_saldo()
-        anadir_historial()
+        anadir_historial(suma)
         session.pop("ncompra", None)
         session.pop("compra", None)
     return index()

@@ -34,7 +34,7 @@ h3 {
 }
 
 .green {
-	background-color: rgb(85, 111, 52);
+	background-color: rgb(85, 111, 52) !important;
   	color: white;
 }
 
@@ -71,6 +71,10 @@ h3 {
 
 .overflow {
 	overflow: auto;
+}
+
+.p0 {
+	padding: 0;
 }
 /*End general web style*/
 
@@ -404,7 +408,6 @@ h3 {
 }
 
 .pedidos img, .pedidos div{
-	max-height: 180px;
 	background-color: Khaki;
 	padding: 5px;
 	float: left;
@@ -419,6 +422,12 @@ h3 {
 	display: none;
 	background-color: rgb(85, 111, 52) !important;
   	color: white;
+  	flex-basis: 80%;
+  	min-width: 350px;
+}
+
+.por_poner_algo {
+	flex-basis: 20%;
 }
 
 .pedidos-right {

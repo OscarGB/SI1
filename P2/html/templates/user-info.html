@@ -30,12 +30,19 @@
 				<div class="black-border flex-row">
 					<div class="por_poner_algo">
 						<button class="detalles button1 hov">{{a.fecha}}</button>
+						<h2> Importe: {{a.precio}}</h2>
 					</div>
-					<div class="desplegable black-border">
-						<img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ a.poster }}" class="pedidos-img">
-						<h4><b>{{ a.titulo }}</b></h4>
-						<h4><b>Cantidad: {{ a.cantidad }}</b></h4>
-						<h4><b>Precio por unidad: {{ a.precio }}&euro;</b></h4>
+					<div class="desplegable black-border flex-column">
+						{% for e in a.peliculas %}
+						<div class="flex-row green">
+							<img alt="{{ e.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ e.poster }}" class="pedidos-img">
+							<div class="green">
+								<h4><b>&nbsp;&nbsp;{{ e.titulo }}</b></h4>
+								<h4><b>&nbsp;&nbsp;Cantidad: {{ e.cantidad }}</b></h4>
+								<h4><b>&nbsp;&nbsp;Precio por unidad: {{ e.precio }}&euro;</b></h4>
+							</div>
+						</div>
+						{% endfor %}
 					</div>
 				</div>
 			{% endfor %}

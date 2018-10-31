@@ -115,12 +115,12 @@ def anadir_historial():
         historial = open(path, "r").read()
         historial = json.loads(historial)
         for a in session["compra"]:
-            a["fecha"] = time.strftime("%y/%m/%d %H:%M")
+            a["fecha"] = time.strftime("%d/%m/%y")
             historial.append(a)
     else:
         historial = []
         for a in session["compra"]:
-            a["fecha"] = time.strftime("%y/%m/%d %H:%M")
+            a["fecha"] = time.strftime("%d/%m/%y")
             historial.append(a)
     open(path, "w").write(json.dumps(historial, indent=4))
 
@@ -353,7 +353,7 @@ def user_info(userc):
         user = session["user"]
         email = session["email"]
         saldo = session["saldo"]
-        historial = sorted(get_historial(), reverse=True, key=lambda x: time.strptime(x["fecha"], "%y/%m/%d %H:%M"))[:5]
+        historial = sorted(get_historial(), reverse=True, key=lambda x: x["fecha"])[:5]
         if userc != user:
             return index()
     else:

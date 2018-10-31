@@ -1,61 +1,152 @@
 [
     {
-        "categoria": "Musical", 
-        "director": "Michael Gracey", 
-        "sinopsis": "Biopic sobre Phineas Taylor Barnum (1810-1891), un empresario circense estadounidense que fund\u00f3 el Ringling Bros. and Barnum and Bailey Circus, conocido como el mayor espect\u00e1culo en la tierra.", 
+        "categoria": "Acci\u00f3n", 
+        "director": "Doug Liman", 
+        "sinopsis": "Un hombre amn\u00e9sico es rescatado por la tripulaci\u00f3n de un barco pesquero italiano cuando flota a la deriva en el mar. No lleva nada consigo. S\u00f3lo las balas que lleva clavadas en la espalda y un n\u00famero de cuenta de un banco suizo que lleva adherido a la cadera. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes ling&uuml;\u00edsticas, marciales y de autodefensa que sugieren una profesi\u00f3n de riesgo. Confuso y desorientado, emprende una fren\u00e9tica b\u00fasqueda para descubrir qui\u00e9n es y por qu\u00e9 su vida ha tomado un giro tan peligroso.", 
         "cantidad": 1, 
         "opiniones": [
             {
                 "puntuacion": 4, 
-                "opinion": "Acaba siendo un imponente objeto kitsch dotado con un gratificante poder de seducci\u00f3n si uno, como este mismo cr\u00edtico, se entrega a sus barrocos encantos. La energ\u00eda de Hugh Jackman merec\u00eda este campo de juegos.", 
-                "nombre_op": "Juan P\u00e9rez"
+                "opinion": "Una trama atractiva y nada predecible (\u00a1por fin!), con un gui\u00f3n capaz de mantener la tensi\u00f3n", 
+                "nombre_op": "Poti Valls"
             }, 
             {
-                "puntuacion": 3, 
-                "opinion": "No se encarga de juzgar la figura de P.T. Barnum, sino que se limita a convertirlo en un personaje casi disneyiano, pi\u00edcaro y buscavidas que termina simbolizando lo que significa luchar por los suen&ntilde;os.", 
-                "nombre_op": "David Rooney"
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Mart\u00edn Montes"
             }
         ], 
-        "poster": "el_gran_showman.jpg", 
-        "fecha": "18/10/18 18:16", 
-        "precio": "14.50", 
-        "anno": "2017", 
+        "poster": "caso_bourne.jpg", 
+        "fecha": "28/10/18", 
+        "precio": "9.50", 
+        "anno": "2002", 
+        "premios": [], 
+        "pais": "Estados Unidos", 
+        "actores": [
+            {
+                "nombre": "Matt Damon"
+            }, 
+            {
+                "nombre": "Franka Potente"
+            }, 
+            {
+                "nombre": " Chris Cooper"
+            }, 
+            {
+                "nombre": "Brian Cox"
+            }, 
+            {
+                "nombre": "Clive Owen"
+            }, 
+            {
+                "nombre": "Adewale Akinnuoye-Agbaje"
+            }, 
+            {
+                "nombre": "Gabriel Mann"
+            }, 
+            {
+                "nombre": "Julia Stiles"
+            }, 
+            {
+                "nombre": "Orso Maria Guerrini"
+            }, 
+            {
+                "nombre": " Tim Dutton"
+            }, 
+            {
+                "nombre": "Walton Goggins"
+            }
+        ], 
+        "duracion": " 147 min.", 
+        "titulo": "El caso Bourne"
+    }, 
+    {
+        "categoria": "Acci\u00f3n", 
+        "director": "Ridley Scott", 
+        "sinopsis": "En el a&ntilde;o 180, el Imperio Romano domina todo el mundo conocido. Tras una gran victoria sobre los b\u00e1rbaros del norte, el anciano emperador Marco Aurelio (Richard Harris) decide transferir el poder a M\u00e1ximo (Russell Crowe), bravo general de sus ej\u00e9rcitos y hombre de inquebrantable lealtad al imperio. Pero su hijo C\u00f3modo (Joaquin Phoenix), que aspiraba al trono, no lo acepta y trata de asesinar a M\u00e1ximo.", 
+        "cantidad": 1, 
+        "opiniones": [
+            {
+                "puntuacion": 4, 
+                "opinion": "El talento y fuerza visual de Ridley Scott vuelven a alcanzar altas cotas en esta entretenid\u00edsima pel\u00edcula de aventuras que adolece de un gui\u00f3n excesivamente plano (curiosamente, casi todos sus di\u00e1logos por separado son excelentes, pero la historia como conjunto es maniquea y bastante exagerada). Lo cierto es que a sus productores -y a los miembros de la academia de Hollywood- poco pareci\u00f3 importarles, pues los primeros ya anunciaban su tono \u00e9pico en la leyenda de promoci\u00f3n: &laquo;El general que se convirti\u00f3 en esclavo, el esclavo que se convirti\u00f3 en gladiador, el gladiador que desafi\u00f3 a un imperio&raquo; y los segundos se rindieron a frases tan contundentes como: &laquo;Mi nombre es M\u00e1ximo D\u00e9cimo Meridio, comandante de las tropas del norte, general de las legiones F\u00e9lix, leal servidor del verdadero emperador, Marco Aurelio. Padre de un hijo asesinado, marido de una mujer asesinada, y alcanzar\u00e9 mi venganza, en esta vida o en la otra&raquo;. En cualquier caso, su impresionante comienzo y los realistas combates de los gladiadores hacen de este 'taquillazo' un espect\u00e1culo digno de ver, oir -atenci\u00f3n a su maravillosa y potente banda sonora- y disfrutar.", 
+                "nombre_op": "Laura Frooster"
+            }, 
+            {
+                "puntuacion": 4, 
+                "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                "nombre_op": "Litz Rose"
+            }
+        ], 
+        "poster": "gladiator.jpg", 
+        "fecha": "28/10/18", 
+        "precio": "10.50", 
+        "anno": "2000", 
         "premios": [
             {
-                "premio": "2017: Premios Oscar: Nominada a mejor canci\u00f3n"
+                "premio": "2000: 5 Oscars: Pel\u00edcula, actor (Crowe), vestuario, sonido, efectos visuales. 12 nom."
             }, 
             {
-                "premio": "2017: Globos de Oro: Mejor canci\u00f3n original (This is Me). 3 nominaciones"
+                "premio": "2000: 2 Globos de Oro: Mejor pel\u00edcula drama y BSO. 5 nominaciones, incl. Director"
             }, 
             {
-                "premio": "2017: Critics Choice Awards: Nominada a Mejor canci\u00f3n"
+                "premio": "2000: 4 Premios BAFTA: Mejor pel\u00edcula, fotograf\u00eda, montaje y dise\u00f1o prod. 14 nom"
+            }, 
+            {
+                "premio": "2000: 2 premios National Board of Review: Mejor dise\u00f1o de producci\u00f3n y actor sec"
+            }, 
+            {
+                "premio": "2000: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
             }
         ], 
         "pais": "Estados Unidos", 
         "actores": [
             {
-                "nombre": "Hugh Jackman"
+                "nombre": " Russell Crowe"
             }, 
             {
-                "nombre": " Michelle Williams"
+                "nombre": "Joaquin Phoenix"
             }, 
             {
-                "nombre": "Zac Efron"
+                "nombre": " Connie Nielsen"
             }, 
             {
-                "nombre": "Zendaya"
+                "nombre": "Oliver Reed"
             }, 
             {
-                "nombre": " Rebecca Ferguson"
+                "nombre": "Richard Harris"
             }, 
             {
-                "nombre": "Diahann Carroll"
+                "nombre": "Ralf Moeller"
             }, 
             {
-                "nombre": "Fredric Lehne"
+                "nombre": "Derek Jacobi"
+            }, 
+            {
+                "nombre": "Djimon Hounsou"
+            }, 
+            {
+                "nombre": "David Schofield"
+            }, 
+            {
+                "nombre": " John Shrapnel"
+            }, 
+            {
+                "nombre": "Spencer Treat Clark"
+            }, 
+            {
+                "nombre": "Tomas Arana"
+            }, 
+            {
+                "nombre": "David Hemmings"
+            }, 
+            {
+                "nombre": "Tommy Flanagan"
+            }, 
+            {
+                "nombre": "Sven-Ole Thorsen"
             }
         ], 
-        "duracion": " 115 min.", 
-        "titulo": "El Gran Showman"
+        "duracion": " 150 min.", 
+        "titulo": "Gladiator"
     }
 ]

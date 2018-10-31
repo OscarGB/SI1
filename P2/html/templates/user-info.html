@@ -24,18 +24,18 @@
 	</div>
 	<div class="flex-column pedidos">
 		<h3>Historial:</h3>
+
 		{%  if historial %}
 			{% for a in historial %}
 				<div class="black-border flex-row">
-					<img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ a.poster }}" class="pedidos-img">
 					<div class="por_poner_algo">
-						<h4><b>{{ a.titulo }}</b></h4>
-						<button class="detalles button1 hov">Detalles</button>
+						<button class="detalles button1 hov">{{a.fecha}}</button>
 					</div>
 					<div class="desplegable black-border">
+						<img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ a.poster }}" class="pedidos-img">
+						<h4><b>{{ a.titulo }}</b></h4>
 						<h4><b>Cantidad: {{ a.cantidad }}</b></h4>
 						<h4><b>Precio por unidad: {{ a.precio }}&euro;</b></h4>
-						<h4><b>Fecha: {{ a.fecha }}</b></h4>
 					</div>
 				</div>
 			{% endfor %}

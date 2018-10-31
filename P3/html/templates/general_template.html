@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename = 'stylesheet/style.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename = 'scripts/general.js') }}"></script>
+  {% block scripts %}{% endblock %}
+  
+</head>
+<body>
+  <div class="flex-column full flex-general"> 
+    <div class="flex-top">
+      <div class="flex-column">
+        <div class="flex-row flex-1-top">
+          <a href="/index.wsgi/"><img alt="La casa del dvd" src="{{ url_for('static', filename = 'media/img/la_casa_del_dvd.png') }}"></a>
+          <h4>La casa del DVD</h4>
+          <div class="login_buttons">
+            {% if user %}
+              <a class="button1 hov" href="/index.wsgi/logout/">Logout</a>
+              <a class="button1 hov" href="/index.wsgi/users/{{ user }}/">Mi cuenta</a>
+            {% else %}
+              <a class="button1 hov" href="/index.wsgi/login/">Login</a>
+              <a class="button1 hov" href="/index.wsgi/register/">Registro</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="flex-row green flex-1-bottom">
+          <a class="button2 hov green flex-row" href="/index.wsgi/"><img alt="Home" class="link-image" src="{{ url_for('static', filename = 'media/img/home.png') }}"></a>
+          <a class="hov green flex-row button2" href="/index.wsgi/listado_peliculas/1"><p>Pel&iacute;culas</p></a>
+          <a class="hov green flex-row button2" href="/index.wsgi/categorias/"><p>G&eacute;neros</p></a>
+          <a class="hov green flex-row button2" href="/index.wsgi/contacto/"><p>Contacto</p></a>
+          <form class="green flex-row" action="/index.wsgi/busqueda/">
+              <input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required">
+              <button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>
+          </form>
+          <a class="hov green flex-row button2" href="/index.wsgi/carrito/"><img alt="Carrito" class="link-image" src="{{ url_for('static', filename = 'media/img/carrito.png') }}">
+          {% if ncompra %}
+            <span class="ncompra">{{ ncompra }}</span>
+          {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="flex-row flex-bottom full overflow">
+      <div class="sidebar flex-column" id="sidebar">
+        <div class="sidebar-section flex-row wrap">
+          {% for pop in populares_sidebar %}
+          <div class="sb-img-container">
+          <a href="/index.wsgi/peliculas/{{ pop.titulo }}/"><img alt="{{ pop.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ pop.poster }}"></a>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="sidebar-section flex-row wrap">
+          {% for nov in novedades_sidebar %}
+          <div class="sb-img-container">
+          <a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="sidebar-handle flex-column green black-border" id="sidebar-handle">
+        <div class="sidebar-section hov"><div class="rotated">Recomendadas</div></div>
+        <div class="sidebar-section hov"><div class="rotated">Novedades</div></div>
+      </div>
+      <div class="flex-2-right flex-column">
+<!--                               CONTENIDO                                                    -->
+        {% block content %}{% endblock %}    
+<!--                             FIN-DE-CONTENIDO                                              -->      
+  
+  </div>
+  <div class="footer-frame green">
+    <p class="footer-text"> Luc&iacute;a Colmenarejo P&eacute;rez   |   &Oacute;scar G&oacute;mez Borzdynski   |   &copy; 2018   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ya somos <span class="ncompra contador"></span> caseros</p>
+  </div>
+</body>
+</html>
+
+
+<!--<div class="flex-column carrito-right">-->

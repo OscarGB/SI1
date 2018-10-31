@@ -1,0 +1,40 @@
+{% extends "general_template.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+				<h2>Novedades</h2>
+				<div class="flex-row wrap index-down">
+					{% for nov in novedades %}
+					<div class="img-index">
+						<a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
+					</div>
+					{% endfor %}
+				</div>
+
+				<div class="flex-row wrap">
+					<div class="flex-column index-down-left">
+						<h2>Categor&iacute;as destacadas</h2>	
+						<div class="flex-row wrap ">
+							{% for dest in destacadas %}
+							<div class="img-index"> <!-- Holaaa -->
+								<a href="/index.wsgi/categorias/{{ dest.nombre }}/"><img alt="{{ dest.nombre }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ dest.imagen }}"></a>
+								<h4>{{ dest.nombre }}</h4>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="flex-column index-down-right">
+						<form action="/index.wsgi/busqueda/" class="flex-column wrap flex-1-top full">
+              				<input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required">
+              				<select name="categoria">
+								<option value="0">Seleccione categoria</option>
+								{% for dest in destacadas %}
+								<option value="{{ dest.nombre }}">{{ dest.nombre }}</option>
+								{% endfor %}
+							</select>
+              				<button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>
+          				</form>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

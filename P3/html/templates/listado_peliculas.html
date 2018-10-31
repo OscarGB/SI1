@@ -1,0 +1,28 @@
+{% extends "general_template.html" %}
+{% block title %}Películas{% endblock %}
+{% block content %}
+<!--                 CONTENIDO                       -->
+	{% if peliculas|length %}
+				<h1>Pel&iacute;culas</h1>
+				<div class="flex-row wrap peliculas-gen">
+					{% for p in peliculas %}
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/{{ p.titulo }}/"><img alt="{{ p.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ p.poster }}"></a>
+						<h4>{{ p.titulo }}</h4>
+						<h4>Precio: {{ p.precio }}€</h4>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="flex-row wrap gen-down">
+					{% if i > 1 %}
+						<a class="button3 hov" href="/index.wsgi/listado_peliculas/{{ i-1 }}">Anterior</a>
+					{% endif %}
+					<a class="button3 hov" href="/index.wsgi/listado_peliculas/{{ i+1 }}">Siguiente</a>	
+				</div>
+	{% else %}
+		<p>No encontramos más peliculas</p>
+		<a class="button3 hov" href="/index.wsgi/listado_peliculas/{{ i-1 }}">Anterior</a>
+	{% endif %}
+
+<!--                  FIN-DE-CONTENIDO                      -->
+{% endblock %}

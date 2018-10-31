@@ -1,0 +1,19 @@
+{% extends "general_template.html" %}
+{% block title %}{{ Titulo }}{% endblock %}
+{% block content %}
+<!--                 CONTENIDO                       -->
+
+				<h1>{{ Titulo }}</h1>
+				<div class="flex-row wrap peliculas-gen">
+					{% for p in peliculas %}
+					<div class="img-gen">
+						<a href="/index.wsgi/peliculas/{{ p.titulo }}/"><img alt="{{ p.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ p.poster }}"></a>
+						<h4>{{ p.titulo }}</h4>
+						<h4>Precio: {{ p.precio }}€</h4>
+					</div>
+					{% endfor %}
+				</div>
+				
+
+<!--                  FIN-DE-CONTENIDO                      -->
+{% endblock %}

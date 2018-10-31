@@ -1,0 +1,57 @@
+{% extends "general_template.html" %}
+{% block title %}Tu cuenta{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename = 'scripts/user.js') }}"></script>
+{% endblock %}
+{% block content %}
+<h1>Tu cuenta</h1>
+<div class="flex-row user-info wrap">
+	<div class="flex-column user-data-exterior">
+		<div class="flex-row wrap user-data-container">
+			<img alt="User" src="{{ url_for('static', filename = 'media/img/user.png') }}">
+			<div class="user-data">
+				<H2>Tus datos:</H2>
+
+				<h3>Nombre de usuario:</h3><p> {{ user }}</p>
+				<h3>Correo:</h3><p> {{ email }}</p>
+				<h3>Saldo:</h3><p> {{ saldo }} <a href="/index.wsgi/recargar/{{user}}/" class="button1">Recargar</a></p>
+			</div>
+		</div>
+		<div class="black-border frase-motivadora">
+			<p><i>Que la fuerza te acompa&ntilde;e</i></p>
+			<p>~Star Wars~</p>
+		</div>
+	</div>
+	<div class="flex-column pedidos">
+		<h3>Historial:</h3>
+
+		{%  if historial %}
+			{% for a in historial %}
+				<div class="black-border flex-row">
+					<div class="por_poner_algo">
+						<button class="detalles button1 hov">{{a.fecha}}</button>
+						<h2> Importe: {{a.precio}}</h2>
+					</div>
+					<div class="desplegable black-border flex-column">
+						{% for e in a.peliculas %}
+						<div class="flex-row green">
+							<img alt="{{ e.titulo }}" src="{{ url_for('static', filename = 'media/img/')}}{{ e.poster }}" class="pedidos-img">
+							<div class="green">
+								<h4><b>&nbsp;&nbsp;{{ e.titulo }}</b></h4>
+								<h4><b>&nbsp;&nbsp;Cantidad: {{ e.cantidad }}</b></h4>
+								<h4><b>&nbsp;&nbsp;Precio por unidad: {{ e.precio }}&euro;</b></h4>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endfor %}
+		{% else %}
+		<div class="black-border frase-motivadora">
+			<p><i>¿A qué esperas para comprar?</i></p>
+		</div>
+		{% endif %}
+	</div>
+			
+</div>
+{% endblock %}

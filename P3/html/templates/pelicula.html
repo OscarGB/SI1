@@ -1,0 +1,52 @@
+{% extends "general_template.html" %}
+{% block title %}{{ Titulo }}{% endblock %}
+{% block content %}
+<!--                         CONTENIDO                             -->
+	<h1>{{ Titulo }}</h1>
+	<div class="flex-row film-container">
+		<img alt="{{ pelicula.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ pelicula.poster }}" class="film-image">
+		<p class="film-description"><b>Director:</b>{{ pelicula.director }}<br><br>
+			<b>Reparto:</b>
+			{% for a in pelicula.actores %}
+			{{ a.nombre }},
+			{% endfor %}
+			<br><br>
+			<b>Sinopsis:</b><br>{{ pelicula.sinopsis }}<br><br>
+
+			<b>A&ntilde;o:</b>{{ pelicula.anno }}<br><br>
+			<b>Duraci&oacute;n:</b>{{ pelicula.duracion }}<br><br>
+			<b>Pa&iacute;s:</b>{{ pelicula.pais }}<br><br>
+			{% if pelicula.premios|length %}
+				<b>Premios:</b><br>
+				{% for a in pelicula.premios %}
+				{{ a.premio }}<br>
+				{% endfor %}
+			{% endif %}
+		</p>
+		<div class="green black-border film-buy-container flex-column">
+			<h1 class="button1">{{ pelicula.precio }}€</h1>
+			<a class="button1 hov" href="/index.wsgi/peliculas/{{ pelicula.titulo}}/comprar/">A&ntilde;adir al carrito</a>
+		</div>
+	</div>
+	<h1>Pel&iacute;culas similares</h1>
+	<div class="black-border film-similar-container flex-row">
+		{% for a in similares %}
+		<div class="film-similar-img-container">
+			<a href="/index.wsgi/peliculas/{{ a.titulo }}/"><img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ a.poster }}"></a>
+		</div>
+		{% endfor %}
+	</div>
+	<h1>OH!-PI&Ntilde;ONES</h1>
+	<div class="flex-column film-opinions-container">
+		{% for a in pelicula.opiniones %}
+			<p>"{{ a.opinion }}" <br>
+			{{ a.nombre_op }}<br>
+			<b>Puntuaci&oacute;n: </b>{{a.puntuacion}} pi&ntilde;ones
+			{% for i in range(a.puntuacion) %}
+				<img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" class="pinon">
+			{% endfor %}
+			</p>
+		{% endfor %}	
+	</div>
+<!--                     FIN CONTENIDO                             -->
+{% endblock %}

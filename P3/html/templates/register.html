@@ -1,0 +1,44 @@
+{% extends "general_template.html" %}
+{% block title %}Register{% endblock %}
+{% block scripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+	<script src="{{ url_for('static', filename = 'scripts/register.js') }}"></script>
+{% endblock %}
+{% block content %}
+<h1>&iexcl;Reg&iacute;strate!</h1>
+	<div class="flex-row register wrap">
+		<form class="register-form" action="/index.wsgi/register/activate/" method="post" onsubmit="return checkForm()">
+			<H2>Introduce tus datos:</H2>
+			<table class="center_table">
+				<tr><td><p>Nombre de usuario:</p></td><td>
+				 	  <input type="text" id="user" name="user" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required"></td></tr>
+				<tr><td></td><td>
+					<p class="erroruser">Este usuario ya existe</p>
+				</td></tr>
+				<tr><td><p>Correo:</p></td><td>
+					  <input type="email" name="email" required="required"></td></tr>
+				<tr><td><p>Contrase&nacute;a:</p></td><td>
+					  <input type="password" id='password' name='passwd' required="required"></td></tr>
+				<tr><td></td><td>
+					<meter max="4" id="password-strength-meter"></meter>
+					<span id="errorMessage"></span>
+				</td></tr>
+				<tr><td><p>Repita contrase&nacute;a:</p></td><td>
+					  <input type="password" name="rep_passwd" id="rep_password" required="required"></td></tr>
+				<tr><td></td><td>
+					<span id="confirmMessage"></span>
+				</td></tr>
+				<tr><td><p>Tarjeta de cr&eacute;dito:</p></td><td>
+					  <input type="text" name="card" pattern="[0-9]{16}" required="required"></td></tr>
+			</table>
+			<br><input type="checkbox" id="Condiciones" name="Condiciones" required="required" /><label for="Condiciones">Acepta las <a href="{{ url_for('static', filename = 'media/others/pagina_condiciones.html') }}">condiciones y t&eacute;rminos de esta p&aacute;gina</a></label>
+			<br>
+			<br>
+			<button type="submit" class="button3 hov">Registrar</button>
+		</form>
+		<div class="black-border frase-motivadora">
+			<p><i>Carpe diem, aprovechad el momento, haced que vuestra vida sea extraordinaria.</i></p>
+			<p>~El club de los poetas muertos~</p>
+		</div>
+	</div>
+{% endblock %}

@@ -75,6 +75,8 @@ CREATE TABLE public.pedidos (
     pedidoid integer 				PRIMARY KEY		NOT NULL,
     fecha date 										NOT NULL,
     clienteid integer				REFERENCES clientes(clienteid),
+    precioneto numeric,
+    impuestos numeric,
     preciototal numeric,
     estado character varying(10)
 );
@@ -164,8 +166,8 @@ INSERT INTO public.peliculas (peliculaid, titulo, estreno)
 SELECT movieid, movietitle, year 
 FROM imdb_movies;
 
-INSERT INTO public.pedidos (pedidoid, fecha, clienteid, preciototal, estado)
-SELECT orderid, orderdate, customerid, totalamount, status 
+INSERT INTO public.pedidos (pedidoid, fecha, clienteid, precioneto, impuestos, preciototal, estado)
+SELECT orderid, orderdate, customerid, netamount, tax, totalamount, status 
 FROM orders;
 
 INSERT INTO public.paises (pais)

@@ -1,0 +1,236 @@
+[
+    {
+        "peliculas": [
+            {
+                "categoria": "Drama", 
+                "director": "Guillermo del Toro", 
+                "sinopsis": "En un inquietante laboratorio de alta seguridad, durante la Guerra Fr\u00eda, se produce una conexi\u00f3n ins\u00f3lita entre dos mundos aparentemente alejados. La vida de la solitaria Elisa (Sally Hawkins), que trabaja como limpiadora en el laboratorio, cambia por completo cuando descubre un experimento clasificado como secreto: un hombre anfibio (Doug Jones) que se encuentra ah\u00ed recluido.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Es cine sobre la necesidad de lo otro, de lo extra&ntilde;o, de todo aquello que, desde la sombra, construye y desarma la propia realidad .La cinta navega, de forma literal, sobre la retina del espectador como un animal alucinado.", 
+                        "nombre_op": "Mary Brian"
+                    }, 
+                    {
+                        "puntuacion": 3, 
+                        "opinion": "Del Toro vuelve a evidenciar que es un portentoso creador de ima\u00e1genes. Su imagineri\u00eda resulta desbordante, y su virtuosismo formal sirve para envolver al espectador en una espiral de sensualidad.", 
+                        "nombre_op": "Michael Furst"
+                    }
+                ], 
+                "poster": "la_forma_del_agua.jpg", 
+                "precio": "13.99", 
+                "anno": "2017", 
+                "premios": [
+                    {
+                        "premio": "2017: 4 Premios Oscar: Mejor pel\u00edcula, director, m\u00fasica y dise\u00f1o de prod. 13 nom"
+                    }, 
+                    {
+                        "premio": "2017: Festival de Venecia: Le\u00f3n de Oro (Mejor pel\u00edcula)"
+                    }, 
+                    {
+                        "premio": "2017: Globos de Oro: Mejor director y banda sonora original. 7 nominaciones"
+                    }, 
+                    {
+                        "premio": "2017: Premios BAFTA: 3 premios, incluyendo Mejor director. 12 nominaciones "
+                    }, 
+                    {
+                        "premio": "2017: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Sally Hawkins"
+                    }, 
+                    {
+                        "nombre": "Doug Jones"
+                    }, 
+                    {
+                        "nombre": "Michael Shannon"
+                    }, 
+                    {
+                        "nombre": "Octavia Spencer"
+                    }, 
+                    {
+                        "nombre": " Richard Jenkins"
+                    }, 
+                    {
+                        "nombre": "Michael Stuhlbarg"
+                    }, 
+                    {
+                        "nombre": "Lauren Lee Smith"
+                    }, 
+                    {
+                        "nombre": "David Hewlett"
+                    }, 
+                    {
+                        "nombre": "Nick Searcy"
+                    }, 
+                    {
+                        "nombre": "Morgan Kelly"
+                    }, 
+                    {
+                        "nombre": "Dru Viergever"
+                    }
+                ], 
+                "duracion": " 119 min.", 
+                "titulo": "La forma del agua"
+            }, 
+            {
+                "categoria": "Drama", 
+                "director": "Ron Howard", 
+                "sinopsis": "Obsesionado con la b\u00fasqueda de una idea matem\u00e1tica original, el brillante estudiante John Forbes Nash (Russell Crowe) llega a Princeton en 1947 para realizar sus estudios de postgrado. Es un muchacho extra&ntilde;o y solitario, al que s\u00f3lo comprende su compa&ntilde;ero de cuarto (Paul Bettany). Por fin, Nash esboza una revolucionaria teor\u00eda y consigue una plaza de profesor en el MIT. Alicia Lard\u00e9 (Jennifer Connelly), una de sus alumnas, lo deja fascinado al mostrarle que las leyes del amor est\u00e1n por encima de las de las matem\u00e1ticas. Gracias a su prodigiosa habilidad para descifrar c\u00f3digos es reclutado por Parcher William (Ed Harris), del departamento de Defensa, para ayudar a los Estados Unidos en la Guerra Fr\u00eda contra la Uni\u00f3n Sovi\u00e9tica.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Las escenas que corresponden a los ataques de Nash son las mejores, si tenemos en cuenta las licencias necesarias para visualizarlas. Las alucinaciones est\u00e1n llenas de misterio y salpican la narraci\u00f3n.", 
+                        "nombre_op": "Pepe Luis Rodr\u00edguez"
+                    }, 
+                    {
+                        "puntuacion": 3, 
+                        "opinion": "Previsible pero s\u00f3lida. No hay nada en ella que me entusiasme, tampoco me convulsiona emocionalmente, pero casi todo me parece eficaz.", 
+                        "nombre_op": "Manuel Pineda"
+                    }
+                ], 
+                "poster": "una_mente_maravillosa.jpg", 
+                "precio": "10.30", 
+                "anno": "2001", 
+                "premios": [
+                    {
+                        "premio": "2001: 4 Oscars: mejor pel\u00edcula, director, actriz reparto (Connelly) y gui\u00f3n adaptado"
+                    }, 
+                    {
+                        "premio": "2001: 4 Globos de Oro: Mejor pel\u00edcula drama, actor, actriz sec. y gui\u00f3n. 6 nom"
+                    }, 
+                    {
+                        "premio": "2001: 2 Premios BAFTA: Mejor actor (Crowe) y actriz sec. (Connelly). 5 nom"
+                    }, 
+                    {
+                        "premio": "2001: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
+                    }, 
+                    {
+                        "premio": "2001: 4 Critics' Choice Awards: Mejor pel\u00edcula, director, actor y actriz sec. 5 nom"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Russell Crowe"
+                    }, 
+                    {
+                        "nombre": "Jennifer Connelly"
+                    }, 
+                    {
+                        "nombre": "Ed Harris"
+                    }, 
+                    {
+                        "nombre": "Paul Bettany"
+                    }, 
+                    {
+                        "nombre": " Adam Goldberg"
+                    }, 
+                    {
+                        "nombre": "Judd Hirsch"
+                    }, 
+                    {
+                        "nombre": "Christopher Plummer"
+                    }, 
+                    {
+                        "nombre": "Josh Lucas"
+                    }, 
+                    {
+                        "nombre": "Anthony Rapp"
+                    }, 
+                    {
+                        "nombre": "Austin Pendleton"
+                    }, 
+                    {
+                        "nombre": "Jason Gray-Stanford"
+                    }
+                ], 
+                "duracion": " 130 min.", 
+                "titulo": "Una mente maravillosa"
+            }, 
+            {
+                "categoria": "Drama", 
+                "director": "James Cameron", 
+                "sinopsis": "Jack (DiCaprio), un joven artista, gana en una partida de cartas un pasaje para viajar a Am\u00e9rica en el Titanic, el transatl\u00e1ntico m\u00e1s grande y seguro jam\u00e1s construido. A bordo conoce a Rose (Kate Winslet), una joven de una buena familia venida a menos que va a contraer un matrimonio de conveniencia con Cal (Billy Zane), un millonario engre\u00eddo a quien s\u00f3lo interesa el prestigioso apellido de su prometida. Jack y Rose se enamoran, pero el prometido y la madre de ella ponen todo tipo de trabas a su relaci\u00f3n. Mientras, el gigantesco y lujoso transatl\u00e1ntico se aproxima hacia un inmenso iceberg.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "La pel\u00edcula de los noventa (al menos en cuanto a sus cifras y r\u00e9cords de n\u00ba de Oscars, presupuesto y recaudaci\u00f3n en taquilla) rebas\u00f3 las ya de por s\u00ed alt\u00edsimas expectativas. Fuimos a ver efectos especiales y nos encontramos con una magn\u00edfica (y muy bien contada) historia de amor que conmov\u00eda y convenc\u00eda.... cuando en esto lleg\u00f3 el iceberg. Entonces sufrimos con la tragedia de la rom\u00e1ntica pareja (aunque evidentemente sobraba Billy Zane pegando tiros) mientras un espect\u00e1culo \u00e9pico nos dejaba boquiabiertos y nos humedec\u00eda las pupilas. El resto es historia: el p\u00fablico hizo de Leonardo Di Caprio una estrella y de 'Titanic' una m\u00e1quina de recaudar dinero, adem\u00e1s de una obra maestra del cine popular.", 
+                        "nombre_op": "Jordi Costa"
+                    }, 
+                    {
+                        "puntuacion": 3, 
+                        "opinion": "Nos encontramos, sin duda, ante un espect\u00e1culo visual sin precedentes. Impresionante y rom\u00e1ntica historia sobre la tragedia del m\u00edtico trasatl\u00e1ntico.", 
+                        "nombre_op": "Fernando Morales"
+                    }
+                ], 
+                "poster": "titanic.jpg", 
+                "precio": "9.90", 
+                "anno": "1997", 
+                "premios": [
+                    {
+                        "premio": "1997: 11 Oscars, incluyendo mejor pel\u00edcula, director, fotograf\u00eda, sonido. 14 nom"
+                    }, 
+                    {
+                        "premio": "1997: 4 Globos de Oro: Mejor pel\u00edcula drama, director, BSO, canci\u00f3n. 8 nom"
+                    }, 
+                    {
+                        "premio": "1997: 10 nominaciones a los BAFTA, incluyendo mejor pel\u00edcula y director"
+                    }, 
+                    {
+                        "premio": "1997: C\u00edrculo de Cr\u00edticos de Nueva York: Nominada a Mejor pel\u00edcula"
+                    }, 
+                    {
+                        "premio": "1997: Premios Cesar: Nominada a mejor pel\u00edcula extranjera"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Leonardo DiCaprio"
+                    }, 
+                    {
+                        "nombre": "Kate Winslet"
+                    }, 
+                    {
+                        "nombre": "Billy Zane"
+                    }, 
+                    {
+                        "nombre": "Kathy Bates"
+                    }, 
+                    {
+                        "nombre": " Frances Fisher"
+                    }, 
+                    {
+                        "nombre": "Gloria Stuart"
+                    }, 
+                    {
+                        "nombre": "Bill Paxton"
+                    }, 
+                    {
+                        "nombre": "Bernard Hill"
+                    }, 
+                    {
+                        "nombre": "David Warner"
+                    }, 
+                    {
+                        "nombre": "Victor Garber"
+                    }, 
+                    {
+                        "nombre": "Jonathan Hyde"
+                    }
+                ], 
+                "duracion": " 195 min.", 
+                "titulo": "Titanic"
+            }
+        ], 
+        "fecha": "31/10/18 13:18", 
+        "precio": "34.19\u20ac"
+    }
+]

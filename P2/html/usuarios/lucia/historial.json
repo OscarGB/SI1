@@ -1,0 +1,1007 @@
+[
+    {
+        "peliculas": [
+            {
+                "categoria": "Drama", 
+                "director": "Martin McDonagh", 
+                "sinopsis": "Mildred Hayes (Frances McDormand), una mujer de 50 a\u00f1os cuya hija adolescente ha sido violada y asesinada, decide iniciar por su cuenta una guerra contra la Polic\u00eda de su pueblo, Ebbing, al considerar que no hacen lo suficiente para resolver el caso y que se haga justicia. Su primer paso ser\u00e1 contratar unas vallas publicitarias denunciando la situaci\u00f3n y se\u00f1alando al jefe de polic\u00eda, William Willoughby (Woody Harrelson), como responsable principal de la pasividad policial.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Cada l\u00ednea de guion es directamente una pedrada; cada aparici\u00f3n de Frances McDormand, una invitaci\u00f3n no tanto al entusiasmo como a la ira, la comedia (o algo parecido) mejor escrita en mucho tiempo.", 
+                        "nombre_op": "Luis Mart\u00ednez"
+                    }, 
+                    {
+                        "puntuacion": 3, 
+                        "opinion": "Un reparto estelar, di\u00e1logos brillantes y un cuidado trabajo est\u00e9tico respaldan a McDonagh. Aunque tanto desborde a veces castiga tambi\u00e9n a la pel\u00edcula, con momentos excesivos, forzados o baches en el gui\u00f3n.", 
+                        "nombre_op": "Tommaso Koch"
+                    }
+                ], 
+                "poster": "tres_carteles_a_las_afueras.jpg", 
+                "precio": "11.50", 
+                "anno": "2017", 
+                "premios": [
+                    {
+                        "premio": "2017: 2 Premios Oscar: Mejor actriz (McDormand) y actor sec. (Rockwell). 7 nom"
+                    }, 
+                    {
+                        "premio": "2017: Festival de Venecia: Mejor gui\u00f3n (Martin McDonagh)"
+                    }, 
+                    {
+                        "premio": "2017: 4 Globos de Oro: Mejor pel\u00edcula drama, gui\u00f3n, actriz (McDormand) y actor rep"
+                    }, 
+                    {
+                        "premio": "2017: 5 Premios BAFTA: incluyendo Mejor pel\u00edcula. 9 nominaciones"
+                    }, 
+                    {
+                        "premio": "2017: Festival de Toronto: Mejor pel\u00edcula (Premio del P\u00fablico)"
+                    }
+                ], 
+                "pais": "Reino Unido", 
+                "actores": [
+                    {
+                        "nombre": "Frances McDormand"
+                    }, 
+                    {
+                        "nombre": "Woody Harrelson"
+                    }, 
+                    {
+                        "nombre": "Sam Rockwell"
+                    }, 
+                    {
+                        "nombre": "John Hawkes"
+                    }, 
+                    {
+                        "nombre": " Peter Dinklage"
+                    }, 
+                    {
+                        "nombre": "Caleb Landry Jones"
+                    }, 
+                    {
+                        "nombre": "Lucas Hedges"
+                    }, 
+                    {
+                        "nombre": "Abbie Cornish"
+                    }, 
+                    {
+                        "nombre": "Brendan Sexton III"
+                    }, 
+                    {
+                        "nombre": "Samara Weaving"
+                    }, 
+                    {
+                        "nombre": "Kerry Condon"
+                    }
+                ], 
+                "duracion": " 112 min.", 
+                "titulo": "Tres carteles a las afueras"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Steven Spielberg", 
+                "sinopsis": "A&ntilde;o 1957, en plena guerra fr\u00eda. Indiana Jones (Harrison Ford) consigue de milagro salir ileso de una explosiva situaci\u00f3n con unos agentes sovi\u00e9ticos en un remoto desierto al que lleg\u00f3 detenido junto a su amigo Mac (Ray Winstone). El decano de la Universidad (Jim Broadbent) le confiesa a su amigo el profesor Jones que las \u00faltimas misiones de Indy han fracasado, y que est\u00e1 a punto de ser despedido. Mientras tanto, Indiana conoce a Mutt (Shia LaBeouf), un joven rebelde que le propone un trato: si le ayuda a resolver un problema personal, \u00e9l, a cambio, le facilitar\u00eda uno de los descubrimientos m\u00e1s espectaculares de la historia: la Calavera de Cristal de Akator, que se encuentra en un lugar remoto del Per\u00fa. Pero los agentes sovi\u00e9ticos, dirigidos por la fr\u00eda y bella Irina Spalko (Cate Blanchett), tienen el mismo objetivo.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Las escenas de acci\u00f3n, geniales; la historia, por debajo de las anteriores.", 
+                        "nombre_op": "Roger Ebert"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Indiana Jones y el reino de la calavera de cristal. Dilo en alto. El simple t\u00edtulo ya te acelera el coraz\u00f3n. Si te gustaron las otras, te gustar\u00e1 esta. Y si no, pues no estoy hablando contigo.", 
+                        "nombre_op": "Dave Hanks"
+                    }
+                ], 
+                "poster": "indiana_jones3.jpg", 
+                "precio": "11.40", 
+                "anno": "2008", 
+                "premios": [
+                    {
+                        "premio": "2008: Nominada a los BAFTA: Mejores efectos especiales visuales."
+                    }, 
+                    {
+                        "premio": "2008: Premio Razzie: Peor precuela, remake, copia o secuela"
+                    }, 
+                    {
+                        "premio": "2008: Nominada a Critics' Choice Awards: Mejor pel\u00edcula de acci\u00f3n"
+                    }, 
+                    {
+                        "premio": "2008: Sindicato de Actores (SAG): Nom. Mejores especialistas de acci\u00f3n (Largometraje)"
+                    }, 
+                    {
+                        "premio": "2008: Festival de Cannes: Secci\u00f3n Oficial (Fuera de concurso)"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Harrison Ford"
+                    }, 
+                    {
+                        "nombre": "Cate Blanchett"
+                    }, 
+                    {
+                        "nombre": "Shia LaBeouf"
+                    }, 
+                    {
+                        "nombre": "Karen Allen"
+                    }, 
+                    {
+                        "nombre": "John Hurt"
+                    }, 
+                    {
+                        "nombre": "Ray Winstone"
+                    }, 
+                    {
+                        "nombre": "Jim Broadbent"
+                    }, 
+                    {
+                        "nombre": "Igor Jijikine"
+                    }, 
+                    {
+                        "nombre": "Alan Dalea"
+                    }, 
+                    {
+                        "nombre": "Joel Stoffer"
+                    }, 
+                    {
+                        "nombre": "Neil Flynn"
+                    }, 
+                    {
+                        "nombre": " V.J. Foster"
+                    }, 
+                    {
+                        "nombre": "Dimitri Diatchenko"
+                    }, 
+                    {
+                        "nombre": "Ilia Volok"
+                    }, 
+                    {
+                        "nombre": "Andrew Divoff"
+                    }
+                ], 
+                "duracion": " 125 min.", 
+                "titulo": "Indiana Jones y el reino de la calavera de cristal"
+            }
+        ], 
+        "fecha": "31/10/18 13:12", 
+        "precio": "22.9\u20ac"
+    }, 
+    {
+        "peliculas": [
+            {
+                "categoria": "Acci\u00f3n", 
+                "anno": "2016", 
+                "sinopsis": "Despu\u00e9s de que otro incidente internacional involucre a Los Vengadores, causando varios da\u00f1os colaterales, aumentan las presiones pol\u00edticas para instaurar un sistema que exija m\u00e1s responsabilidades y que determine cu\u00e1ndo deben contratar los servicios del grupo de superh\u00e9roes. Esta nueva situaci\u00f3n dividir\u00e1 a Los Vengadores, mientras intentan proteger al mundo de un nuevo y terrible villano. Tercera entrega de la saga Capit\u00e1n Am\u00e9rica.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Es la pel\u00edcula m\u00e1s seria entregada por Marvel hasta la fecha. Tambi\u00e9n es la mejor rodada y (ex aequo con 'Los Vengadores') la mejor escrita.", 
+                        "nombre_op": "Jacinto Soria"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Un gigantesco entretenimiento que encuentra espacio para algo de resonancia emocional bajo el excelente espect\u00e1culo, 'Captain America: Civil War' es un thriller de acci\u00f3n totalmente satisfactorio con muy buen ritmo.", 
+                        "nombre_op": "Lizt Rose"
+                    }
+                ], 
+                "poster": "capitan_america.jpg", 
+                "precio": "11.80", 
+                "director": "Anthony Russo, Joe Russo ", 
+                "premios": [
+                    {
+                        "premio": "2016: Premios Annie: Nomin. a mejor animaci\u00f3n de personajes en pel\u00edcula no animada"
+                    }, 
+                    {
+                        "premio": "2016: Critics Choice Awards: 3 nominaciones incluyendo mejor pel\u00edcula de acci\u00f3n"
+                    }
+                ], 
+                "duracion": " 113 min.", 
+                "actores": [
+                    {
+                        "nombre": "Chris Evans"
+                    }, 
+                    {
+                        "nombre": "Robert Downey Jr."
+                    }, 
+                    {
+                        "nombre": " Sebastian Stan"
+                    }, 
+                    {
+                        "nombre": "Scarlett Johansson"
+                    }, 
+                    {
+                        "nombre": "Anthony Mackie"
+                    }, 
+                    {
+                        "nombre": "Daniel Br\u00fchl"
+                    }, 
+                    {
+                        "nombre": "Don Cheadle"
+                    }, 
+                    {
+                        "nombre": "Jeremy Renner"
+                    }, 
+                    {
+                        "nombre": "Chadwick Boseman"
+                    }, 
+                    {
+                        "nombre": " Paul Bettany"
+                    }, 
+                    {
+                        "nombre": "Elizabeth Olsen"
+                    }, 
+                    {
+                        "nombre": "Paul Rudd"
+                    }, 
+                    {
+                        "nombre": "Emily VanCamp"
+                    }, 
+                    {
+                        "nombre": "Tom Holland"
+                    }, 
+                    {
+                        "nombre": "Frank Grillo"
+                    }, 
+                    {
+                        "nombre": "Martin Freeman"
+                    }, 
+                    {
+                        "nombre": "Marisa Tomei"
+                    }, 
+                    {
+                        "nombre": "John Kani"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "titulo": "Capit\u00e1n Am\u00e9rica: Cilvil War"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "anno": "1989", 
+                "sinopsis": "Cuando el Profesor Henry Jones (Sean Connery, La liga de los hombres extraordinarios) desaparece de repente, el arque\u00f3logo y aventurero Indiana Jones (Harrison Ford, Cowboys and Aliens), deber\u00e1 enfrentarse a un mal\u00e9fico multimillonario para seguir los pasos de su padre hasta el momento que fue secuestrado. En compa&ntilde;\u00eda de la codiciosa Elsa (Alison Doody, papel de Pam en la temporada 2 de Beaver Falls), ir\u00e1 al rescate de su padre y continuar\u00e1 con la b\u00fasqueda del Santo Grial, una preciada reliquia que tambi\u00e9n quieren los nazis, con los que tendr\u00e1 que luchar para conseguirlo, ya que \u00e9stos planean utilizarlo para dominar el mundo. El famoso aventurero adquiere un diario que contiene pistas y un mapa sin nombres para encontrar al misterioso Santo Grial. Con el diario como clave fundamental y el mapa sin nombres como gu\u00eda, Indiana Jones, se encuentra inmerso en una emocionante aventura en la que tendr\u00e1 que desafiar a la muerte, una vez m\u00e1s.", 
+                "cantidad": 2, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "'El arca perdida', ahora m\u00e1s que nunca, parece un punto de inflexi\u00f3n en el cine de evasi\u00f3n. Lo que ha hecho es coger los mismos elementos y aplicar toda su habilidad y su sentido de la diversi\u00f3n para que funcionen una vez m\u00e1s.", 
+                        "nombre_op": "Roger Ebert"
+                    }, 
+                    {
+                        "puntuacion": 1, 
+                        "opinion": "No es nada nuevo en el canon Lucas-Spielberg; ni siquiera es algo nuevo para el cine. Es una perogrullada psicol\u00f3gica est\u00e1ndar.", 
+                        "nombre_op": "Daniel Andreas"
+                    }
+                ], 
+                "poster": "indiana_jones.jpg", 
+                "precio": "12.20", 
+                "director": "Steven Spielberg", 
+                "premios": [
+                    {
+                        "premio": "1989: Oscar: Mejores efectos de sonido. 3 nominaciones."
+                    }, 
+                    {
+                        "premio": "1989: Globos de Oro: Nominado Mejor actor de reparto (Sean Connery)"
+                    }, 
+                    {
+                        "premio": "1989: BAFTA: Nominada a Actor de Reparto (Connery), Sonido y Efectos Especiales"
+                    }
+                ], 
+                "duracion": " 127 min.", 
+                "actores": [
+                    {
+                        "nombre": "Harrison Ford"
+                    }, 
+                    {
+                        "nombre": "Sean Connery"
+                    }, 
+                    {
+                        "nombre": "Alison Doody"
+                    }, 
+                    {
+                        "nombre": "Denholm Elliott"
+                    }, 
+                    {
+                        "nombre": "John Rhys-Davies"
+                    }, 
+                    {
+                        "nombre": "River Phoenix"
+                    }, 
+                    {
+                        "nombre": "Julian Glover"
+                    }, 
+                    {
+                        "nombre": "Michael Byrne"
+                    }, 
+                    {
+                        "nombre": "Kevork Malikyan"
+                    }, 
+                    {
+                        "nombre": "Robert Eddison"
+                    }, 
+                    {
+                        "nombre": "Alexei Sayle"
+                    }, 
+                    {
+                        "nombre": "Richard Young"
+                    }, 
+                    {
+                        "nombre": "J.J. Hardy"
+                    }, 
+                    {
+                        "nombre": "Bradley Gregg"
+                    }, 
+                    {
+                        "nombre": "Michael Sheard"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "titulo": "Indiana Jones y la \u00faltima cruzada"
+            }
+        ], 
+        "fecha": "31/10/18 13:14", 
+        "precio": "36.2\u20ac"
+    }, 
+    {
+        "peliculas": [
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Doug Liman", 
+                "sinopsis": "Un hombre amn\u00e9sico es rescatado por la tripulaci\u00f3n de un barco pesquero italiano cuando flota a la deriva en el mar. No lleva nada consigo. S\u00f3lo las balas que lleva clavadas en la espalda y un n\u00famero de cuenta de un banco suizo que lleva adherido a la cadera. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes ling&uuml;\u00edsticas, marciales y de autodefensa que sugieren una profesi\u00f3n de riesgo. Confuso y desorientado, emprende una fren\u00e9tica b\u00fasqueda para descubrir qui\u00e9n es y por qu\u00e9 su vida ha tomado un giro tan peligroso.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una trama atractiva y nada predecible (\u00a1por fin!), con un gui\u00f3n capaz de mantener la tensi\u00f3n", 
+                        "nombre_op": "Poti Valls"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                        "nombre_op": "Mart\u00edn Montes"
+                    }
+                ], 
+                "poster": "caso_bourne.jpg", 
+                "precio": "9.50", 
+                "anno": "2002", 
+                "premios": [], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Matt Damon"
+                    }, 
+                    {
+                        "nombre": "Franka Potente"
+                    }, 
+                    {
+                        "nombre": " Chris Cooper"
+                    }, 
+                    {
+                        "nombre": "Brian Cox"
+                    }, 
+                    {
+                        "nombre": "Clive Owen"
+                    }, 
+                    {
+                        "nombre": "Adewale Akinnuoye-Agbaje"
+                    }, 
+                    {
+                        "nombre": "Gabriel Mann"
+                    }, 
+                    {
+                        "nombre": "Julia Stiles"
+                    }, 
+                    {
+                        "nombre": "Orso Maria Guerrini"
+                    }, 
+                    {
+                        "nombre": " Tim Dutton"
+                    }, 
+                    {
+                        "nombre": "Walton Goggins"
+                    }
+                ], 
+                "duracion": " 147 min.", 
+                "titulo": "El caso Bourne"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Ted Kotcheff", 
+                "sinopsis": "Cuando John Rambo, un veterano boina verde, va a visitar a un viejo compa&ntilde;ero de armas, se entera de que ha muerto v\u00edctima de las secuelas de la guerra. Algunos d\u00edas despu\u00e9s, la polic\u00eda lo detiene por vagabundo y se ensa&ntilde;a con \u00e9l. Entonces recuerda las torturas que sufri\u00f3 en Vietnam y reacciona violentamente.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una buena pel\u00edcula de acci\u00f3n, rodada con firmeza, pero que encubre h\u00e1bilmente un mensaje de lo m\u00e1s conservado.", 
+                        "nombre_op": "Jacinto Soria"
+                    }, 
+                    {
+                        "puntuacion": 1, 
+                        "opinion": "Rambo mata. As\u00ed dicho, puede parecer arcaico, pero el asunto da para poco m\u00e1s. Por lo dem\u00e1s, la primera piedra de una larga serie de adoquinazos.", 
+                        "nombre_op": "Elisa Burst"
+                    }
+                ], 
+                "poster": "rambo.jpg", 
+                "precio": "9.80", 
+                "anno": "1982", 
+                "premios": [], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Sylvester Stallone"
+                    }, 
+                    {
+                        "nombre": "Richard Crenna"
+                    }, 
+                    {
+                        "nombre": "Brian Dennehy"
+                    }, 
+                    {
+                        "nombre": "David Caruso"
+                    }, 
+                    {
+                        "nombre": "Jack Starrett"
+                    }, 
+                    {
+                        "nombre": "Michael Talbott"
+                    }, 
+                    {
+                        "nombre": "Chris Mulkey"
+                    }
+                ], 
+                "duracion": " 97 min.", 
+                "titulo": "Acorralado (Rambo)"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Sam Mendes", 
+                "sinopsis": "James Bond recibe un cr\u00edptico mensaje del pasado que le conf\u00eda una misi\u00f3n secreta que lo lleva a M\u00e9xico D.F. y a Roma, donde conoce a Luc\u00eda Sciarra, la hermosa viuda de un infame criminal. Bond se infiltra en una reuni\u00f3n secreta y descubre la existencia de una siniestra organizaci\u00f3n conocida como SPECTRE. Mientras tanto, en Londres, el nuevo director del Centro para la Seguridad Nacional cuestiona las acciones de Bond y pone en duda la importancia del MI6, encabezado por M. De modo encubierto Bond recluta a dos colaboradores para que le ayuden a encontrar a Madeleine Swann, la hija de su gran enemigo, el Sr. White, pues quiz\u00e1 tenga la clave para desentra&ntilde;ar el misterio de SPECTRE. A medida que Bond avanza en su investigaci\u00f3n, descubre una estremecedora conexi\u00f3n entre \u00e9l y el enemigo que busca.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "La pel\u00edcula es tan en\u00e9rgica, y su discurso contra el terrorismo de Estado en forma de hipervigilancia orwelliana tan institucionalmente incorrecto que a este cr\u00edtico le costar\u00e1 esperar hasta que llegue la siguiente entrega.", 
+                        "nombre_op": "Laura Fooster"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "007 al servicio de su Majestad el Cine. El ritmo vertiginoso que crea Mendes en dos horas y media que no fatigan huye de aturdir al espectador y de marearle.", 
+                        "nombre_op": "Litz Rose"
+                    }
+                ], 
+                "poster": "james_bond.jpg", 
+                "precio": "11.80", 
+                "anno": "2015", 
+                "premios": [
+                    {
+                        "premio": "2015: Premios Oscar: Mejor canci\u00f3n original."
+                    }, 
+                    {
+                        "premio": "2015: Globos de Oro: Mejor canci\u00f3n original"
+                    }, 
+                    {
+                        "premio": "2015: Satellite Awards: 7 nominaciones incluyendo mejor fotograf\u00eda y sonido"
+                    }, 
+                    {
+                        "premio": "2015: Critics Choice Awards: Nominada a mejor canci\u00f3n y actor acci\u00f3n (Craig)"
+                    }, 
+                    {
+                        "premio": "2016: Premios del Cine Europeo: Nominada al Premio del P\u00fablico"
+                    }
+                ], 
+                "pais": "Reino Unido", 
+                "actores": [
+                    {
+                        "nombre": "Daniel Craig"
+                    }, 
+                    {
+                        "nombre": "Christoph Waltz"
+                    }, 
+                    {
+                        "nombre": "L\u00e9a Seydoux"
+                    }, 
+                    {
+                        "nombre": "Ralph Fiennes"
+                    }, 
+                    {
+                        "nombre": "Monica Bellucci"
+                    }, 
+                    {
+                        "nombre": "Naomie Harris"
+                    }, 
+                    {
+                        "nombre": "Rory Kinnear"
+                    }, 
+                    {
+                        "nombre": "Ben Whishaw"
+                    }, 
+                    {
+                        "nombre": "Dave Bautista"
+                    }, 
+                    {
+                        "nombre": "Andrew Scott"
+                    }, 
+                    {
+                        "nombre": "Jesper Christensen"
+                    }, 
+                    {
+                        "nombre": "Stephanie Sigman"
+                    }
+                ], 
+                "duracion": " 148 min.", 
+                "titulo": "James Bond"
+            }
+        ], 
+        "fecha": "31/10/18 13:14", 
+        "precio": "31.1\u20ac"
+    }, 
+    {
+        "peliculas": [
+            {
+                "categoria": "Acci\u00f3n", 
+                "anno": "2002", 
+                "sinopsis": "Un hombre amn\u00e9sico es rescatado por la tripulaci\u00f3n de un barco pesquero italiano cuando flota a la deriva en el mar. No lleva nada consigo. S\u00f3lo las balas que lleva clavadas en la espalda y un n\u00famero de cuenta de un banco suizo que lleva adherido a la cadera. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes ling&uuml;\u00edsticas, marciales y de autodefensa que sugieren una profesi\u00f3n de riesgo. Confuso y desorientado, emprende una fren\u00e9tica b\u00fasqueda para descubrir qui\u00e9n es y por qu\u00e9 su vida ha tomado un giro tan peligroso.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una trama atractiva y nada predecible (\u00a1por fin!), con un gui\u00f3n capaz de mantener la tensi\u00f3n", 
+                        "nombre_op": "Poti Valls"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                        "nombre_op": "Mart\u00edn Montes"
+                    }
+                ], 
+                "poster": "caso_bourne.jpg", 
+                "precio": "9.50", 
+                "director": "Doug Liman", 
+                "premios": [], 
+                "duracion": " 147 min.", 
+                "actores": [
+                    {
+                        "nombre": "Matt Damon"
+                    }, 
+                    {
+                        "nombre": "Franka Potente"
+                    }, 
+                    {
+                        "nombre": " Chris Cooper"
+                    }, 
+                    {
+                        "nombre": "Brian Cox"
+                    }, 
+                    {
+                        "nombre": "Clive Owen"
+                    }, 
+                    {
+                        "nombre": "Adewale Akinnuoye-Agbaje"
+                    }, 
+                    {
+                        "nombre": "Gabriel Mann"
+                    }, 
+                    {
+                        "nombre": "Julia Stiles"
+                    }, 
+                    {
+                        "nombre": "Orso Maria Guerrini"
+                    }, 
+                    {
+                        "nombre": " Tim Dutton"
+                    }, 
+                    {
+                        "nombre": "Walton Goggins"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "titulo": "El caso Bourne"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "anno": "1982", 
+                "sinopsis": "Cuando John Rambo, un veterano boina verde, va a visitar a un viejo compa&ntilde;ero de armas, se entera de que ha muerto v\u00edctima de las secuelas de la guerra. Algunos d\u00edas despu\u00e9s, la polic\u00eda lo detiene por vagabundo y se ensa&ntilde;a con \u00e9l. Entonces recuerda las torturas que sufri\u00f3 en Vietnam y reacciona violentamente.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una buena pel\u00edcula de acci\u00f3n, rodada con firmeza, pero que encubre h\u00e1bilmente un mensaje de lo m\u00e1s conservado.", 
+                        "nombre_op": "Jacinto Soria"
+                    }, 
+                    {
+                        "puntuacion": 1, 
+                        "opinion": "Rambo mata. As\u00ed dicho, puede parecer arcaico, pero el asunto da para poco m\u00e1s. Por lo dem\u00e1s, la primera piedra de una larga serie de adoquinazos.", 
+                        "nombre_op": "Elisa Burst"
+                    }
+                ], 
+                "poster": "rambo.jpg", 
+                "precio": "9.80", 
+                "director": "Ted Kotcheff", 
+                "premios": [], 
+                "duracion": " 97 min.", 
+                "actores": [
+                    {
+                        "nombre": "Sylvester Stallone"
+                    }, 
+                    {
+                        "nombre": "Richard Crenna"
+                    }, 
+                    {
+                        "nombre": "Brian Dennehy"
+                    }, 
+                    {
+                        "nombre": "David Caruso"
+                    }, 
+                    {
+                        "nombre": "Jack Starrett"
+                    }, 
+                    {
+                        "nombre": "Michael Talbott"
+                    }, 
+                    {
+                        "nombre": "Chris Mulkey"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "titulo": "Acorralado (Rambo)"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "anno": "2000", 
+                "sinopsis": "En el a&ntilde;o 180, el Imperio Romano domina todo el mundo conocido. Tras una gran victoria sobre los b\u00e1rbaros del norte, el anciano emperador Marco Aurelio (Richard Harris) decide transferir el poder a M\u00e1ximo (Russell Crowe), bravo general de sus ej\u00e9rcitos y hombre de inquebrantable lealtad al imperio. Pero su hijo C\u00f3modo (Joaquin Phoenix), que aspiraba al trono, no lo acepta y trata de asesinar a M\u00e1ximo.", 
+                "cantidad": 2, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "El talento y fuerza visual de Ridley Scott vuelven a alcanzar altas cotas en esta entretenid\u00edsima pel\u00edcula de aventuras que adolece de un gui\u00f3n excesivamente plano (curiosamente, casi todos sus di\u00e1logos por separado son excelentes, pero la historia como conjunto es maniquea y bastante exagerada). Lo cierto es que a sus productores -y a los miembros de la academia de Hollywood- poco pareci\u00f3 importarles, pues los primeros ya anunciaban su tono \u00e9pico en la leyenda de promoci\u00f3n: &laquo;El general que se convirti\u00f3 en esclavo, el esclavo que se convirti\u00f3 en gladiador, el gladiador que desafi\u00f3 a un imperio&raquo; y los segundos se rindieron a frases tan contundentes como: &laquo;Mi nombre es M\u00e1ximo D\u00e9cimo Meridio, comandante de las tropas del norte, general de las legiones F\u00e9lix, leal servidor del verdadero emperador, Marco Aurelio. Padre de un hijo asesinado, marido de una mujer asesinada, y alcanzar\u00e9 mi venganza, en esta vida o en la otra&raquo;. En cualquier caso, su impresionante comienzo y los realistas combates de los gladiadores hacen de este 'taquillazo' un espect\u00e1culo digno de ver, oir -atenci\u00f3n a su maravillosa y potente banda sonora- y disfrutar.", 
+                        "nombre_op": "Laura Frooster"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Una historia aterradora con personajes fuertes y maduros, ag\u00f3nico suspense y emociones viscerales", 
+                        "nombre_op": "Litz Rose"
+                    }
+                ], 
+                "poster": "gladiator.jpg", 
+                "precio": "10.50", 
+                "director": "Ridley Scott", 
+                "premios": [
+                    {
+                        "premio": "2000: 5 Oscars: Pel\u00edcula, actor (Crowe), vestuario, sonido, efectos visuales. 12 nom."
+                    }, 
+                    {
+                        "premio": "2000: 2 Globos de Oro: Mejor pel\u00edcula drama y BSO. 5 nominaciones, incl. Director"
+                    }, 
+                    {
+                        "premio": "2000: 4 Premios BAFTA: Mejor pel\u00edcula, fotograf\u00eda, montaje y dise\u00f1o prod. 14 nom"
+                    }, 
+                    {
+                        "premio": "2000: 2 premios National Board of Review: Mejor dise\u00f1o de producci\u00f3n y actor sec"
+                    }, 
+                    {
+                        "premio": "2000: American Film Institute (AFI): Top 10 - Mejores pel\u00edculas del a\u00f1o"
+                    }
+                ], 
+                "duracion": " 150 min.", 
+                "actores": [
+                    {
+                        "nombre": " Russell Crowe"
+                    }, 
+                    {
+                        "nombre": "Joaquin Phoenix"
+                    }, 
+                    {
+                        "nombre": " Connie Nielsen"
+                    }, 
+                    {
+                        "nombre": "Oliver Reed"
+                    }, 
+                    {
+                        "nombre": "Richard Harris"
+                    }, 
+                    {
+                        "nombre": "Ralf Moeller"
+                    }, 
+                    {
+                        "nombre": "Derek Jacobi"
+                    }, 
+                    {
+                        "nombre": "Djimon Hounsou"
+                    }, 
+                    {
+                        "nombre": "David Schofield"
+                    }, 
+                    {
+                        "nombre": " John Shrapnel"
+                    }, 
+                    {
+                        "nombre": "Spencer Treat Clark"
+                    }, 
+                    {
+                        "nombre": "Tomas Arana"
+                    }, 
+                    {
+                        "nombre": "David Hemmings"
+                    }, 
+                    {
+                        "nombre": "Tommy Flanagan"
+                    }, 
+                    {
+                        "nombre": "Sven-Ole Thorsen"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "titulo": "Gladiator"
+            }
+        ], 
+        "fecha": "31/10/18 13:15", 
+        "precio": "40.3\u20ac"
+    }, 
+    {
+        "peliculas": [
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Anthony Russo, Joe Russo ", 
+                "sinopsis": "Despu\u00e9s de que otro incidente internacional involucre a Los Vengadores, causando varios da\u00f1os colaterales, aumentan las presiones pol\u00edticas para instaurar un sistema que exija m\u00e1s responsabilidades y que determine cu\u00e1ndo deben contratar los servicios del grupo de superh\u00e9roes. Esta nueva situaci\u00f3n dividir\u00e1 a Los Vengadores, mientras intentan proteger al mundo de un nuevo y terrible villano. Tercera entrega de la saga Capit\u00e1n Am\u00e9rica.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Es la pel\u00edcula m\u00e1s seria entregada por Marvel hasta la fecha. Tambi\u00e9n es la mejor rodada y (ex aequo con 'Los Vengadores') la mejor escrita.", 
+                        "nombre_op": "Jacinto Soria"
+                    }, 
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Un gigantesco entretenimiento que encuentra espacio para algo de resonancia emocional bajo el excelente espect\u00e1culo, 'Captain America: Civil War' es un thriller de acci\u00f3n totalmente satisfactorio con muy buen ritmo.", 
+                        "nombre_op": "Lizt Rose"
+                    }
+                ], 
+                "poster": "capitan_america.jpg", 
+                "precio": "11.80", 
+                "anno": "2016", 
+                "premios": [
+                    {
+                        "premio": "2016: Premios Annie: Nomin. a mejor animaci\u00f3n de personajes en pel\u00edcula no animada"
+                    }, 
+                    {
+                        "premio": "2016: Critics Choice Awards: 3 nominaciones incluyendo mejor pel\u00edcula de acci\u00f3n"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Chris Evans"
+                    }, 
+                    {
+                        "nombre": "Robert Downey Jr."
+                    }, 
+                    {
+                        "nombre": " Sebastian Stan"
+                    }, 
+                    {
+                        "nombre": "Scarlett Johansson"
+                    }, 
+                    {
+                        "nombre": "Anthony Mackie"
+                    }, 
+                    {
+                        "nombre": "Daniel Br\u00fchl"
+                    }, 
+                    {
+                        "nombre": "Don Cheadle"
+                    }, 
+                    {
+                        "nombre": "Jeremy Renner"
+                    }, 
+                    {
+                        "nombre": "Chadwick Boseman"
+                    }, 
+                    {
+                        "nombre": " Paul Bettany"
+                    }, 
+                    {
+                        "nombre": "Elizabeth Olsen"
+                    }, 
+                    {
+                        "nombre": "Paul Rudd"
+                    }, 
+                    {
+                        "nombre": "Emily VanCamp"
+                    }, 
+                    {
+                        "nombre": "Tom Holland"
+                    }, 
+                    {
+                        "nombre": "Frank Grillo"
+                    }, 
+                    {
+                        "nombre": "Martin Freeman"
+                    }, 
+                    {
+                        "nombre": "Marisa Tomei"
+                    }, 
+                    {
+                        "nombre": "John Kani"
+                    }
+                ], 
+                "duracion": " 113 min.", 
+                "titulo": "Capit\u00e1n Am\u00e9rica: Cilvil War"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Steven Spielberg", 
+                "sinopsis": "Cuando el Profesor Henry Jones (Sean Connery, La liga de los hombres extraordinarios) desaparece de repente, el arque\u00f3logo y aventurero Indiana Jones (Harrison Ford, Cowboys and Aliens), deber\u00e1 enfrentarse a un mal\u00e9fico multimillonario para seguir los pasos de su padre hasta el momento que fue secuestrado. En compa&ntilde;\u00eda de la codiciosa Elsa (Alison Doody, papel de Pam en la temporada 2 de Beaver Falls), ir\u00e1 al rescate de su padre y continuar\u00e1 con la b\u00fasqueda del Santo Grial, una preciada reliquia que tambi\u00e9n quieren los nazis, con los que tendr\u00e1 que luchar para conseguirlo, ya que \u00e9stos planean utilizarlo para dominar el mundo. El famoso aventurero adquiere un diario que contiene pistas y un mapa sin nombres para encontrar al misterioso Santo Grial. Con el diario como clave fundamental y el mapa sin nombres como gu\u00eda, Indiana Jones, se encuentra inmerso en una emocionante aventura en la que tendr\u00e1 que desafiar a la muerte, una vez m\u00e1s.", 
+                "cantidad": "3", 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "'El arca perdida', ahora m\u00e1s que nunca, parece un punto de inflexi\u00f3n en el cine de evasi\u00f3n. Lo que ha hecho es coger los mismos elementos y aplicar toda su habilidad y su sentido de la diversi\u00f3n para que funcionen una vez m\u00e1s.", 
+                        "nombre_op": "Roger Ebert"
+                    }, 
+                    {
+                        "puntuacion": 1, 
+                        "opinion": "No es nada nuevo en el canon Lucas-Spielberg; ni siquiera es algo nuevo para el cine. Es una perogrullada psicol\u00f3gica est\u00e1ndar.", 
+                        "nombre_op": "Daniel Andreas"
+                    }
+                ], 
+                "poster": "indiana_jones.jpg", 
+                "precio": "12.20", 
+                "anno": "1989", 
+                "premios": [
+                    {
+                        "premio": "1989: Oscar: Mejores efectos de sonido. 3 nominaciones."
+                    }, 
+                    {
+                        "premio": "1989: Globos de Oro: Nominado Mejor actor de reparto (Sean Connery)"
+                    }, 
+                    {
+                        "premio": "1989: BAFTA: Nominada a Actor de Reparto (Connery), Sonido y Efectos Especiales"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Harrison Ford"
+                    }, 
+                    {
+                        "nombre": "Sean Connery"
+                    }, 
+                    {
+                        "nombre": "Alison Doody"
+                    }, 
+                    {
+                        "nombre": "Denholm Elliott"
+                    }, 
+                    {
+                        "nombre": "John Rhys-Davies"
+                    }, 
+                    {
+                        "nombre": "River Phoenix"
+                    }, 
+                    {
+                        "nombre": "Julian Glover"
+                    }, 
+                    {
+                        "nombre": "Michael Byrne"
+                    }, 
+                    {
+                        "nombre": "Kevork Malikyan"
+                    }, 
+                    {
+                        "nombre": "Robert Eddison"
+                    }, 
+                    {
+                        "nombre": "Alexei Sayle"
+                    }, 
+                    {
+                        "nombre": "Richard Young"
+                    }, 
+                    {
+                        "nombre": "J.J. Hardy"
+                    }, 
+                    {
+                        "nombre": "Bradley Gregg"
+                    }, 
+                    {
+                        "nombre": "Michael Sheard"
+                    }
+                ], 
+                "duracion": " 127 min.", 
+                "titulo": "Indiana Jones y la \u00faltima cruzada"
+            }, 
+            {
+                "categoria": "Acci\u00f3n", 
+                "director": "Steven Spielberg", 
+                "sinopsis": "A&ntilde;o 1936. Indiana Jones es un profesor de arqueolog\u00eda, dispuesto a correr peligrosas aventuras con tal de conseguir valiosas reliquias hist\u00f3ricas. Despu\u00e9s de una infructuosa misi\u00f3n en Sudam\u00e9rica, el gobierno estadounidense le encarga la b\u00fasqueda del Arca de la Alianza, donde se conservan las Tablas de la Ley que Dios entreg\u00f3 a Mois\u00e9s. Seg\u00fan la leyenda, quien las posea tendr\u00e1 un poder absoluto, raz\u00f3n por la cual tambi\u00e9n la buscan los nazis.", 
+                "cantidad": 1, 
+                "opiniones": [
+                    {
+                        "puntuacion": 4, 
+                        "opinion": "Aqu\u00ed est\u00e1. La reinvenci\u00f3n del cine de aventuras a cargo de Spielberg -el director m\u00e1s listo de Hollywood-, y el salto al megaestrellato del gran Harrison Ford, todo en un irresistible paquete. Ya un cl\u00e1sico del cine moderno, esta primera entrega de las peripecias del apuesto arque\u00f3logo Indiana Jones es una entretenid\u00edsima y trepidante aventura, deudora del c\u00f3mic y las historietas gr\u00e1ficas, donde la acci\u00f3n, la diversi\u00f3n y la intriga se combinan magistralmente para gozo de toda la familia.", 
+                        "nombre_op": "Roger Ebert"
+                    }, 
+                    {
+                        "puntuacion": 1, 
+                        "opinion": "El frenes\u00ed incesante r\u00e1pidamente se vuelve mon\u00f3tono.", 
+                        "nombre_op": "Dave Hanks"
+                    }
+                ], 
+                "poster": "indiana_jones2.jpg", 
+                "precio": "11.40", 
+                "anno": "1981", 
+                "premios": [
+                    {
+                        "premio": "1981: 5 Oscars: Incluyendo Montaje, Dir. art\u00edstica, Sonido, Efectos esp. 8 nom."
+                    }, 
+                    {
+                        "premio": "1981: Nominada al Globo de Oro: Mejor director"
+                    }, 
+                    {
+                        "premio": "1981: Premios BAFTA: Dise\u00f1o de producci\u00f3n. 7 nom., incluyendo Mejor pel\u00edcula"
+                    }, 
+                    {
+                        "premio": "1981: Sindicato de Directores (DGA): Nominada a Mejor director"
+                    }, 
+                    {
+                        "premio": "1981: Sindicato de Guionistas (WGA): Nominada a Mejor gui\u00f3n original comedia"
+                    }
+                ], 
+                "pais": "Estados Unidos", 
+                "actores": [
+                    {
+                        "nombre": "Harrison Ford"
+                    }, 
+                    {
+                        "nombre": "Karen Allen"
+                    }, 
+                    {
+                        "nombre": "Paul Freeman"
+                    }, 
+                    {
+                        "nombre": "Ronald Lacey"
+                    }, 
+                    {
+                        "nombre": "John Rhys-Davies"
+                    }, 
+                    {
+                        "nombre": "Vic Tablian"
+                    }, 
+                    {
+                        "nombre": "Denholm Elliott"
+                    }, 
+                    {
+                        "nombre": "Wolf Kahler"
+                    }, 
+                    {
+                        "nombre": "Alfred Molina"
+                    }, 
+                    {
+                        "nombre": "George Harris"
+                    }, 
+                    {
+                        "nombre": "Don Fellows"
+                    }, 
+                    {
+                        "nombre": "William Hootkins"
+                    }, 
+                    {
+                        "nombre": "Tutte Lemkov"
+                    }, 
+                    {
+                        "nombre": "Eddie Tagoe"
+                    }, 
+                    {
+                        "nombre": "Anthony Higgins"
+                    }
+                ], 
+                "duracion": " 115 min.", 
+                "titulo": "Indiana Jones y el arca p\u00e9rdida"
+            }
+        ], 
+        "fecha": "31/10/18 13:16", 
+        "precio": "59.8\u20ac"
+    }
+]

@@ -7,6 +7,17 @@ from urlparse import urlparse
 from hashlib import md5
 import time
 import json, os, re
+from sqlalchemy import create_engine, update
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy.sql import select, and_, insert
+from sqlalchemy.sql.expression import func
+
+# configurar el motor de sqlalchemy
+db_engine = create_engine("postgresql://alumnodb:alumnodb@localhost/si1", echo=False)
+# cargar las tablas desde una base de datos existente
+db_meta = MetaData(bind=db_engine, reflect = True)
+# conexion a la base de datos
+db_conn = db_engine.connect()
 
 non_decimal = re.compile(r'[^\d.]+')
 
@@ -17,31 +28,39 @@ app = Flask(__name__)
 app.secret_key = 'esto-es-una-clave-muy-secreta'
 
 #Datos del catalogo (Data es un diccionario)
+############################################################################
 Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
-#Conseguir todas las categorias, sin repetidos
-aux = list(set([a["categoria"] for a in Data["peliculas"]]))
+#Conseguir todas los generos
+generos = db_meta.tables['generos']
+query = select([generos])
+result = list(db_conn.execute(query))
 Categorias = []
-for a in aux:
-    auxdic = {"nombre": a, "imagen": None}
-    for film in Data["peliculas"]:
-        if (film["categoria"] == a):
-            auxdic["imagen"] = film["poster"]
-            break
+for a in result:
+    auxdic = {"nombre": a[1], "imagen":"la_mascara.jpg"}
     Categorias.append(auxdic)
-
+    
 #Ordenar las peliculas por año (las mas nuevas primero)
-Novedades = sorted(Data["peliculas"], key=lambda x: -int(x["anno"]))
+peliculas = db_meta.tables['peliculas']
+query = select([peliculas]).order_by(peliculas.c.estreno).limit(10)
+result = list(db_conn.execute(query))
+Novedades=[]
+for a in result:
+    auxdic = {"titulo": a[1], "poster":"la_mascara.jpg", "peliculaid":a[0]}
+    Novedades.append(auxdic)
 
-#Obtener las peliculas ordenadas por puntuacion de los criticos
-def sort_rec(x):
-    aux = 0.0
-    for a in x["opiniones"]:
-        aux += float(a["puntuacion"])
-    return -aux/len(x["opiniones"])
-Recomendadas = sorted(Data["peliculas"], key=lambda x: sort_rec(x))
+#############################################################################
+def getPelicula(pelicula):
+    peliculas = db_meta.tables['peliculas']
+    query = select([peliculas]).where(peliculas.c.peliculaid == pelicula)
+    result = list(db_conn.execute(query))[0]
 
+#############################################################################
+def getSimilares(Peli):
+
+
+############################################################################
 def get_pelis_en_categoria(categoria):
     return [a for a in Data["peliculas"] if (categoria == a["categoria"])]
 
@@ -59,47 +78,49 @@ def normalize(s):
         s = s.replace(a, b).replace(a.upper(), b.upper())
     return s.lower()
 
+############################################################################
 def get_pelis_by_name(name, categoria):
     if categoria is None:
         return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]))]
     return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]) and categoria == a["categoria"])]
 
-def check_password(path,password):
-    user_data = open(path, "r").read()
-    user_data = json.loads(user_data)
-    m = md5()
-    m.update(password)
-    password = m.hexdigest()
-    if(user_data["contrasena"] == password):
-        session["user"] = user_data["usuario"]
-        session["email"] = user_data["email"]
-        session["saldo"] = user_data["saldo"]
+def check_password(email, password):
+    try:
+        clientes = db_meta.tables['clientes']
+        query = select([clientes]).where(and_(clientes.c.email == email, clientes.c.password == password))
+        result = db_conn.execute(query)
+        a = list(result)[0]
+        iduser = a[0]
+        saldo = a[2]
+        useremail = a[3]
+        nombre = a[4]
+        session["userid"] = iduser
+        session["user"] = nombre
+        session["email"] = useremail
+        session["saldo"] = saldo
         return True
-    return False
+    except Exception as e:
+        return False
+
 
 def create_user_and_login(user, pwd, email, card, path):
-    m = md5()
-    m.update(pwd)
-    password = m.hexdigest()
-    os.mkdir(path)
-    dic={"contrasena": password,\
-        "email": email,\
-        "usuario": user,\
-        "tarjeta": card,\
-        "saldo": randint(0,100)}
-    open(path+"datos.dat", "w").write(json.dumps(dic))
-    session["user"] = dic["usuario"]
-    session["email"] = dic["email"]
-    session["saldo"] = dic["saldo"]
+    try:
+        clientes = db_meta.tables['clientes']
+        query = select([func.max(clientes.c.clienteid)])
+        result = db_conn.execute(query)
+        maxid = list(result)[0][0]
+        query = clientes.insert().values(clienteid=maxid+1, tarjeta=card, saldo=randint(1,100), email=email, nombre=user, password=pwd)
+        result = db_conn.execute(query)
+        return check_password(email, pwd)
+    except Exception as e:
+        return False
 
 def change_saldo():
-    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
-    
-    user_data = open(path, "r").read()
-    user_data = json.loads(user_data)
-    user_data["saldo"] = session["saldo"]
-    open(path, "w").write(json.dumps(user_data))
+    clientes = db_meta.tables['clientes']
+    query = update(clientes).where(clientes.c.clienteid == session["userid"]).values(saldo=session["saldo"])
+    db_conn.execute(query)
 
+############################################################################
 def recarga_saldo():
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
     
@@ -109,6 +130,7 @@ def recarga_saldo():
     session["saldo"] = user_data["saldo"]
     open(path, "w").write(json.dumps(user_data))
 
+############################################################################
 def anadir_historial(suma):
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
     if(os.path.exists(path)):
@@ -126,6 +148,7 @@ def anadir_historial(suma):
     historial.append(pedido)
     open(path, "w").write(json.dumps(historial, indent=4))
 
+############################################################################
 def get_historial():
     path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
     if(os.path.exists(path)):
@@ -146,8 +169,8 @@ def index():
     else:
         ncompra = 0
     return render_template("index.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
-     destacadas=Categorias, novedades=Novedades[:10], user=user)
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
+     destacadas=Categorias[:6], categorias=Categorias, novedades=Novedades[:10], user=user)
 
 @app.route("/carrito/")
 def carrito():
@@ -166,7 +189,7 @@ def carrito():
         ncompra = 0
         suma = 0
     return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, compradas=compra, total=suma)
 
 @app.route("/carrito/<valor>/modificar/", methods=["POST"])
@@ -197,7 +220,7 @@ def carrito_modificar(valor):
         ncompra = 0
         suma = 0
     return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, compradas=session["compra"], total=suma)
 
 @app.route("/carrito/<valor>/borrar/")
@@ -224,7 +247,7 @@ def carrito_borrar(valor):
         ncompra = 0
         suma = 0
     return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, compradas=session["compra"], total=suma)
 
 @app.route("/pagar/")
@@ -242,7 +265,7 @@ def pagar():
         ncompra = 0
         suma = 0
     return render_template("pagar.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, total=suma)
 
 @app.route("/pagar/confirmar/", methods=["POST"])
@@ -262,7 +285,7 @@ def pagar_1():
 
     if suma > session["saldo"]:
         return render_template("pagar.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, total=suma, error=1)
     else:
         session["saldo"] -= suma
@@ -283,7 +306,7 @@ def contacto():
     else:
         ncompra = 0
     return render_template("contacto.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user)
 
 @app.route("/login/")
@@ -297,7 +320,7 @@ def login():
     else:
         ncompra = 0
     return render_template("login.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user)
 
 @app.route("/login/activate/", methods=['POST'])
@@ -306,16 +329,14 @@ def login_fun():
         return index()
     user = request.form["user"]
     pwd = request.form["password"]
-    path = os.path.dirname(__file__)+ "/usuarios/"+user+"/datos.dat"
-    if(os.path.exists(path)):
-        if(check_password(path, pwd)):
-            return index()
+    if(check_password(user, pwd)):
+        return index()
     if "ncompra" in session:
         ncompra = session["ncompra"]
     else:
         ncompra = 0
     return render_template("login.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      wrong=True)
 
 @app.route("/register/")
@@ -327,7 +348,7 @@ def register():
     else:
         ncompra = 0
     return render_template("register.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra)
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra)
 
 @app.route("/register/activate/", methods=['POST'])
 def register_fun():
@@ -344,7 +365,7 @@ def register_fun():
         else:
             ncompra = 0
         return render_template("register.html",\
-         novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+         novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
          error=True)
     create_user_and_login(user, pwd, email, card, path)
     return index()
@@ -365,7 +386,7 @@ def user_info(userc):
     else:
         ncompra = 0
     return render_template("user-info.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, email=email, saldo=saldo, historial=historial)
 
 @app.route("/contador/")
@@ -400,7 +421,7 @@ def listado_peliculas(i):
     else:
         ncompra = 0
     return render_template("listado_peliculas.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      peliculas = Data["peliculas"][12*(i-1):12*i], user=user, i=i)
 
 @app.route("/categorias/")
@@ -414,7 +435,7 @@ def categorias():
     else:
         ncompra = 0
     return render_template("categorias.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      categorias=Categorias, user=user)
 
 @app.route("/categorias/<categoria>/")
@@ -428,7 +449,7 @@ def categorias_categoria(categoria):
     else:
         ncompra = 0
     return render_template("categoria.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      Titulo=categoria, peliculas=get_pelis_en_categoria(categoria), user=user)
 
 @app.route("/peliculas/<pelicula>/")
@@ -437,8 +458,8 @@ def pelicula(pelicula):
         user = session["user"]
     else:
         user = None
-    Peli = [a for a in Data["peliculas"] if a["titulo"] == pelicula][0]
-    Similares = [a for a in get_pelis_en_categoria(Peli["categoria"]) if (Peli["titulo"] != a["titulo"])]
+    Peli = getPelicula(pelicula)
+    Similares = getSimilares(Peli)
     shuffle(Similares)
 
     if "ncompra" in session:
@@ -446,7 +467,7 @@ def pelicula(pelicula):
     else:
         ncompra = 0
     return render_template("pelicula.html",\
-     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      pelicula=Peli, similares=Similares[:8], user=user)
 
 @app.route("/peliculas/<pelicula>/comprar/")
@@ -478,7 +499,7 @@ def comprar(pelicula):
     else:
         ncompra = 0
     return render_template("pelicula.html",\
-     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      pelicula=Peli, similares=Similares[:8], user=user)
 
 @app.route("/busqueda/")
@@ -496,7 +517,7 @@ def busqueda():
     else:
         ncompra = 0
     return render_template("busqueda.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Recomendadas[:4], ncompra=ncompra,\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      peliculas=get_pelis_by_name(nombre, categoria), nombre=nombre, categoria=categoria,\
      user=user)
 

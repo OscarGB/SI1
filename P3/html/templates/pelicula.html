@@ -25,14 +25,14 @@
 		</p>
 		<div class="green black-border film-buy-container flex-column">
 			<h1 class="button1">{{ pelicula.precio }}€</h1>
-			<a class="button1 hov" href="/index.wsgi/peliculas/{{ pelicula.titulo}}/comprar/">A&ntilde;adir al carrito</a>
+			<a class="button1 hov" href="/index.wsgi/peliculas/{{ pelicula.peliculaid}}/comprar/">A&ntilde;adir al carrito</a>
 		</div>
 	</div>
 	<h1>Pel&iacute;culas similares</h1>
 	<div class="black-border film-similar-container flex-row">
 		{% for a in similares %}
 		<div class="film-similar-img-container">
-			<a href="/index.wsgi/peliculas/{{ a.titulo }}/"><img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ a.poster }}"></a>
+			<a href="/index.wsgi/peliculas/{{ a.peliculaid }}/"><img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ a.poster }}"></a>
 		</div>
 		{% endfor %}
 	</div>

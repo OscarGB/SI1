@@ -4,7 +4,7 @@
 --
 
 CREATE TABLE public.clientes (
-	clienteid integer            	PRIMARY KEY		NOT NULL,
+	clienteid serial            	PRIMARY KEY		NOT NULL,
 	tarjeta character varying(50) 					NOT NULL,
 	saldo real 										NOT NULL,    
 	email character varying(50),

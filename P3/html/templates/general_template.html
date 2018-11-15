@@ -51,14 +51,14 @@
         <div class="sidebar-section flex-row wrap">
           {% for pop in populares_sidebar %}
           <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/{{ pop.titulo }}/"><img alt="{{ pop.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ pop.poster }}"></a>
+          <a href="/index.wsgi/peliculas/{{ pop.peliculaid }}/"><img alt="{{ pop.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ pop.poster }}"></a>
           </div>
           {% endfor %}
         </div>
         <div class="sidebar-section flex-row wrap">
           {% for nov in novedades_sidebar %}
           <div class="sb-img-container">
-          <a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
+          <a href="/index.wsgi/peliculas/{{ nov.peliculaid }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
           </div>
           {% endfor %}
         </div>

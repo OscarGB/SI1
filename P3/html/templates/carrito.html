@@ -15,9 +15,9 @@
 				<div>
 					<h4><b>{{ a.titulo }}</b></h4>
 					<h4><b>Cantidad: 
-						<form method="post" class="auto_submit_form inline" action="/index.wsgi/carrito/{{ a.titulo }}/modificar/">
+						<form method="post" class="auto_submit_form inline" action="/index.wsgi/carrito/{{ a.peliculaid }}/modificar/">
 							<input name="cantidad" class="auto_submit_field" type="number" step="1" min="0" max="10" value="{{ a.cantidad }}"/>&nbsp;</b></form>
-						<a href="/index.wsgi/carrito/{{ a.titulo }}/borrar/" class="button1 hov inline">Eliminar</a></h4>
+						<a href="/index.wsgi/carrito/{{ a.peliculaid }}/borrar/" class="button1 hov inline">Eliminar</a></h4>
 					<h4 class="pedidos-right">Precio: {{ a.precio }}&euro;x{{ a.cantidad }}</h4>
 				</div>
 			</div>

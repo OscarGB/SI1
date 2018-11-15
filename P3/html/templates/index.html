@@ -5,7 +5,7 @@
 				<div class="flex-row wrap index-down">
 					{% for nov in novedades %}
 					<div class="img-index">
-						<a href="/index.wsgi/peliculas/{{ nov.titulo }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
+						<a href="/index.wsgi/peliculas/{{ nov.peliculaid }}/"><img alt="{{ nov.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ nov.poster }}"></a>
 					</div>
 					{% endfor %}
 				</div>
@@ -27,7 +27,7 @@
               				<input type="text" placeholder="Buscar..." name="search" pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ]{1,20}" required="required">
               				<select name="categoria">
 								<option value="0">Seleccione categoria</option>
-								{% for dest in destacadas %}
+								{% for dest in categorias %}
 								<option value="{{ dest.nombre }}">{{ dest.nombre }}</option>
 								{% endfor %}
 							</select>

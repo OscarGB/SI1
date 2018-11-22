@@ -23,6 +23,13 @@ CREATE TABLE public.actores (
 
 ALTER TABLE public.actores OWNER TO alumnodb;
 
+CREATE TABLE public.alertas (
+    productoid integer                 PRIMARY KEY     NOT NULL,
+    stock integer                                   NOT NULL
+);
+
+ALTER TABLE public.alertas OWNER TO alumnodb;
+
 --
 
 CREATE TABLE public.directores (
@@ -211,6 +218,11 @@ FROM generos INNER JOIN imdb_moviegenres ON generos.genero = imdb_moviegenres.ge
 INSERT INTO public.paispeliculas (paisid, peliculaid)
 SELECT paisid, movieid
 FROM paises INNER JOIN imdb_moviecountries ON paises.pais = imdb_moviecountries.country;
+
+INSERT INTO public.alertas
+SELECT productoid, stock
+FROM productos
+WHERE stock < 1;
 
 DROP TABLE customers, imdb_actormovies, imdb_actors, imdb_directormovies, imdb_directors,
 imdb_moviecountries, imdb_moviegenres, imdb_movielanguages, imdb_movies, inventory, orderdetail, 

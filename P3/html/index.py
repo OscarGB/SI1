@@ -509,37 +509,45 @@ def pelicula(pelicula):
      Titulo=Peli["titulo"], novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      pelicula=Peli, similares=Similares[:8], user=user)
 
-@app.route("/peliculas/<pelicula>/comprar/")
-def comprar(pelicula):
+def anadir_al_carrito(productoid):
     if "user" in session:
         user = session["user"]
-    else:
-        user = None
-    Peli = [a for a in Data["peliculas"] if a["titulo"] == pelicula][0]
-    Peli["cantidad"] = 1;
-    flag = 0
-    if "ncompra" in session:
-        session["ncompra"] += 1
-        session["compra"]
-        for a in session["compra"]:
-            if(a["titulo"] == Peli["titulo"]):
-                a["cantidad"] += 1
-                flag = 1
-        if flag == 0:
-            session["compra"].append(Peli)
-    else:
-        session["ncompra"] = 1
-        session["compra"] = [Peli, ]
-    Similares = [a for a in get_pelis_en_categoria(Peli["categoria"]) if (Peli["titulo"] != a["titulo"])]
-    shuffle(Similares)
+        if "ncompra" in session:
+            session["ncompra"] += 1
+        else:
+            session["ncompra"] = 1
 
-    if "ncompra" in session:
-        ncompra = session["ncompra"]
+        result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+        if(len(result) == 0):
+            db_conn.execute("INSERT INTO pedidos VALUES ((select MAX(pedidoid) from pedidos) + 1, NOW(), "+str(session["userid"])+", 0, 15, 15, NULL);")
+            result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+        
+        pedidoid = result[0][0]
+        result = list(db_conn.execute("select * from detallespedidos where pedidoid = "+str(pedidoid)+" and productoid = "+str(productoid)+";"))
+        if(len(result) > 0):
+            db_conn.execute("UPDATE detallespedidos\
+            SET cantidad = cantidad + 1,\
+                preciototal = (preciototal/cantidad)*(cantidad+1)\
+            WHERE pedidoid = "+str(pedidoid)+" and productoid = "+str(productoid)+";")
+        else:
+            db_conn.execute("INSERT INTO detallespedidos VALUES\
+            ("+str(pedidoid)+", "+str(productoid)+", (SELECT precio from productos where productoid = "+str(productoid)+"),1)")
+
+
     else:
-        ncompra = 0
-    return render_template("pelicula.html",\
-     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     pelicula=Peli, similares=Similares[:8], user=user)
+        if "ncompra" in session:
+            session["ncompra"] += 1
+            session["compra"]+=productoid
+        else:
+            session["ncompra"] = 1
+            session["compra"] = [productoid, ]
+
+@app.route("/peliculas/<productoid>/comprar/")
+def comprar(productoid):
+
+    anadir_al_carrito(productoid)
+    
+    return pelicula(productoid)
 
 @app.route("/busqueda/")
 def busqueda():

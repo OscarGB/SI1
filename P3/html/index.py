@@ -154,33 +154,8 @@ def change_saldo():
     query = update(clientes).where(clientes.c.clienteid == session["userid"]).values(saldo=session["saldo"])
     db_conn.execute(query)
 
-############################################################################
 def recarga_saldo():
-    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/datos.dat"
-    
-    user_data = open(path, "r").read()
-    user_data = json.loads(user_data)
-    user_data["saldo"] += 100
-    session["saldo"] = user_data["saldo"]
-    open(path, "w").write(json.dumps(user_data))
-
-############################################################################
-def anadir_historial(suma):
-    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
-    if(os.path.exists(path)):
-        historial = open(path, "r").read()
-        historial = json.loads(historial)
-        pedido = {"fecha": time.strftime("%d/%m/%y %H:%M"), "peliculas": []}
-        for a in session["compra"]:
-            pedido["peliculas"].append(a)
-    else:
-        historial = []
-        pedido = {"fecha": time.strftime("%d/%m/%y %H:%M"), "peliculas": []}
-        for a in session["compra"]:
-            pedido["peliculas"].append(a)
-    pedido["precio"] = str(suma)+"€"
-    historial.append(pedido)
-    open(path, "w").write(json.dumps(historial, indent=4))
+    db_conn.execute("UPDATE clientes SET saldo = saldo + 100 WHERE clienteid = "+str(session["userid"])+";")
 
 ############################################################################
 def get_historial():

@@ -5,18 +5,20 @@
 	<h1>{{ Titulo }}</h1>
 	<div class="flex-row film-container">
 		<img alt="{{ pelicula.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ pelicula.poster }}" class="film-image">
-		<p class="film-description"><b>Director:</b>{{ pelicula.director }}<br><br>
-			<b>Reparto:</b>
-			{% for a in pelicula.actores %}
-			{{ a.nombre }},
-			{% endfor %}
+		<p class="film-description">
+			{% if pelicula.director %}<b>Director:</b>{{ pelicula.director }}<br><br>{% endif %}
+			{% if pelicula.actores|length %}
+			<b>Reparto: </b>
+				{% for a in pelicula.actores %}
+				{{ a }}&nbsp;
+				{% endfor %}
+			{% endif %}
 			<br><br>
 			<b>A&ntilde;o:</b>{{ pelicula.anno }}<br><br>
-			<b>Pa&iacute;s:</b>{{ pelicula.pais }}<br><br>
 			{% if pelicula.paises|length %}
-				<b>Paises:</b><br>
+			<b>Paises: </b>
 				{% for a in pelicula.paises %}
-				{{ a.pais }}<br>
+				{{ a }}&nbsp;
 				{% endfor %}
 			{% endif %}
 		</p>
@@ -29,21 +31,14 @@
 	<div class="black-border film-similar-container flex-row">
 		{% for a in similares %}
 		<div class="film-similar-img-container">
-			<a href="/index.wsgi/peliculas/{{ a.peliculaid }}/"><img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ a.poster }}"></a>
+			<a href="/index.wsgi/peliculas/{{ a.productoid }}/"><img alt="{{ a.titulo }}" src="{{ url_for('static', filename = 'media/img/') }}{{ a.poster }}"></a>
 		</div>
 		{% endfor %}
 	</div>
 	<h1>OH!-PI&Ntilde;ONES</h1>
 	<div class="flex-column film-opinions-container">
-		{% for a in pelicula.opiniones %}
-			<p>"{{ a.opinion }}" <br>
-			{{ a.nombre_op }}<br>
-			<b>Puntuaci&oacute;n: </b>{{a.puntuacion}} pi&ntilde;ones
-			{% for i in range(a.puntuacion) %}
-				<img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" class="pinon">
-			{% endfor %}
-			</p>
-		{% endfor %}	
+		<p>"Es la pel&iacute;cula m&aacute;s seria entregada por Marvel hasta la fecha. Tambi&eacute;n es la mejor rodada y (ex aequo con 'Los Vengadores') la mejor escrita." <br>Jacinto Soria<br><b>Puntuaci&oacute;n:</b>4 pi&ntilde;ones<img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"></p>
+		<p>"Un gigantesco entretenimiento que encuentra espacio para algo de resonancia emocional bajo el excelente espect&aacute;culo, 'Captain America: Civil War' es un thriller de acci&oacute;n totalmente satisfactorio con muy buen ritmo."<br>Lizt Rose<br><b>Puntuaci&oacute;n:</b>4 pi&ntilde;ones<img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"><img alt="Piñon" src="{{ url_for('static', filename = 'media/img/pinon.png') }}" width="30"></p>	
 	</div>
 <!--                     FIN CONTENIDO                             -->
 {% endblock %}

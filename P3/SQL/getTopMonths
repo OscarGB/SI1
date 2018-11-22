@@ -1,6 +1,5 @@
 DROP FUNCTION IF EXISTS getTopMonths(integer, integer);
 
-SELECT getTopMonths(19000, 320000);
 CREATE OR REPLACE FUNCTION getTopMonths(p integer, i integer) RETURNS TABLE(ano double precision, mes double precision, preciototal integer, cantidad integer) AS $$
 BEGIN
 	RETURN QUERY (SELECT * FROM (SELECT extract(year from fecha) as ano, extract(month from fecha) as mes, 

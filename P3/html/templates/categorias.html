@@ -6,7 +6,7 @@
 <div class="flex-row wrap peliculas-gen">
 	{% for c in categorias %}
 	<div class="img-gen">
-		<a href="/index.wsgi/categorias/{{ c.nombre }}"><img alt="{{ c.nombre }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ c.imagen }}"></a>
+		<a href="/index.wsgi/categorias/{{ c.categoriaid }}"><img alt="{{ c.nombre }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ c.imagen }}"></a>
 		<h1>{{ c.nombre }}</h1>
 	</div>
 	{% endfor %}

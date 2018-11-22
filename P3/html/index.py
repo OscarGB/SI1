@@ -46,31 +46,47 @@ query = select([generos])
 result = list(db_conn.execute(query))
 Categorias = []
 for a in result:
-    auxdic = {"nombre": a[1], "imagen":"la_mascara.jpg"}
+    auxdic = {"categoriaid": a[0], "nombre": a[1], "imagen":"la_mascara.jpg"}
     Categorias.append(auxdic)
     
 #Ordenar las peliculas por año (las mas nuevas primero)
-peliculas = db_meta.tables['peliculas']
-query = select([peliculas]).order_by(peliculas.c.estreno).limit(10)
-result = list(db_conn.execute(query))
+result = list(db_conn.execute("SELECT * FROM peliculas natural join productos where stock > 0 ORDER BY estreno LIMIT 10;"))
 Novedades=[]
 for a in result:
-    auxdic = {"titulo": a[1], "poster":"la_mascara.jpg", "peliculaid":a[0]}
+    auxdic = {"titulo": a[1], "poster":"la_mascara.jpg", "peliculaid":a[0], "productoid":a[3]}
     Novedades.append(auxdic)
 
 #############################################################################
 def getPelicula(pelicula):
-    peliculas = db_meta.tables['peliculas']
-    result = list(db_conn.execute("SELECT * FROM peliculas natural join productos natural join paises natural join actores natural join  where stock > 0 and productoid = " + str(pelicula) + ";"))[0]
-    return {"titulo": result[1], "poster": "la_mascara.jpg", "precio":result[4], "anno":result[2]}
+    result = list(db_conn.execute("SELECT * FROM (SELECT* FROM productos where productoid = "+str(pelicula)+" and stock > 0) AS T1 natural join peliculas;"))[0]
+    pelicula = {"peliculaid":result[0], "productoid":result[1], "titulo": result[6], "poster": "la_mascara.jpg", "precio":result[2], "anno":result[7]}
+    pelicula["paises"] = []
+    result = list(db_conn.execute("SELECT * FROM (SELECT* FROM peliculas where peliculaid = "+str(pelicula["peliculaid"]) +") AS T1 natural join paispeliculas natural join paises;"))
+    for a in result:
+        pelicula["paises"].append(a[4])
+    pelicula["actores"] = []
+    result = list(db_conn.execute("SELECT * FROM (SELECT* FROM peliculas where peliculaid = "+str(pelicula["peliculaid"]) +") AS T1 natural join actorpeliculas natural join actores LIMIT 10;"))
+    for a in result:
+        pelicula["actores"].append(a[6])
+    result = list(db_conn.execute("SELECT * FROM (SELECT* FROM peliculas where peliculaid = "+str(pelicula["peliculaid"]) +") AS T1 natural join directorpeliculas natural join directores;"))
+    if(len(result) > 0):
+        pelicula["director"] = result[0][4]
+    
+    return pelicula
 
 #############################################################################
 def getSimilares(Peli):
-    pass
+    result = list(db_conn.execute("SELECT * FROM (SELECT* FROM peliculas where peliculaid = "+str(Peli["peliculaid"]) +") AS T1 natural join generopeliculas natural join generos;"))[0]
+    return get_pelis_en_categoria(result[0])[:10]
 
 ############################################################################
 def get_pelis_en_categoria(categoria):
-    return [a for a in Data["peliculas"] if (categoria == a["categoria"])]
+    result = list(db_conn.execute("SELECT * FROM (SELECT * FROM generopeliculas where generoid="+str(categoria)+") AS T1 natural join peliculas natural join productos  where stock > 0;"))
+    peliscat = []
+    for a in result:
+        auxdic = {"productoid":a[4], "titulo":a[2], "precio":a[5], "poster":"la_mascara.jpg"}
+        peliscat.append(auxdic)
+    return peliscat
 
 #Elimina acentos y eñes (para busquedas)
 def normalize(s):
@@ -448,6 +464,10 @@ def categorias():
 
 @app.route("/categorias/<categoria>/")
 def categorias_categoria(categoria):
+    for a in Categorias:
+        if str(a["categoriaid"]) == categoria:
+            nombre = a["nombre"]
+            break
     if "user" in session:
         user = session["user"]
     else:
@@ -458,7 +478,7 @@ def categorias_categoria(categoria):
         ncompra = 0
     return render_template("categoria.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     Titulo=categoria, peliculas=get_pelis_en_categoria(categoria), user=user)
+     Titulo=nombre, peliculas=get_pelis_en_categoria(categoria), user=user)
 
 @app.route("/peliculas/<pelicula>/")
 def pelicula(pelicula):
@@ -467,11 +487,8 @@ def pelicula(pelicula):
     else:
         user = None
     Peli = getPelicula(pelicula)
-    # Similares = getSimilares(Peli)
-    # shuffle(Similares)
-
-    ######################################
-    Similares = []
+    Similares = getSimilares(Peli)
+    shuffle(Similares)
 
     if "ncompra" in session:
         ncompra = session["ncompra"]

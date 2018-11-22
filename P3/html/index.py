@@ -32,6 +32,14 @@ app.secret_key = 'esto-es-una-clave-muy-secreta'
 Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
 Data = json.loads(Data)
 
+productos = db_meta.tables['productos']
+peliculas = db_meta.tables['peliculas']
+result = list(db_conn.execute("SELECT * FROM peliculas natural join productos where stock > 0;"))
+Data = []
+for a in result:
+    auxdic = {"productoid":a[3], "titulo":a[1], "precio":a[4], "poster":"la_mascara.jpg"}
+    Data.append(auxdic)
+
 #Conseguir todas los generos
 generos = db_meta.tables['generos']
 query = select([generos])
@@ -53,12 +61,12 @@ for a in result:
 #############################################################################
 def getPelicula(pelicula):
     peliculas = db_meta.tables['peliculas']
-    query = select([peliculas]).where(peliculas.c.peliculaid == pelicula)
-    result = list(db_conn.execute(query))[0]
+    result = list(db_conn.execute("SELECT * FROM peliculas natural join productos natural join paises natural join actores natural join  where stock > 0 and productoid = " + str(pelicula) + ";"))[0]
+    return {"titulo": result[1], "poster": "la_mascara.jpg", "precio":result[4], "anno":result[2]}
 
 #############################################################################
 def getSimilares(Peli):
-
+    pass
 
 ############################################################################
 def get_pelis_en_categoria(categoria):
@@ -422,7 +430,7 @@ def listado_peliculas(i):
         ncompra = 0
     return render_template("listado_peliculas.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     peliculas = Data["peliculas"][12*(i-1):12*i], user=user, i=i)
+     peliculas = Data[12*(i-1):12*i], user=user, i=i)
 
 @app.route("/categorias/")
 def categorias():
@@ -459,15 +467,18 @@ def pelicula(pelicula):
     else:
         user = None
     Peli = getPelicula(pelicula)
-    Similares = getSimilares(Peli)
-    shuffle(Similares)
+    # Similares = getSimilares(Peli)
+    # shuffle(Similares)
+
+    ######################################
+    Similares = []
 
     if "ncompra" in session:
         ncompra = session["ncompra"]
     else:
         ncompra = 0
     return render_template("pelicula.html",\
-     Titulo=pelicula, novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
+     Titulo=Peli["titulo"], novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      pelicula=Peli, similares=Similares[:8], user=user)
 
 @app.route("/peliculas/<pelicula>/comprar/")

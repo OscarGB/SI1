@@ -11,15 +11,12 @@
 			{{ a.nombre }},
 			{% endfor %}
 			<br><br>
-			<b>Sinopsis:</b><br>{{ pelicula.sinopsis }}<br><br>
-
 			<b>A&ntilde;o:</b>{{ pelicula.anno }}<br><br>
-			<b>Duraci&oacute;n:</b>{{ pelicula.duracion }}<br><br>
 			<b>Pa&iacute;s:</b>{{ pelicula.pais }}<br><br>
-			{% if pelicula.premios|length %}
-				<b>Premios:</b><br>
-				{% for a in pelicula.premios %}
-				{{ a.premio }}<br>
+			{% if pelicula.paises|length %}
+				<b>Paises:</b><br>
+				{% for a in pelicula.paises %}
+				{{ a.pais }}<br>
 				{% endfor %}
 			{% endif %}
 		</p>

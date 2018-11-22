@@ -104,9 +104,19 @@ def normalize(s):
 
 ############################################################################
 def get_pelis_by_name(name, categoria):
-    if categoria is None:
-        return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]))]
-    return [a for a in Data["peliculas"] if (normalize(name) in normalize(a["titulo"]) and categoria == a["categoria"])]
+    if categoria is not None:
+        result = list(db_conn.execute("SELECT * FROM (SELECT * FROM peliculas where titulo like '%%"+str(name)+"%%') as T natural join productos natural join generopeliculas where generoid = "+str(categoria)+";"))
+        peliscat = []
+        for a in result:
+            auxdic = {"productoid":a[3], "titulo":a[1], "precio":a[4], "poster":"la_mascara.jpg"}
+            peliscat.append(auxdic)
+        return peliscat
+    result = list(db_conn.execute("SELECT * FROM (SELECT * FROM peliculas where titulo like '%%"+str(name)+"%%') as T natural join productos;"))
+    peliscat = []
+    for a in result:
+        auxdic = {"productoid":a[3], "titulo":a[1], "precio":a[4], "poster":"la_mascara.jpg"}
+        peliscat.append(auxdic)
+    return peliscat
 
 def check_password(email, password):
     try:
@@ -462,12 +472,13 @@ def categorias():
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      categorias=Categorias, user=user)
 
-@app.route("/categorias/<categoria>/")
-def categorias_categoria(categoria):
+@app.route("/categorias/<categoria>/<i>/")
+def categorias_categoria(categoria, i):
     for a in Categorias:
         if str(a["categoriaid"]) == categoria:
             nombre = a["nombre"]
             break
+    i = int(i)
     if "user" in session:
         user = session["user"]
     else:
@@ -478,7 +489,7 @@ def categorias_categoria(categoria):
         ncompra = 0
     return render_template("categoria.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     Titulo=nombre, peliculas=get_pelis_en_categoria(categoria), user=user)
+     Titulo=nombre, i=i, categoriaid=categoria, peliculas=get_pelis_en_categoria(categoria)[12*(i-1):12*i], user=user)
 
 @app.route("/peliculas/<pelicula>/")
 def pelicula(pelicula):

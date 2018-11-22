@@ -28,7 +28,7 @@
               				<select name="categoria">
 								<option value="0">Seleccione categoria</option>
 								{% for dest in categorias %}
-								<option value="{{ dest.nombre }}">{{ dest.nombre }}</option>
+								<option value="{{ dest.categoriaid }}">{{ dest.nombre }}</option>
 								{% endfor %}
 							</select>
               				<button type="submit"><img class="lupa-img" alt="Lupa" src="{{ url_for('static', filename = 'media/img/search.png') }}"></button>

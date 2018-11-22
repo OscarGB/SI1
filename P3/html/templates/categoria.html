@@ -3,6 +3,7 @@
 {% block content %}
 <!--                 CONTENIDO                       -->
 
+	{% if peliculas|length %}
 				<h1>{{ Titulo }}</h1>
 				<div class="flex-row wrap peliculas-gen">
 					{% for p in peliculas %}
@@ -13,7 +14,16 @@
 					</div>
 					{% endfor %}
 				</div>
-				
+				<div class="flex-row wrap gen-down">
+					{% if i > 1 %}
+						<a class="button3 hov" href="/index.wsgi/listado_peliculas/{{ i-1 }}">Anterior</a>
+					{% endif %}
+					<a class="button3 hov" href="/index.wsgi/categorias/{{ categoriaid }}/{{ i+1 }}/">Siguiente</a>	
+				</div>
+	{% else %}
+		<p>No encontramos más peliculas</p>
+		<a class="button3 hov" href="/index.wsgi/categorias/{{ categoriaid }}/{{ i-1 }}/">Anterior</a>
+	{% endif %}
 
 <!--                  FIN-DE-CONTENIDO                      -->
 {% endblock %}

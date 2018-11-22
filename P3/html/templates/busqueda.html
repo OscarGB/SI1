@@ -1,15 +1,12 @@
 {% extends "general_template.html" %}
 {% block title %}Inicio{% endblock %}
 {% block content %}
-				<h2>Has buscado {{nombre}}
-				{% if categoria %}
-					en {{ categoria }}
-				{% endif %}</h2>
+				<h2>Has buscado {{nombre}}</h2>
 				<div class="flex-row wrap peliculas-gen">
 				{% if peliculas|length %}
 				{% for p in peliculas %}
 					<div class="img-gen">
-						<a href="/index.wsgi/peliculas/{{ p.peliculaid }}/"><img alt="{{ p.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ p.poster }}"></a>
+						<a href="/index.wsgi/peliculas/{{ p.productoid }}/"><img alt="{{ p.titulo }}" class="sb-img" src="{{ url_for('static', filename = 'media/img/') }}{{ p.poster }}"></a>
 						<h4>{{ p.titulo }}</h4>
 						<h4>Precio: {{ p.precio }}€</h4>
 					</div>

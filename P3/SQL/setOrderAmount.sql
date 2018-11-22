@@ -10,3 +10,4 @@ BEGIN
 		(precioneto IS NULL or preciototal IS NULL);
 END;
 $$ language plpgsql;
+SELECT * FROM setOrderAmount();

@@ -27,11 +27,6 @@ app = Flask(__name__)
 #Secret Key for cookie encryption
 app.secret_key = 'esto-es-una-clave-muy-secreta'
 
-#Datos del catalogo (Data es un diccionario)
-############################################################################
-Data = open(os.path.dirname(__file__)+"/catalogo.json", "r").read()
-Data = json.loads(Data)
-
 productos = db_meta.tables['productos']
 peliculas = db_meta.tables['peliculas']
 result = list(db_conn.execute("SELECT * FROM peliculas natural join productos where stock > 0;"))
@@ -56,7 +51,6 @@ for a in result:
     auxdic = {"titulo": a[1], "poster":"la_mascara.jpg", "peliculaid":a[0], "productoid":a[3]}
     Novedades.append(auxdic)
 
-#############################################################################
 def getPelicula(pelicula):
     result = list(db_conn.execute("SELECT * FROM (SELECT* FROM productos where productoid = "+str(pelicula)+" and stock > 0) AS T1 natural join peliculas;"))[0]
     pelicula = {"peliculaid":result[0], "productoid":result[1], "titulo": result[6], "poster": "la_mascara.jpg", "precio":result[2], "anno":result[7]}
@@ -74,12 +68,10 @@ def getPelicula(pelicula):
     
     return pelicula
 
-#############################################################################
 def getSimilares(Peli):
     result = list(db_conn.execute("SELECT * FROM (SELECT* FROM peliculas where peliculaid = "+str(Peli["peliculaid"]) +") AS T1 natural join generopeliculas natural join generos;"))[0]
     return get_pelis_en_categoria(result[0])[:10]
 
-############################################################################
 def get_pelis_en_categoria(categoria):
     result = list(db_conn.execute("SELECT * FROM (SELECT * FROM generopeliculas where generoid="+str(categoria)+") AS T1 natural join peliculas natural join productos  where stock > 0;"))
     peliscat = []
@@ -102,7 +94,6 @@ def normalize(s):
         s = s.replace(a, b).replace(a.upper(), b.upper())
     return s.lower()
 
-############################################################################
 def get_pelis_by_name(name, categoria):
     if categoria is not None:
         result = list(db_conn.execute("SELECT * FROM (SELECT * FROM peliculas where titulo like '%%"+str(name)+"%%') as T natural join productos natural join generopeliculas where generoid = "+str(categoria)+";"))
@@ -132,6 +123,25 @@ def check_password(email, password):
         session["user"] = nombre
         session["email"] = useremail
         session["saldo"] = saldo
+        result = list(db_conn.execute("SELECT SUM(cantidad) FROM (select * from pedidos where clienteid = "+str(iduser)+" and estado is null order by fecha DESC) as T inner join detallespedidos on T.pedidoid = detallespedidos.pedidoid"))
+        if(len(result) == 0):
+            ncompra = 0
+        else:
+            ncompra = result[0][0]
+
+        # Cargar carrito de antes de hacer login
+        if "ncompra" in session:
+            ncompra += session["ncompra"]
+            session.pop("ncompra", None)
+            for a in session["compra"]:
+                anadir_al_carrito(a)
+            session.pop("compra", None)
+        if(ncompra == 0):
+            session.pop("ncompra", None)
+        else:
+            session["ncompra"] = ncompra
+
+
         return True
     except Exception as e:
         return False
@@ -156,21 +166,26 @@ def change_saldo():
 
 def recarga_saldo():
     db_conn.execute("UPDATE clientes SET saldo = saldo + 100 WHERE clienteid = "+str(session["userid"])+";")
+    session["saldo"] += 100
 
-############################################################################
 def get_historial():
-    path = os.path.dirname(__file__)+ "/usuarios/"+session["user"]+"/historial.json"
-    if(os.path.exists(path)):
-        historial = open(path, "r").read()
-        historial = json.loads(historial)
-    else:
-        historial = []
+    result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is not null order by fecha DESC;"))
+    if(len(result) == 0):
+        return None
+    historial = []
+    for a in result:
+        auxdic = {"pedidoid":a[0], "fecha":a[1], "precio":round(a[5],2), "estado":a[6], "peliculas":[]}
+        result2 = list(db_conn.execute("SELECT * from (select * from detallespedidos where pedidoid = "+str(auxdic["pedidoid"])+") as T natural join productos natural join peliculas;"))
+        for b in result2:
+            auxdic2 = {"titulo": b[9], "precio": round(b[3],2), "cantidad": b[4], "poster": "la_mascara.jpg"}
+            auxdic["peliculas"].append(auxdic2)
+        historial.append(auxdic)
     return historial
 
 @app.route("/")
 def index():
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     if "ncompra" in session:
@@ -181,22 +196,52 @@ def index():
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      destacadas=Categorias[:6], categorias=Categorias, novedades=Novedades[:10], user=user)
 
+def getcarrito():
+    if "user" in session:        
+        result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+        if(len(result) == 0):
+            return 0,None
+        pedidoid = result[0][0]
+        precioneto = result[0][3]
+        result = list(db_conn.execute("SELECT * from (select * from detallespedidos where pedidoid = "+str(pedidoid)+") as T natural join productos natural join peliculas;"))
+        if(len(result) == 0):
+            return 0,None
+        else:
+            compradas = []
+            for b in result:
+                auxdic = {"titulo": b[9], "precio": round(b[3],2), "cantidad": b[4], "poster": "la_mascara.jpg", "productoid":b[1]}
+                compradas.append(auxdic)
+        return precioneto, compradas
+
+
+    else:
+        if "ncompra" in session:
+            done = []
+            compradas = []
+            precioneto = 0
+            for a in session["compra"]:
+                if a in done:
+                    continue
+                done.append(a)
+                b = list(db_conn.execute("SELECT * from (select * from productos where productoid = "+str(a)+") as T natural join peliculas;"))[0]
+                auxdic = {"titulo": b[6], "precio": round(b[2],2), "cantidad": session["compra"].count(a), "poster": "la_mascara.jpg", "productoid":b[1]}
+                precioneto += auxdic["precio"]*auxdic["cantidad"]
+                compradas.append(auxdic)
+            return precioneto, compradas
+        else:
+            return 0, None
+
 @app.route("/carrito/")
 def carrito():
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     if "ncompra" in session:
         ncompra = session["ncompra"]
-        suma = 0
-        compra = session["compra"]
-        for a in session["compra"]:
-            suma += float(non_decimal.sub('', a["precio"]))*a["cantidad"]
     else:
-        compra = None
         ncompra = 0
-        suma = 0
+    suma, compra = getcarrito()
     return render_template("carrito.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, compradas=compra, total=suma)
@@ -204,102 +249,101 @@ def carrito():
 @app.route("/carrito/<valor>/modificar/", methods=["POST"])
 def carrito_modificar(valor):
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
+        if "ncompra" in session:
+            nueva_can = request.form["cantidad"]
+            result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+            if(len(result) == 0):
+                return
+            pedidoid = result[0][0]
+            result = list(db_conn.execute("select * from detallespedidos where pedidoid = "+str(pedidoid)+" and productoid = "+str(valor)+";"))
+            if(len(result) > 0):
+                precioproducto = result[0][2]/result[0][3] 
+                session["ncompra"] += int(nueva_can)-result[0][3]
+                db_conn.execute("UPDATE detallespedidos SET cantidad = "+str(nueva_can)+", preciototal = "+str(int(nueva_can)*precioproducto)+" where pedidoid = "+str(pedidoid)+" and productoid = "+str(valor)+";")
+            else:
+                return
     else:
         user = None
-    if "ncompra" in session:
-        nueva_can = request.form["cantidad"]
-        vieja_can = nueva_can
-        for a in session["compra"]:
-            if a["titulo"] == valor:
-                vieja_can = a["cantidad"]
-                a["cantidad"] = nueva_can
-                if nueva_can == "0":
-                    session["compra"].remove(a)
-                break
-        session["ncompra"] += (int(nueva_can) - int(vieja_can))
-        if(session["ncompra"] <= 0):
-            session.pop("ncompra", None)
-    if "ncompra" in session:
-        ncompra = session["ncompra"]
-        suma = 0
-        for a in session["compra"]:
-            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
+        if "ncompra" in session:
+            nueva_can = request.form["cantidad"]
+            vieja_can = session["compra"].count(valor)
+            session["ncompra"] += (int(nueva_can) - int(vieja_can))
+            for a in range(int(nueva_can) - int(vieja_can)):
+                session["compra"].append(valor)
+            for a in range(int(vieja_can) - int(nueva_can)):
+                session["compra"].delete(valor)
+            if(session["ncompra"] <= 0):
+                session.pop("ncompra", None)
+                session.pop("compra", None)
+
+    return carrito()
+
+def remove_from_carrito(valor):
+    if "user" in session:
+        result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+        if(len(result) == 0):
+            return
+        pedidoid = result[0][0]
+        result = list(db_conn.execute("select * from detallespedidos where pedidoid = "+str(pedidoid)+" and productoid = "+str(valor)+";"))
+        if(len(result) > 0):
+            session["ncompra"] -= result[0][3]
+            db_conn.execute("DELETE from detallespedidos where pedidoid = "+str(pedidoid)+" and productoid = "+str(valor)+";")
+        else:
+            return
+
     else:
-        ncompra = 0
-        suma = 0
-    return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     user=user, compradas=session["compra"], total=suma)
+        session["ncompra"] -= session["compra"].count(valor)
+        session["compra"] = filter(lambda a: a != valor, session["compra"])
 
 @app.route("/carrito/<valor>/borrar/")
 def carrito_borrar(valor):
-    if "user" in session:
-        user = session["user"]
-    else:
-        user = None
-    if "ncompra" in session:
-        for a in session["compra"]:
-            if a["titulo"] == valor:
-                vieja_can = a["cantidad"]
-                session["compra"].remove(a)
-                break
-        session["ncompra"] += (-int(vieja_can))
-        if(session["ncompra"] <= 0):
-            session.pop("ncompra", None)
-    if "ncompra" in session:
-        ncompra = session["ncompra"]
-        suma = 0
-        for a in session["compra"]:
-            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
-    else:
-        ncompra = 0
-        suma = 0
-    return render_template("carrito.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     user=user, compradas=session["compra"], total=suma)
+    remove_from_carrito(valor)
+    return carrito()
 
 @app.route("/pagar/")
 def pagar():
     if "user" in session:
-        user = session["user"]
-    else:
-        user = None
-    if "ncompra" in session:
-        ncompra = session["ncompra"]
-        suma = 0
-        for a in session["compra"]:
-            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
-    else:
-        ncompra = 0
-        suma = 0
-    return render_template("pagar.html",\
-     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     user=user, total=suma)
-
-@app.route("/pagar/confirmar/", methods=["POST"])
-def pagar_1():
-    if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         return login()
     if "ncompra" in session:
         ncompra = session["ncompra"]
-        suma = 0
-        for a in session["compra"]:
-            suma += float(non_decimal.sub('', a["precio"]))*float(a["cantidad"])
     else:
         ncompra = 0
-        suma = 0
+    suma, compra = getcarrito()
+    return render_template("pagar.html",\
+     novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
+     user=user, total=suma)
+
+def finalizar_pedido():
+    result = list(db_conn.execute("select * from pedidos where clienteid = "+str(session["userid"])+" and estado is null;"))
+    if(len(result) == 0):
+        return
+    pedidoid = result[0][0]
+    db_conn.execute("update pedidos set estado='Paid', fecha=NOW() where pedidoid = "+str(pedidoid)+";")
+
+
+@app.route("/pagar/confirmar/", methods=["POST"])
+def pagar_1():
+    if "user" in session:
+        user = session["userid"]
+    else:
+        return login()
+    if "ncompra" in session:
+        ncompra = session["ncompra"]
+    else:
+        ncompra = 0
+    suma, compra = getcarrito()
 
     if suma > session["saldo"]:
         return render_template("pagar.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
      user=user, total=suma, error=1)
     else:
-        session["saldo"] -= suma
+        session["saldo"] -= float(suma)
         change_saldo()
-        anadir_historial(suma)
+        finalizar_pedido()
         session.pop("ncompra", None)
         session.pop("compra", None)
     return index()
@@ -307,7 +351,7 @@ def pagar_1():
 @app.route("/contacto/")
 def contacto():
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     if "ncompra" in session:
@@ -382,12 +426,13 @@ def register_fun():
 @app.route("/users/<userc>/")
 def user_info(userc):
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
+        username = session["user"]
         email = session["email"]
         saldo = session["saldo"]
-        historial = sorted(get_historial(), reverse=True, key=lambda x: x["fecha"])[:5]
-        if userc != user:
-            return index()
+        historial = get_historial()[:5]
+        if userc != str(session["userid"]):
+           return index()
     else:
         return index()
     if "ncompra" in session:
@@ -396,7 +441,7 @@ def user_info(userc):
         ncompra = 0
     return render_template("user-info.html",\
      novedades_sidebar=Novedades[:4], populares_sidebar=Novedades[:4], ncompra=ncompra,\
-     user=user, email=email, saldo=saldo, historial=historial)
+     user=user, username=username, email=email, saldo=saldo, historial=historial)
 
 @app.route("/contador/")
 def contador():
@@ -413,15 +458,14 @@ def user_exists(userc):
 @app.route("/recargar/<userc>/")
 def recargar(userc):
     if "user" in session:
-        user = session["user"]
-        if(userc == user):
-            recarga_saldo()
+        user = session["userid"]
+        recarga_saldo()
     return user_info(userc)
 
 @app.route("/listado_peliculas/<i>")
 def listado_peliculas(i):
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     i = int(i)
@@ -436,7 +480,7 @@ def listado_peliculas(i):
 @app.route("/categorias/")
 def categorias():
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     if "ncompra" in session:
@@ -455,7 +499,7 @@ def categorias_categoria(categoria, i):
             break
     i = int(i)
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     if "ncompra" in session:
@@ -469,7 +513,7 @@ def categorias_categoria(categoria, i):
 @app.route("/peliculas/<pelicula>/")
 def pelicula(pelicula):
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     Peli = getPelicula(pelicula)
@@ -486,7 +530,7 @@ def pelicula(pelicula):
 
 def anadir_al_carrito(productoid):
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
         if "ncompra" in session:
             session["ncompra"] += 1
         else:
@@ -507,12 +551,10 @@ def anadir_al_carrito(productoid):
         else:
             db_conn.execute("INSERT INTO detallespedidos VALUES\
             ("+str(pedidoid)+", "+str(productoid)+", (SELECT precio from productos where productoid = "+str(productoid)+"),1)")
-
-
     else:
         if "ncompra" in session:
             session["ncompra"] += 1
-            session["compra"]+=productoid
+            session["compra"].append(productoid)
         else:
             session["ncompra"] = 1
             session["compra"] = [productoid, ]
@@ -527,7 +569,7 @@ def comprar(productoid):
 @app.route("/busqueda/")
 def busqueda():
     if "user" in session:
-        user = session["user"]
+        user = session["userid"]
     else:
         user = None
     nombre = request.args.get('search')
@@ -548,6 +590,7 @@ def logout():
     session.pop("user", None)
     session.pop("ncompra", None)
     session.pop("compra", None)
+    session.pop("userid", None)
     return index()
 
 if __name__ == "__main__":

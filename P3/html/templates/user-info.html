@@ -12,7 +12,7 @@
 			<div class="user-data">
 				<H2>Tus datos:</H2>
 
-				<h3>Nombre de usuario:</h3><p> {{ user }}</p>
+				<h3>Nombre de usuario:</h3><p> {{ username }}</p>
 				<h3>Correo:</h3><p> {{ email }}</p>
 				<h3>Saldo:</h3><p> {{ saldo }} <a href="/index.wsgi/recargar/{{user}}/" class="button1">Recargar</a></p>
 			</div>
@@ -39,7 +39,7 @@
 							<div class="green">
 								<h4><b>&nbsp;&nbsp;{{ e.titulo }}</b></h4>
 								<h4><b>&nbsp;&nbsp;Cantidad: {{ e.cantidad }}</b></h4>
-								<h4><b>&nbsp;&nbsp;Precio por unidad: {{ e.precio }}&euro;</b></h4>
+								<h4><b>&nbsp;&nbsp;Precio: {{ e.precio }}&euro;</b></h4>
 							</div>
 						</div>
 						{% endfor %}

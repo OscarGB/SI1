@@ -1,0 +1,1 @@
+En clientesDistintos, hemos probado con distintos indices, sobre totalamount hace que nuestra consulta sea más lenta, sobre ambos no mejora. Hemos decidido dejar el indice sobre orderdate.

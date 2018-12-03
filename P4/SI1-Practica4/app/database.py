@@ -17,8 +17,25 @@ def dbCloseConnect(db_conn):
 def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0, niter):
 
     # TODO: implementar la consulta; asignar nombre 'cc' al contador resultante
-    consulta = " ... "
+    consulta_preparada = "  PREPARE getListaCliMes (text, int) AS \
+                            SELECT COUNT(DISTINCT customerid) as cc\
+                            FROM \
+                              orders \
+                            WHERE\
+                              orderdate >= to_date($1, 'YYYYMM') \
+                              and orderdate < to_date($1, 'YYYYMM') + interval '1 month'\
+                              and totalamount > $2;"
+
+    consulta_no_preparada = "SELECT COUNT(DISTINCT customerid) as cc\
+                            FROM \
+                              orders \
+                            WHERE\
+                              orderdate >= to_date('{0}', 'YYYYMM') \
+                              and orderdate < to_date('{0}', 'YYYYMM') + interval '1 month'\
+                              and totalamount > {1}"
     
+    if(use_prepare):
+        db_conn.execute(consulta_preparada)
     # TODO: ejecutar la consulta 
     # - mediante PREPARE, EXECUTE, DEALLOCATE si use_prepare es True
     # - mediante db_conn.execute() si es False
@@ -27,16 +44,23 @@ def getListaCliMes(db_conn, mes, anio, iumbral, iintervalo, use_prepare, break0,
     dbr=[]
 
     for ii in range(niter):
-
-        # TODO: ...
+        if(use_prepare):
+            res = list(db_conn.execute("EXECUTE getListaCliMes ('"+str(anio)+str(mes)+"', "+str(iumbral)+");"))[0]
+        else:
+            res = list(db_conn.execute(consulta_no_preparada.format(str(anio)+str(mes), str(iumbral))))[0]
 
         # Guardar resultado de la query
         dbr.append({"umbral":iumbral,"contador":res['cc']})
+        if(break0 and res['cc'] == 0): 
+            break
 
         # TODO: si break0 es True, salir si contador resultante es cero
         
         # Actualizacion de umbral
         iumbral = iumbral + iintervalo
+
+    if(use_prepare):
+        db_conn.execute("DEALLOCATE getListaCliMes;")
                 
     return dbr
 

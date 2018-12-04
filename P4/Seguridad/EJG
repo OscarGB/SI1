@@ -1,0 +1,7 @@
+a' or 1=1;--
+
+
+Con esa consulta en el campo de la contraseña o el nombre te devuelve pup nosh (independientemente de donde lo pongas). Por lo que vale para ambos apartados (supongo vaya)
+
+Para arreglarlo podriamos usar querys preparadas, ya que SQL distingue entre datos y codigo. En caso de usar nuestra inyección el la contraseña, SQL buscaría un usuario con contraseña exactamente igual a "a' or 1=1;--", por lo que fallaría la inyección. 
+Otra forma de tratar de evitarlo sería filtrar los campos con algún filtro. Por ejemplo permitir únicamente letras y números. Esto limita la capacidad de las contraseñas, haciéndolas más débiles y más fáciles de atacar mediante fuerza bruta. 

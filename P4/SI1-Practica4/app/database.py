@@ -100,27 +100,83 @@ def getCustomer(username, password):
     else:
         return {'firstname': res['firstname'], 'lastname': res['lastname']}
     
-# def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
+def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     
-#     # Array de trazas a mostrar en la página
-#     dbr=[]
+    # Array de trazas a mostrar en la página
+    dbr=[]
+    db_conn = dbConnect()
 
-#     # TODO: Ejecutar consultas de borrado
-#     # - ordenar consultas según se desee provocar un error (bFallo True) o no
-#     # - ejecutar commit intermedio si bCommit es True
-#     # - usar sentencias SQL ('BEGIN', 'COMMIT', ...) si bSQL es True
-#     # - suspender la ejecución 'duerme' segundos en el punto adecuado para forzar deadlock
-#     # - ir guardando trazas mediante dbr.append()
+    # TODO: Ejecutar consultas de borrado
+    # - ordenar consultas según se desee provocar un error (bFallo True) o no
+    # - ejecutar commit intermedio si bCommit es True
+    # - usar sentencias SQL ('BEGIN', 'COMMIT', ...) si bSQL es True
+    # - suspender la ejecución 'duerme' segundos en el punto adecuado para forzar deadlock
+    # - ir guardando trazas mediante dbr.append()
     
-#     try:
-#         # TODO: ejecutar consultas
+    try:
+        db_conn.execute('BEGIN;')
+        dbr.append("begin enviado")
+        if(bFallo):
+            if(bSQL):
+                dbr.append("borrando detalles de pedido")
+                db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
+                if(bCommit):
+                    dbr.append("Se han borrado los detalles de pedido con un commit")
+                    db_conn.execute("COMMIT;")
+                    db_conn.execute("BEGIN;")
+                dbr.append("borrando cliente")
+                db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
+                dbr.append("borrando pedidos")
+                db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+            
+            else: # TODO: CAMBIAR?
+                dbr.append("borrando detalles de pedido")
+                db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
+                if(bCommit):
+                    dbr.append("Se han borrado los detalles de pedido con un commit")
+                    db_conn.execute("COMMIT;")
+                    db_conn.execute("BEGIN;")
+                dbr.append("borrando cliente")
+                db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
+                dbr.append("borrando pedidos")
+                db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+        else:
+            if(bSQL):
+                dbr.append("borrando detalles de pedido")
+                db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
+                dbr.append("borrando pedidos")
+                db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                dbr.append("borrando cliente")
+                db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
 
-#     except Exception as e:
-#         # TODO: deshacer en caso de error
+            else: # TODO: CAMBIAR?
+                dbr.append("borrando detalles de pedido")
+                db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
+                dbr.append("borrando pedidos")
+                db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                dbr.append("borrando cliente")
+                db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
 
-#     else:
-#         # TODO: confirmar cambios si todo va bien
+
+    except Exception as e:
+        dbr.append("ha habido un error: imprimiendo excepcion")
+        dbr.append(str(e))
+        dbr.append("rollback")
+        db_conn.execute('ROLLBACK;')
+        dbr.append("Los cambios se han desecho, mostrando un detalle de pedido del cliente:")
+        a = list(db_conn.execute('SELECT orderid, prod_id from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');'))
+        if(len(a) == 0):
+            dbr.append("No hay detalles de pedidos")
+        else:
+            a = a[0]
+            dbr.append("El ciente ha pedido el producto %s en el pedido %s"%(a[1], a[0]))
+    else:
+        dbr.append("todo OK")
+        dbr.append("commit")
+        db_conn.execute('COMMIT;')
+
+    db_conn.close()
 
         
-#     return dbr
+    return dbr
 

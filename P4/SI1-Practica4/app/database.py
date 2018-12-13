@@ -114,7 +114,10 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     # - ir guardando trazas mediante dbr.append()
     
     try:
-        db_conn.execute('BEGIN;')
+        if(bSQL):
+            db_conn.execute('BEGIN;')
+        else:
+            trans = db_conn.begin()
         dbr.append("begin enviado")
         if(bFallo):
             if(bSQL):
@@ -128,24 +131,27 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
                 db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
                 dbr.append("borrando pedidos")
                 db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                time.sleep(duerme);
             
             else: # TODO: CAMBIAR?
                 dbr.append("borrando detalles de pedido")
                 db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
                 if(bCommit):
                     dbr.append("Se han borrado los detalles de pedido con un commit")
-                    db_conn.execute("COMMIT;")
-                    db_conn.execute("BEGIN;")
+                    trans.commit()
+                    trans = db_conn.begin()
                 dbr.append("borrando cliente")
                 db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
                 dbr.append("borrando pedidos")
                 db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                time.sleep(duerme);
         else:
             if(bSQL):
                 dbr.append("borrando detalles de pedido")
                 db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
                 dbr.append("borrando pedidos")
                 db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                time.sleep(duerme);
                 dbr.append("borrando cliente")
                 db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
 
@@ -154,6 +160,7 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
                 db_conn.execute('delete from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');')
                 dbr.append("borrando pedidos")
                 db_conn.execute('delete from orders where customerid = '+str(customerid)+';')
+                time.sleep(duerme);
                 dbr.append("borrando cliente")
                 db_conn.execute('delete from customers where customerid = '+str(customerid)+';')
 
@@ -162,7 +169,10 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
         dbr.append("ha habido un error: imprimiendo excepcion")
         dbr.append(str(e))
         dbr.append("rollback")
-        db_conn.execute('ROLLBACK;')
+        if(bSQL):
+            db_conn.execute('ROLLBACK;')
+        else:
+            trans.rollback()
         dbr.append("Los cambios se han desecho, mostrando un detalle de pedido del cliente:")
         a = list(db_conn.execute('SELECT orderid, prod_id from orderdetail where orderid in (SELECT orderid from orders where customerid = '+str(customerid)+');'))
         if(len(a) == 0):
@@ -173,8 +183,10 @@ def delCustomer(customerid, bFallo, bSQL, duerme, bCommit):
     else:
         dbr.append("todo OK")
         dbr.append("commit")
-        db_conn.execute('COMMIT;')
-
+        if(bSQL):
+            db_conn.execute('COMMIT;')
+        else:
+            trans.commit()
     db_conn.close()
 
         
